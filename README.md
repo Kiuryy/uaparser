@@ -62,13 +62,16 @@ where example UserAgent is:
 **Usage note:** There are some OSes that do not return a version, see docs below. Linux is typically not reported with a specific Linux distro name or version.
 
 #### Browser Name
-* `BrowserChrome` - Google [Chrome](https://en.wikipedia.org/wiki/Google_Chrome), [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))
+* `BrowserChrome` - Google [Chrome](https://en.wikipedia.org/wiki/Google_Chrome)
 * `BrowserSafari` - Apple [Safari](https://en.wikipedia.org/wiki/Safari_(web_browser)), Google Search ([GSA](https://itunes.apple.com/us/app/google/id284815942))
 * `BrowserEdge` - Microsoft [Edge](https://en.wikipedia.org/wiki/Microsoft_Edge)
 * `BrowserFirefox` - Mozilla [Firefox](https://en.wikipedia.org/wiki/Firefox), GNU [IceCat](https://en.wikipedia.org/wiki/GNU_IceCat), [Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel), [Seamonkey](https://en.wikipedia.org/wiki/SeaMonkey)
 * `BrowserIE` - Microsoft [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer)
 * `BrowserAndroid` - Android [WebView](https://developer.chrome.com/multidevice/webview/overview) (Android OS <4.4 only)
 * `BrowserOpera` - [Opera](https://en.wikipedia.org/wiki/Opera_(web_browser))
+* `BrowserChromium` - Google [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))
+* `BrowserVivaldi` - [Vivaldi](https://en.wikipedia.org/wiki/Vivaldi_(web_browser))
+* `BrowserBrave` - [Brave](https://en.wikipedia.org/wiki/Brave_(web_browser))
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
 * `BrowserSilk` - Amazon [Silk](https://en.wikipedia.org/wiki/Amazon_Silk)
 * `BrowserQQ` - Tencent [QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
