@@ -26,7 +26,7 @@ func (i BrowserName) String() string {
 	return _BrowserName_name[_BrowserName_index[i]:_BrowserName_index[i+1]]
 }
 
-const _OSName_name = "OSUnknownOSWindowsPhoneOSWindowsOSMacOSXOSiOSOSAndroidOSBlackberryOSChromeOSOSKindleOSWebOSOSLinuxOSPlaystationOSXboxOSNintendoOSBot"
+const _OSName_name = "OSUnknownOSWindowsPhoneOSWindowsOSMacOSOSiOSOSAndroidOSBlackberryOSChromeOSOSKindleOSWebOSOSLinuxOSPlaystationOSXboxOSNintendoOSBot"
 
 var _OSName_index = [...]uint8{0, 9, 23, 32, 40, 45, 54, 66, 76, 84, 91, 98, 111, 117, 127, 132}
 

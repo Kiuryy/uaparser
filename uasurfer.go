@@ -88,7 +88,7 @@ const (
 	OSUnknown OSName = iota
 	OSWindowsPhone
 	OSWindows
-	OSMacOSX
+	OSMacOS
 	OSiOS
 	OSAndroid
 	OSBlackberry

@@ -47,7 +47,7 @@ var testUAVars = []struct {
 	// Chrome
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36",
 		UserAgent{
-			Browser{BrowserChrome, Version{43, 0, 2357}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 4}}, DeviceComputer}},
+			Browser{BrowserChrome, Version{43, 0, 2357}}, OS{PlatformMac, OSMacOS, Version{10, 10, 4}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/534.48.3",
 		UserAgent{
@@ -64,7 +64,7 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36",
 		UserAgent{
-			Browser{BrowserChrome, Version{45, 0, 2454}}, OS{PlatformMac, OSMacOSX, Version{10, 11, 0}}, DeviceComputer}},
+			Browser{BrowserChrome, Version{45, 0, 2454}}, OS{PlatformMac, OSMacOS, Version{10, 11, 0}}, DeviceComputer}},
 
 	//TODO: refactor "getVersion()" to handle this device/chrome version douchebaggery
 	// {"Mozilla/5.0 (Linux; Android 4.4.2; en-gb; SAMSUNG SM-G800F Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.6 Chrome/28.0.1500.94 Mobile Safari/537.36",
@@ -74,15 +74,15 @@ var testUAVars = []struct {
 	// Safari
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12",
 		UserAgent{
-			Browser{BrowserSafari, Version{8, 0, 7}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 4}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{8, 0, 7}}, OS{PlatformMac, OSMacOS, Version{10, 10, 4}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; en-us) AppleWebKit/525.26.2 (KHTML, like Gecko) Version/3.2 Safari/525.26.12",
 		UserAgent{
-			Browser{BrowserSafari, Version{3, 2, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 5, 5}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{3, 2, 0}}, OS{PlatformMac, OSMacOS, Version{10, 5, 5}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.32 (KHTML, like Gecko) Version/10.0 Safari/602.1.32", // macOS Sierra dev beta
 		UserAgent{
-			Browser{BrowserSafari, Version{10, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 12, 0}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{10, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 12, 0}}, DeviceComputer}},
 
 	// Firefox
 	{"Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4",
@@ -167,7 +167,7 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3803.0 Safari/537.36 Edg/76.0.176.0",
 		UserAgent{
-			Browser{BrowserEdge, Version{76, 0, 176}}, OS{PlatformMac, OSMacOSX, Version{10, 14, 5}}, DeviceComputer}},
+			Browser{BrowserEdge, Version{76, 0, 176}}, OS{PlatformMac, OSMacOS, Version{10, 14, 5}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.123",
 		UserAgent{
@@ -359,7 +359,7 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Spotify/1.0.9.133 Safari/537.36",
 		UserAgent{
-			Browser{BrowserSpotify, Version{1, 0, 9}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 2}}, DeviceComputer}},
+			Browser{BrowserSpotify, Version{1, 0, 9}}, OS{PlatformMac, OSMacOS, Version{10, 10, 2}}, DeviceComputer}},
 
 	// OCSP fetchers
 	{"Microsoft-CryptoAPI/10.0",
@@ -439,11 +439,11 @@ var testUAVars = []struct {
 	// Unknown or partially handled
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.1b3pre) Gecko/20090223 SeaMonkey/2.0a3", //Seamonkey (~FF)
 		UserAgent{
-			Browser{BrowserFirefox, Version{0, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 4, 0}}, DeviceComputer}},
+			Browser{BrowserFirefox, Version{0, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 4, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en; rv:1.9.0.8pre) Gecko/2009022800 Camino/2.0b3pre", //Camino (~FF)
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 5, 0}}, DeviceComputer}},
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 5, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0", //firefox OS
 		UserAgent{
@@ -741,59 +741,59 @@ var testUAVars = []struct {
 	// TODO consider bot?
 	// {"Miro/2.0.4 (http://www.getmiro.com/; Darwin 10.3.0 i386)",
 	// 	UserAgent{
-	//		Browser{BrowserUnknown, Version{0,0,0}}, OS{PlatformMac, OSMacOSX, Version{3,0,0}}, DeviceComputer}},
+	//		Browser{BrowserUnknown, Version{0,0,0}}, OS{PlatformMac, OSMacOS, Version{3,0,0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.1b3pre) Gecko/20090223 SeaMonkey/2.0a3",
 		UserAgent{
-			Browser{BrowserFirefox, Version{0, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 4, 0}}, DeviceComputer}},
+			Browser{BrowserFirefox, Version{0, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 4, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; en-us) AppleWebKit/525.26.2 (KHTML, like Gecko) Version/3.2 Safari/525.26.12",
 		UserAgent{
-			Browser{BrowserSafari, Version{3, 2, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 5, 5}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{3, 2, 0}}, OS{PlatformMac, OSMacOS, Version{10, 5, 5}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en; rv:1.9.0.8pre) Gecko/2009022800 Camino/2.0b3pre",
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 5, 0}}, DeviceComputer}},
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 5, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-US) AppleWebKit/533.1 (KHTML, like Gecko) Chrome/5.0.329.0 Safari/533.1",
 		UserAgent{
-			Browser{BrowserChrome, Version{5, 0, 329}}, OS{PlatformMac, OSMacOSX, Version{10, 6, 2}}, DeviceComputer}},
+			Browser{BrowserChrome, Version{5, 0, 329}}, OS{PlatformMac, OSMacOS, Version{10, 6, 2}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 (.NET CLR 3.5.30729)",
 		UserAgent{
-			Browser{BrowserFirefox, Version{3, 5, 6}}, OS{PlatformMac, OSMacOSX, Version{10, 6, 0}}, DeviceComputer}},
+			Browser{BrowserFirefox, Version{3, 5, 6}}, OS{PlatformMac, OSMacOS, Version{10, 6, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.52.7 (KHTML, like Gecko) Version/5.1.2 Safari/534.52.7",
 		UserAgent{
-			Browser{BrowserSafari, Version{5, 1, 2}}, OS{PlatformMac, OSMacOSX, Version{10, 7, 2}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{5, 1, 2}}, OS{PlatformMac, OSMacOS, Version{10, 7, 2}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:9.0) Gecko/20111222 Thunderbird/9.0.1",
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 7, 0}}, DeviceComputer}},
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 7, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.75 Safari/535.7",
 		UserAgent{
-			Browser{BrowserChrome, Version{16, 0, 912}}, OS{PlatformMac, OSMacOSX, Version{10, 7, 2}}, DeviceComputer}},
+			Browser{BrowserChrome, Version{16, 0, 912}}, OS{PlatformMac, OSMacOS, Version{10, 7, 2}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8) AppleWebKit/535.18.5 (KHTML, like Gecko) Version/5.2 Safari/535.18.5",
 		UserAgent{
-			Browser{BrowserSafari, Version{5, 2, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 8, 0}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{5, 2, 0}}, OS{PlatformMac, OSMacOS, Version{10, 8, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_8; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.249.0 Safari/532.5",
 		UserAgent{
-			Browser{BrowserChrome, Version{4, 0, 249}}, OS{PlatformMac, OSMacOSX, Version{10, 8, 0}}, DeviceComputer}},
+			Browser{BrowserChrome, Version{4, 0, 249}}, OS{PlatformMac, OSMacOS, Version{10, 8, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9) AppleWebKit/537.35.1 (KHTML, like Gecko) Version/6.1 Safari/537.35.1",
 		UserAgent{
-			Browser{BrowserSafari, Version{6, 1, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 9, 0}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{6, 1, 0}}, OS{PlatformMac, OSMacOS, Version{10, 9, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.34.48 (KHTML, like Gecko) Version/8.0 Safari/538.35.8",
 		UserAgent{
-			Browser{BrowserSafari, Version{8, 0, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 0}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{8, 0, 0}}, OS{PlatformMac, OSMacOS, Version{10, 10, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.32 (KHTML, like Gecko) Version/7.1 Safari/538.4",
 		UserAgent{
-			Browser{BrowserSafari, Version{7, 1, 0}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 0}}, DeviceComputer}},
+			Browser{BrowserSafari, Version{7, 1, 0}}, OS{PlatformMac, OSMacOS, Version{10, 10, 0}}, DeviceComputer}},
 
 	{"Opera/9.80 (S60; SymbOS; Opera Mobi/352; U; de) Presto/2.4.15 Version/10.00",
 		UserAgent{
