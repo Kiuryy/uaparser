@@ -48,7 +48,7 @@ where example UserAgent is:
     },
     OS {
         Platform: PlatformMac,
-        Name: OSMacOSX,
+        Name: OSMacOS,
         Version: {
             Major: 10,
             Minor: 10,
@@ -64,8 +64,9 @@ where example UserAgent is:
 #### Browser Name
 * `BrowserChrome` - Google [Chrome](https://en.wikipedia.org/wiki/Google_Chrome), [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))
 * `BrowserSafari` - Apple [Safari](https://en.wikipedia.org/wiki/Safari_(web_browser)), Google Search ([GSA](https://itunes.apple.com/us/app/google/id284815942))
-* `BrowserIE` - Microsoft [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer), [Edge](https://en.wikipedia.org/wiki/Microsoft_Edge)
+* `BrowserEdge` - Microsoft [Edge](https://en.wikipedia.org/wiki/Microsoft_Edge)
 * `BrowserFirefox` - Mozilla [Firefox](https://en.wikipedia.org/wiki/Firefox), GNU [IceCat](https://en.wikipedia.org/wiki/GNU_IceCat), [Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel), [Seamonkey](https://en.wikipedia.org/wiki/SeaMonkey)
+* `BrowserIE` - Microsoft [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer)
 * `BrowserAndroid` - Android [WebView](https://developer.chrome.com/multidevice/webview/overview) (Android OS <4.4 only)
 * `BrowserOpera` - [Opera](https://en.wikipedia.org/wiki/Opera_(web_browser))
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
@@ -101,7 +102,7 @@ Unknown version is returned as `0`.
 
 #### OS Name
 * `OSWindows`
-* `OSMacOSX` - includes "macOS Sierra"
+* `OSMacOS` - includes "macOS and OS X"
 * `OSiOS`
 * `OSAndroid`
 * `OSChromeOS`
@@ -114,13 +115,13 @@ Unknown version is returned as `0`.
 
 #### OS Version
 
-OS X major version is alway 10 with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
+MacOS major version is alway 10 with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
 Versions can be compared using `Less` function: `if ver1.Less(ver2) {}`
 
 Here are some examples across the platform, os.name, and os.version:
 
 * For Windows XP (Windows NT 5.1), "`PlatformWindows`" is the platform, "`OSWindows`" is the name, and `{5, 1, 0}` the version.
-* For OS X 10.5.1, "`PlatformMac`" is the platform, "`OSMacOSX`" the name, and `{10, 5, 1}` the version.
+* For OS X 10.5.1, "`PlatformMac`" is the platform, "`OSMacOS`" the name, and `{10, 5, 1}` the version.
 * For Android 5.1, "`PlatformLinux`" is the platform, "`OSAndroid`" is the name, and `{5, 1, 0}` the version.
 * For iOS 5.1, "`PlatformiPhone`" or "`PlatformiPad`" is the platform, "`OSiOS`" is the name, and `{5, 1, 0}` the version.
 
@@ -150,7 +151,7 @@ DeviceType is typically quite accurate, though determining between phones and ta
 ## Example Combinations of Attributes
 * Surface RT -> `OSWindows8`, `DeviceTablet`, OSVersion >= `6`
 * Android Tablet -> `OSAndroid`, `DeviceTablet`
-* Microsoft Edge -> `BrowserIE`, BrowserVersion >= `12.0.0`
+* Microsoft Edge -> `BrowserEdge`, BrowserVersion >= `12.0.0`
 
 ## To do
 
