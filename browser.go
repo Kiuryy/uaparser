@@ -37,6 +37,9 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, "opr/") || strings.Contains(ua, "opios/"):
 			u.Browser.Name = BrowserOpera
 
+		case strings.Contains(ua, "brave/") || strings.Contains(ua, "brave chrome/"):
+			u.Browser.Name = BrowserBrave
+
 		case strings.Contains(ua, "silk/"):
 			u.Browser.Name = BrowserSilk
 
@@ -61,7 +64,7 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, "yabrowser/"):
 			u.Browser.Name = BrowserYandex
 
-		// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
+			// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
 		case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "chromium/") || strings.Contains(ua, "crmo/"):
 			u.Browser.Name = BrowserChrome
 
@@ -75,19 +78,19 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, " spotify/"):
 			u.Browser.Name = BrowserSpotify
 
-		// AppleBot uses webkit signature as well
+			// AppleBot uses webkit signature as well
 		case strings.Contains(ua, "applebot"):
 			u.Browser.Name = BrowserAppleBot
 
-		// presume it's safari unless an esoteric browser is being specified (webOSBrowser, SamsungBrowser, etc.)
+			// presume it's safari unless an esoteric browser is being specified (webOSBrowser, SamsungBrowser, etc.)
 		case strings.Contains(ua, "like gecko") && strings.Contains(ua, "mozilla/") && strings.Contains(ua, "safari/") && !strings.Contains(ua, "linux") && !strings.Contains(ua, "android") && !strings.Contains(ua, "browser/") && !strings.Contains(ua, "os/") && !strings.Contains(ua, "yabrowser/"):
 			u.Browser.Name = BrowserSafari
 
-		// if we got this far and the device is iPhone or iPad, assume safari. Some agents don't actually contain the word "safari"
+			// if we got this far and the device is iPhone or iPad, assume safari. Some agents don't actually contain the word "safari"
 		case strings.Contains(ua, "iphone") || strings.Contains(ua, "ipad"):
 			u.Browser.Name = BrowserSafari
 
-		// Google's search app on iPhone, leverages native Safari rather than Chrome
+			// Google's search app on iPhone, leverages native Safari rather than Chrome
 		case strings.Contains(ua, " gsa/"):
 			u.Browser.Name = BrowserSafari
 
@@ -218,6 +221,9 @@ func (u *UserAgent) evalBrowserVersion(ua string) {
 
 	case BrowserOpera:
 		_ = u.Browser.Version.findVersionNumber(ua, "opr/") || u.Browser.Version.findVersionNumber(ua, "opios/") || u.Browser.Version.findVersionNumber(ua, "opera/")
+
+	case BrowserBrave:
+		_ = u.Browser.Version.findVersionNumber(ua, "brave/") || u.Browser.Version.findVersionNumber(ua, "brave chrome/")
 
 	case BrowserSilk:
 		_ = u.Browser.Version.findVersionNumber(ua, "silk/")

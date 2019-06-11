@@ -119,6 +119,19 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserOpera, Version{10, 2, 0}}, OS{PlatformiPhone, OSiOS, Version{8, 4, 0}}, DevicePhone}},
 
+	// Brave
+	{"Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36 Brave/74",
+		UserAgent{
+			Browser{BrowserBrave, Version{74, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{9, 0, 0}}, DevicePhone}},
+
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.38 Safari/537.36 Brave/75",
+		UserAgent{
+			Browser{BrowserBrave, Version{75, 0, 0}}, OS{PlatformWindows, OSWindows, Version{10, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) brave/0.7.10 Chrome/47.0.2526.110 Brave/0.36.5 Safari/537.36",
+		UserAgent{
+			Browser{BrowserBrave, Version{0, 7, 10}}, OS{PlatformWindows, OSWindows, Version{6, 1, 0}}, DeviceComputer}},
+
 	// Internet Explorer -- https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
 	{"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)",
 		UserAgent{

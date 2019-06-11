@@ -43,6 +43,7 @@ const (
 	BrowserFirefox
 	BrowserAndroid
 	BrowserOpera
+	BrowserBrave
 	BrowserBlackberry
 	BrowserUCBrowser
 	BrowserSilk
