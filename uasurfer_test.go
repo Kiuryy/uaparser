@@ -66,11 +66,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChrome, Version{45, 0, 2454}}, OS{PlatformMac, OSMacOS, Version{10, 11, 0}}, DeviceComputer}},
 
-	//TODO: refactor "getVersion()" to handle this device/chrome version douchebaggery
-	// {"Mozilla/5.0 (Linux; Android 4.4.2; en-gb; SAMSUNG SM-G800F Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.6 Chrome/28.0.1500.94 Mobile Safari/537.36",
-	// 	UserAgent{
-	//		Browser{BrowserChrome, Version{28,0,1500}, OS{PlatformLinux, OSAndroid, Version{4,4,2}}, DevicePhone}},
-
 	// Safari
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12",
 		UserAgent{
@@ -199,18 +194,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserUCBrowser, Version{9, 4, 0}}, OS{PlatformUnknown, OSUnknown, Version{0, 0, 0}}, DevicePhone}},
 
-	// Nokia Browser
-	// {"Mozilla/5.0 (Series40; Nokia501/14.0.4/java_runtime_version=Nokia_Asha_1_2; Profile/MIDP-2.1 Configuration/CLDC-1.1) Gecko/20100401 S40OviBrowser/4.0.0.0.45",
-	// 	UserAgent{
-	//		Browser{BrowserUnknown, Version{4,0,0}}, OS{PlatformUnknown, OSUnknown, Version{0,0,0}}, DevicePhone}},
-
-	// {"Mozilla/5.0 (Symbian/3; Series60/5.3 NokiaN8-00/111.040.1511; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/535.1 (KHTML, like Gecko) NokiaBrowser/8.3.1.4 Mobile Safari/535.1",
-	// 	UserAgent{
-	//		Browser{BrowserUnknown, Version{8,0,0}}, OS{PlatformUnknown, OSUnknown, Version{0,0,0}}, DevicePhone}},
-
-	// {"NokiaN97/21.1.107 (SymbianOS/9.4; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebkit/525 (KHTML, like Gecko) BrowserNG/7.1.4",
-	// 	BrowserUnknown, Version{7,0,0}}, OS{PlatformUnknown, OSUnknown, Version{0,0,0}}, DevicePhone}},
-
 	// ChromeOS
 	{"Mozilla/5.0 (X11; U; CrOS i686 9.10.0; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.253.0 Safari/532.5",
 		UserAgent{
@@ -291,11 +274,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChrome, Version{34, 0, 0}}, OS{PlatformLinux, OSKindle, Version{4, 4, 3}}, DeviceTablet}}, // Fire tablet running pinterest
 
-	// extra logic to identify phone when using silk has not been added
-	// {"Mozilla/5.0 (Linux; Android 4.4.4; SD4930UR Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.67 like Chrome/39.0.2171.93 Mobile Safari/537.36",
-	// 	UserAgent{
-	//		Browser{BrowserSilk, Version{3,0,0}}, OS{PlatformLinux, OSKindle, Version{4,0,0}}, DevicePhone}}, // Silk on Fire Phone
-
 	// Nintendo
 	{"Opera/9.30 (Nintendo Wii; U; ; 2047-7; fr)",
 		UserAgent{
@@ -343,10 +321,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (X11; FreeBSD; U; Viera; de-DE) AppleWebKit/537.11 (KHTML, like Gecko) Viera/3.10.0 Chrome/23.0.1271.97 Safari/537.11", // Panasonic Viera
 		UserAgent{
 			Browser{BrowserChrome, Version{23, 0, 1271}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceTV}},
-
-	// TODO: not catching "browser/" and reporting as safari -- ua string not being fully checked?
-	// {"Mozilla/5.0 (DTV) AppleWebKit/531.2+ (KHTML, like Gecko) Espial/6.1.5 AQUOSBrowser/2.0 (US01DTV;V;0001;0001)", // Sharp Aquos
-	// 	BrowserUnknown, Version{0,0,0}}, OS{PlatformUnknown, OSUnknown, Version{0,0,0}}, DeviceTV}},
 
 	{"Roku/DVP-5.2 (025.02E03197A)", // Roku
 		UserAgent{
@@ -517,11 +491,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserAndroid, Version{3, 1, 2}}, OS{PlatformLinux, OSAndroid, Version{1, 6, 0}}, DevicePhone}},
 
-	// TODO: support names of Android OS?
-	//{"Mozilla/5.0 (Linux; U; Android Donut; de-de; HTC Tattoo 1.52.161.1 Build/Donut) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1",
-	//	UserAgent{
-	//		Browser{BrowserAndroid, Version{3, 1, 2}}, OS{PlatformLinux, OSAndroid, Version{1, 0, 0}}, DevicePhone}},
-
 	{"Mozilla/5.0 (Linux; U; Android 1.6; en-gb; HTC Tattoo Build/DRC79) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
 		UserAgent{
 			Browser{BrowserAndroid, Version{3, 0, 4}}, OS{PlatformLinux, OSAndroid, Version{1, 6, 0}}, DevicePhone}},
@@ -541,11 +510,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Linux; U; Android 2.1; en-us; generic) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
 		UserAgent{
 			Browser{BrowserAndroid, Version{3, 0, 4}}, OS{PlatformLinux, OSAndroid, Version{2, 1, 0}}, DevicePhone}},
-
-	// TODO support named versions of Android?
-	{"Mozilla/5.0 (Linux; U; Android Eclair; en-us; sholes) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		UserAgent{
-			Browser{BrowserAndroid, Version{3, 0, 4}}, OS{PlatformLinux, OSAndroid, Version{0, 0, 0}}, DevicePhone}},
 
 	{"Mozilla/5.0 (Linux; U; Android 2.2; en-sa; HTC_DesireHD_A9191 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
 		UserAgent{
@@ -567,11 +531,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserAndroid, Version{4, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{2, 3, 7}}, DevicePhone}},
 
-	// TODO: is tablet, not phone
-	{"Mozilla/5.0 (Linux; U; Android 3.0; xx-xx; Transformer TF101 Build/HRI66) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13",
-		UserAgent{
-			Browser{BrowserAndroid, Version{4, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{3, 0, 0}}, DevicePhone}},
-
 	{"Mozilla/5.0 (Linux; U; Android 3.0; en-us; Xoom Build/HRI39) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13",
 		UserAgent{
 			Browser{BrowserAndroid, Version{4, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{3, 0, 0}}, DeviceTablet}},
@@ -579,12 +538,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Linux; U; Android 4.0.1; en-us; sdk Build/ICS_MR0) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
 		UserAgent{
 			Browser{BrowserAndroid, Version{4, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{4, 0, 1}}, DevicePhone}},
-
-	// TODO support "android-" version prefix
-	// However, can't find reference to this naming scheme in real-world UA gathering
-	// {"Mozilla/5.0 (Linux; U; Android-4.0.3; en-us; Galaxy Nexus Build/IML74K) AppleWebKit/535.7 (KHTML, like Gecko) CrMo/16.0.912.75 Mobile Safari/535.7",
-	// 	UserAgent{
-	//		Browser{BrowserChrome, Version{16,0,0}}, OS{PlatformLinux, OSAndroid, Version{4,0,0}}, DevicePhone}},
 
 	{"Mozilla/5.0 (Linux; U; Android 4.1.1; en-us; Nexus S Build/JRO03E) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
 		UserAgent{
@@ -664,26 +617,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChrome, Version{34, 0, 1847}}, OS{PlatformLinux, OSChromeOS, Version{0, 0, 0}}, DeviceComputer}},
 
-	// {"Mozilla/5.0 (Mobile; rv:14.0) Gecko/14.0 Firefox/14.0",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, 14, OSFirefoxOS, 14}, DevicePhone}},
-
-	// {"Mozilla/5.0 (Mobile; rv:17.0) Gecko/17.0 Firefox/17.0",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, , OSFirefoxOS}, DevicePhone}},
-
-	// {"Mozilla/5.0 (Mobile; rv:18.1) Gecko/18.1 Firefox/18.1",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, , OSFirefoxOS}, DevicePhone}},
-
-	// {"Mozilla/5.0 (Tablet; rv:18.1) Gecko/18.1 Firefox/18.1",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, , OSFirefoxOS}, DevicePhone}},
-
-	// {"Mozilla/5.0 (Mobile; LG-D300; rv:18.1) Gecko/18.1 Firefox/18.1",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, , OSFirefoxOS}, DevicePhone}},
-
 	{"Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10",
 		UserAgent{
 			Browser{BrowserSafari, Version{4, 0, 4}}, OS{PlatformiPad, OSiOS, Version{3, 2, 0}}, DeviceTablet}},
@@ -720,16 +653,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserSafari, Version{10, 2, 1}}, OS{PlatformiPhone, OSiOS, Version{10, 2, 1}}, DevicePhone}},
 
-	// TODO handle default browser based on iOS version
-	// {"Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/538.34.9 (KHTML, like Gecko) Mobile/12A4265u",
-	// 	UserAgent{
-	//		Browser{BrowserSafari, Version{8,0,0}}, OS{PlatformiPhone, OSiOS, Version{8,0,0}}, DevicePhone}},
-
-	// TODO extrapolate browser from iOS version
-	// {"Mozilla/5.0 (iPad; CPU OS 8_0 like Mac OS X) AppleWebKit/538.34.9 (KHTML, like Gecko) Mobile/12A4265u",
-	// 	UserAgent{
-	//		Browser{BrowserSafari, Version{8,0,0}}, OS{PlatformiPad, OSiOS, Version{8,0,0}}, DeviceTablet}},
-
 	{"Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A405 Safari/600.1.4",
 		UserAgent{
 			Browser{BrowserSafari, Version{8, 0, 0}}, OS{PlatformiPhone, OSiOS, Version{8, 0, 2}}, DevicePhone}},
@@ -750,11 +673,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.1.5) Gecko/20091112 Iceweasel/3.5.5 (like Firefox/3.5.5; Debian-3.5.5-1)",
 		UserAgent{
 			Browser{BrowserFirefox, Version{3, 5, 5}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceComputer}},
-
-	// TODO consider bot?
-	// {"Miro/2.0.4 (http://www.getmiro.com/; Darwin 10.3.0 i386)",
-	// 	UserAgent{
-	//		Browser{BrowserUnknown, Version{0,0,0}}, OS{PlatformMac, OSMacOS, Version{3,0,0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.1b3pre) Gecko/20090223 SeaMonkey/2.0a3",
 		UserAgent{
@@ -816,11 +734,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserOpera, Version{10, 0, 0}}, OS{PlatformUnknown, OSUnknown, Version{0, 0, 0}}, DevicePhone}},
 
-	// TODO: support OneBrowser? https://play.google.com/store/apps/details?id=com.tencent.ibibo.mtt&hl=en_GB
-	// {"OneBrowser/3.1 (NokiaN70-1/5.0638.3.0.1)",
-	// 	UserAgent{
-	//		Browser{BrowserUnknown, Version{0,0,0}}, OS{PlatformUnknown, OSUnknown, Version{0,0,0}}, DevicePhone}},
-
 	// WebOS reports itself as safari :(
 	{"Mozilla/5.0 (webOS/1.0; U; en-US) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Pre/1.0",
 		UserAgent{
@@ -849,10 +762,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Nintendo WiiU) AppleWebKit/536.28 (KHTML, like Gecko) NX/3.0.3.12.6 NintendoBrowser/2.0.0.9362.US",
 		UserAgent{
 			Browser{BrowserNintendo, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
-
-	// TODO fails to get opera first -- but is this a real UA string or an uncommon spoof?
-	// {"Mozilla/4.0 (compatible; MSIE 5.0; Windows 2000) Opera 6.0 [en]",
-	// 	BrowserIE, Version{5,0,0}}, OS{PlatformWindows, OSWindows, Version{4,0,0}}, DeviceComputer}},
 
 	{"Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.3705; .NET CLR 2.0.50727)",
 		UserAgent{
@@ -885,40 +794,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (IE 11.0; Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C; rv:11.0) like Gecko",
 		UserAgent{
 			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 3, 0}}, DeviceComputer}},
-
-	// {"Mozilla/4.0 (compatible; MSIE 4.01; Windows 95)",
-	// 	UserAgent{
-	//		Browser{BrowserIE, Version{5,0,0}}, OS{PlatformWindows, OSWindows95, Version{5,0,0}}, DeviceComputer}},
-
-	// {"Mozilla/4.0 (compatible; MSIE 5.0; Windows 95) Opera 6.02 [en]",
-	// 	UserAgent{
-	//		Browser{BrowserIE, Version{5,0,0}}, OS{PlatformWindows, OSWindows95, Version{5,0,0}}, DeviceComputer}},
-
-	// {"Mozilla/4.0 (compatible; MSIE 6.0b; Windows 98; YComp 5.0.0.0)",
-	// 	UserAgent{
-	//		Browser{BrowserIE, Version{6,0,0}}, OS{PlatformWindows, OSWindows98, Version{5,0,0}}, DeviceComputer}},
-
-	// {"Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)",
-	// 	UserAgent{
-	//		Browser{BrowserIE, Version{4,0,0}}, OS{PlatformWindows, OSWindows98, Version{5,0,0}}, DeviceComputer}},
-
-	// {"Mozilla/5.0 (Windows; U; Windows 98; en-US; rv:1.8.1.8pre) Gecko/20071019 Firefox/2.0.0.8 Navigator/9.0.0.1",
-	// 	UserAgent{
-	//		Browser{BrowserFirefox, Version{2,0,0}}, OS{PlatformWindows, OSWindows98, Version{5,0,0}}, DeviceComputer}},
-
-	//Can't parse due to limitation of user agent library
-	// {"Mozilla/5.0 (Windows; U; Windows CE 5.1; rv:1.8.1a3) Gecko/20060610 Minimo/0.016",
-	// UserAgent{
-	//		Browser{	BrowserUnknown, Version{0,0,0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{0,0,0}}, DevicePhone}},
-
-	// {"Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; 176x220)",
-	// 	UserAgent{
-	//		Browser{BrowserIE, Version{4,0,0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{0,0,0}}, DevicePhone}},
-
-	// Can't parse browser due to limitation of user agent library
-	// {"Mozilla/4.0 (compatible; MSIE 5.0; Windows ME) Opera 6.0 [de]",
-	// 	UserAgent{
-	//		Browser{BrowserUnknown, OSWindowsME}, DeviceComputer}},
 
 	{"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.5.21022; .NET CLR 3.5.30729; MS-RTC LM 8; OfficeLiveConnector.1.4; OfficeLivePatch.1.3; .NET CLR 3.0.30729)",
 		UserAgent{
