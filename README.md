@@ -151,24 +151,3 @@ DeviceType is typically quite accurate, though determining between phones and ta
 ## Example Combinations of Attributes
 * Surface RT -> `OSWindows8`, `DeviceTablet`, OSVersion >= `6`
 * Android Tablet -> `OSAndroid`, `DeviceTablet`
-* Microsoft Edge -> `BrowserEdge`, BrowserVersion >= `12.0.0`
-
-## To do
-
-* Remove compiled regexp in favor of string.Contains wherever possible (lowers mem/alloc)
-* Better version support on Firefox derivatives (e.g. SeaMonkey)
-* Potential additional browser support:
- * "NetFront" (1% share in India)
- * "Sogou Explorer" (5% share in China)
- * "Maxthon" (1.5% share in China)
- * "Nokia"
-* Potential additional OS support:
- * "Nokia" (5% share in India)
- * "Series 40" (5.5% share in India)
- * Windows 2003 Server
-* iOS safari browser identification based on iOS version
-* Add android version to browser identification
-* old Macs
- * "opera/9.64 (macintosh; ppc mac os x; u; en) presto/2.1.1"
-* old Windows
- * "mozilla/5.0 (windows nt 4.0; wow64) applewebkit/537.36 (khtml, like gecko) chrome/37.0.2049.0 safari/537.36"

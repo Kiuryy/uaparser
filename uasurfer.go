@@ -46,11 +46,7 @@ const (
 	BrowserBlackberry
 	BrowserUCBrowser
 	BrowserSilk
-	BrowserNokia
-	BrowserNetFront
 	BrowserQQ
-	BrowserMaxthon
-	BrowserSogouExplorer
 	BrowserSpotify
 	BrowserNintendo
 	BrowserSamsung
