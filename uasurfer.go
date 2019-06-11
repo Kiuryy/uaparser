@@ -38,6 +38,7 @@ const (
 	BrowserUnknown BrowserName = iota
 	BrowserChrome
 	BrowserIE
+	BrowserEdge
 	BrowserSafari
 	BrowserFirefox
 	BrowserAndroid
