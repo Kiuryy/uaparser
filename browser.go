@@ -64,8 +64,11 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, "yabrowser/"):
 			u.Browser.Name = BrowserYandex
 
+		case strings.Contains(ua, "chromium/"):
+			u.Browser.Name = BrowserChromium
+
 			// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
-		case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "chromium/") || strings.Contains(ua, "crmo/"):
+		case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "crmo/"):
 			u.Browser.Name = BrowserChrome
 
 		case strings.Contains(ua, "android") && !strings.Contains(ua, "chrome/") && strings.Contains(ua, "version/") && !strings.Contains(ua, "like android"):
@@ -183,6 +186,8 @@ func (u *UserAgent) evalBrowserVersion(ua string) {
 	case BrowserChrome:
 		// match both chrome and crios
 		_ = u.Browser.Version.findVersionNumber(ua, "chrome/") || u.Browser.Version.findVersionNumber(ua, "crios/") || u.Browser.Version.findVersionNumber(ua, "crmo/")
+	case BrowserChromium:
+		_ = u.Browser.Version.findVersionNumber(ua, "chromium/") || u.Browser.Version.findVersionNumber(ua, "chrome/")
 	case BrowserYandex:
 		_ = u.Browser.Version.findVersionNumber(ua, "yabrowser/")
 	case BrowserQQ:

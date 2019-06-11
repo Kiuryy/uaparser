@@ -37,6 +37,7 @@ type BrowserName int
 const (
 	BrowserUnknown BrowserName = iota
 	BrowserChrome
+	BrowserChromium
 	BrowserIE
 	BrowserEdge
 	BrowserSafari

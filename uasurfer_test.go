@@ -57,14 +57,18 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChrome, Version{46, 0, 2490}}, OS{PlatformLinux, OSAndroid, Version{6, 0, 0}}, DevicePhone}},
 
-	// Chromium (Chrome)
-	{"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/11.10 Chromium/18.0.1025.142 Chrome/18.0.1025.142 Safari/535.19",
-		UserAgent{
-			Browser{BrowserChrome, Version{18, 0, 1025}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceComputer}},
-
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36",
 		UserAgent{
 			Browser{BrowserChrome, Version{45, 0, 2454}}, OS{PlatformMac, OSMacOS, Version{10, 11, 0}}, DeviceComputer}},
+
+	// Chromium
+	{"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/69.0.3497.81 Chrome/69.0.3497.81 Safari/537.36",
+		UserAgent{
+			Browser{BrowserChromium, Version{69, 0, 3497}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/75.0.3731.0 Chrome/75.0.3731.0 Safari/537.36",
+		UserAgent{
+			Browser{BrowserChromium, Version{75, 0, 3731}}, OS{PlatformWindows, OSWindows, Version{10, 0, 0}}, DeviceComputer}},
 
 	// Safari
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12",
