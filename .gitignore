@@ -39,6 +39,10 @@ coverage.out
 #######################
 *.test
 
+# Project Files #
+#######################
+.idea/
+
 # OS generated files #
 ######################
 .DS_Store
