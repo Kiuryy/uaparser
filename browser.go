@@ -55,9 +55,6 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, "ucbrowser/") || strings.Contains(ua, "ucweb/"):
 			u.Browser.Name = BrowserUCBrowser
 
-		case strings.Contains(ua, "nintendobrowser/"):
-			u.Browser.Name = BrowserNintendo
-
 		case strings.Contains(ua, "samsungbrowser/"):
 			u.Browser.Name = BrowserSamsung
 

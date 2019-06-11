@@ -51,7 +51,6 @@ const (
 	BrowserSilk
 	BrowserQQ
 	BrowserSpotify
-	BrowserNintendo
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc

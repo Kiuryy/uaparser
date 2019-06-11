@@ -78,7 +78,6 @@ where example UserAgent is:
 * `BrowserSpotify` - [Spotify](https://en.wikipedia.org/wiki/Spotify#Clients) desktop client
 * `BrowserBlackberry` - RIM [BlackBerry](https://en.wikipedia.org/wiki/BlackBerry)
 * `BrowserYandex` - [Yandex](https://en.wikipedia.org/wiki/Yandex_Browser)
-* `BrowserNintendo` - [Nintendo DS(i) Browser](https://en.wikipedia.org/wiki/Nintendo_DS_%26_DSi_Browser)
 * `BrowserSamsung` - [Samsung Internet](https://en.wikipedia.org/wiki/Samsung_Internet_for_Android)
 * `BrowserCocCoc`- [Cốc Cốc](https://en.wikipedia.org/wiki/C%E1%BB%91c_C%E1%BB%91c)
 * `BrowserUnknown` - Unknown
