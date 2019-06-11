@@ -70,6 +70,19 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChromium, Version{75, 0, 3731}}, OS{PlatformWindows, OSWindows, Version{10, 0, 0}}, DeviceComputer}},
 
+	// Vivaldi
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36 Vivaldi/2.1.1337.36",
+		UserAgent{
+			Browser{BrowserVivaldi, Version{2, 1, 1337}}, OS{PlatformWindows, OSWindows, Version{10, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36 Vivaldi/1.2.490.43",
+		UserAgent{
+			Browser{BrowserVivaldi, Version{1, 2, 490}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.88 Safari/537.36 Vivaldi/2.4.1488.35",
+		UserAgent{
+			Browser{BrowserVivaldi, Version{2, 4, 1488}}, OS{PlatformMac, OSMacOS, Version{10, 14, 1}}, DeviceComputer}},
+
 	// Safari
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12",
 		UserAgent{

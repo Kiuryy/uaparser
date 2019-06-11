@@ -40,6 +40,9 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 		case strings.Contains(ua, "brave/") || strings.Contains(ua, "brave chrome/"):
 			u.Browser.Name = BrowserBrave
 
+		case strings.Contains(ua, "vivaldi/"):
+			u.Browser.Name = BrowserVivaldi
+
 		case strings.Contains(ua, "silk/"):
 			u.Browser.Name = BrowserSilk
 
@@ -183,21 +186,25 @@ func (u *UserAgent) evalBrowserVersion(ua string) {
 	}
 
 	switch u.Browser.Name {
+
 	case BrowserChrome:
 		// match both chrome and crios
 		_ = u.Browser.Version.findVersionNumber(ua, "chrome/") || u.Browser.Version.findVersionNumber(ua, "crios/") || u.Browser.Version.findVersionNumber(ua, "crmo/")
 	case BrowserChromium:
 		_ = u.Browser.Version.findVersionNumber(ua, "chromium/") || u.Browser.Version.findVersionNumber(ua, "chrome/")
+
 	case BrowserYandex:
 		_ = u.Browser.Version.findVersionNumber(ua, "yabrowser/")
+
+	case BrowserVivaldi:
+		_ = u.Browser.Version.findVersionNumber(ua, "vivaldi/")
+
 	case BrowserQQ:
-		if u.Browser.Version.findVersionNumber(ua, "qq/") {
-			return
-		}
-		_ = u.Browser.Version.findVersionNumber(ua, "qqbrowser/")
+		_ = u.Browser.Version.findVersionNumber(ua, "qq/") || u.Browser.Version.findVersionNumber(ua, "qqbrowser/")
 
 	case BrowserEdge:
 		_ = u.Browser.Version.findVersionNumber(ua, "edge/") || u.Browser.Version.findVersionNumber(ua, "edgios/") || u.Browser.Version.findVersionNumber(ua, "edga/") || u.Browser.Version.findVersionNumber(ua, "edg/")
+
 	case BrowserIE:
 		if u.Browser.Version.findVersionNumber(ua, "msie ") {
 			return
