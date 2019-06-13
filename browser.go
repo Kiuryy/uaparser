@@ -93,7 +93,7 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 			goto notwebkit
 
 		}
-		return u.maybeBot()
+		return u.maybeBot(ua)
 	}
 
 notwebkit:
@@ -160,7 +160,7 @@ notwebkit:
 
 	}
 
-	return u.maybeBot()
+	return u.maybeBot(ua)
 }
 
 // Retrieve browser version
