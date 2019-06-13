@@ -42,33 +42,31 @@ func _() {
 	_ = x[BrowserOpera-8]
 	_ = x[BrowserBrave-9]
 	_ = x[BrowserVivaldi-10]
-	_ = x[BrowserBlackberry-11]
-	_ = x[BrowserUCBrowser-12]
-	_ = x[BrowserSilk-13]
-	_ = x[BrowserQQ-14]
-	_ = x[BrowserSpotify-15]
-	_ = x[BrowserSamsung-16]
-	_ = x[BrowserYandex-17]
-	_ = x[BrowserCocCoc-18]
-	_ = x[BrowserBot-19]
-	_ = x[BrowserAppleBot-20]
-	_ = x[BrowserBaiduBot-21]
-	_ = x[BrowserBingBot-22]
-	_ = x[BrowserDuckDuckGoBot-23]
-	_ = x[BrowserFacebookBot-24]
-	_ = x[BrowserGoogleBot-25]
-	_ = x[BrowserLinkedInBot-26]
-	_ = x[BrowserMsnBot-27]
-	_ = x[BrowserPingdomBot-28]
-	_ = x[BrowserTwitterBot-29]
-	_ = x[BrowserYandexBot-30]
-	_ = x[BrowserCocCocBot-31]
-	_ = x[BrowserYahooBot-32]
+	_ = x[BrowserUCBrowser-11]
+	_ = x[BrowserSilk-12]
+	_ = x[BrowserQQ-13]
+	_ = x[BrowserSamsung-14]
+	_ = x[BrowserYandex-15]
+	_ = x[BrowserCocCoc-16]
+	_ = x[BrowserBot-17]
+	_ = x[BrowserAppleBot-18]
+	_ = x[BrowserBaiduBot-19]
+	_ = x[BrowserBingBot-20]
+	_ = x[BrowserDuckDuckGoBot-21]
+	_ = x[BrowserFacebookBot-22]
+	_ = x[BrowserGoogleBot-23]
+	_ = x[BrowserLinkedInBot-24]
+	_ = x[BrowserMsnBot-25]
+	_ = x[BrowserPingdomBot-26]
+	_ = x[BrowserTwitterBot-27]
+	_ = x[BrowserYandexBot-28]
+	_ = x[BrowserCocCocBot-29]
+	_ = x[BrowserYahooBot-30]
 }
 
-const _BrowserName_name = "BrowserUnknownBrowserChromeBrowserChromiumBrowserIEBrowserEdgeBrowserSafariBrowserFirefoxBrowserAndroidBrowserOperaBrowserBraveBrowserVivaldiBrowserBlackberryBrowserUCBrowserBrowserSilkBrowserQQBrowserSpotifyBrowserSamsungBrowserYandexBrowserCocCocBrowserBotBrowserAppleBotBrowserBaiduBotBrowserBingBotBrowserDuckDuckGoBotBrowserFacebookBotBrowserGoogleBotBrowserLinkedInBotBrowserMsnBotBrowserPingdomBotBrowserTwitterBotBrowserYandexBotBrowserCocCocBotBrowserYahooBot"
+const _BrowserName_name = "BrowserUnknownBrowserChromeBrowserChromiumBrowserIEBrowserEdgeBrowserSafariBrowserFirefoxBrowserAndroidBrowserOperaBrowserBraveBrowserVivaldiBrowserUCBrowserBrowserSilkBrowserQQBrowserSamsungBrowserYandexBrowserCocCocBrowserBotBrowserAppleBotBrowserBaiduBotBrowserBingBotBrowserDuckDuckGoBotBrowserFacebookBotBrowserGoogleBotBrowserLinkedInBotBrowserMsnBotBrowserPingdomBotBrowserTwitterBotBrowserYandexBotBrowserCocCocBotBrowserYahooBot"
 
-var _BrowserName_index = [...]uint16{0, 14, 27, 42, 51, 62, 75, 89, 103, 115, 127, 141, 158, 174, 185, 194, 208, 222, 235, 248, 258, 273, 288, 302, 322, 340, 356, 374, 387, 404, 421, 437, 453, 468}
+var _BrowserName_index = [...]uint16{0, 14, 27, 42, 51, 62, 75, 89, 103, 115, 127, 141, 157, 168, 177, 191, 204, 217, 227, 242, 257, 271, 291, 309, 325, 343, 356, 373, 390, 406, 422, 437}
 
 func (i BrowserName) String() string {
 	if i < 0 || i >= BrowserName(len(_BrowserName_index)-1) {
@@ -86,20 +84,14 @@ func _() {
 	_ = x[OSMacOS-3]
 	_ = x[OSiOS-4]
 	_ = x[OSAndroid-5]
-	_ = x[OSBlackberry-6]
-	_ = x[OSChromeOS-7]
-	_ = x[OSKindle-8]
-	_ = x[OSWebOS-9]
-	_ = x[OSLinux-10]
-	_ = x[OSPlaystation-11]
-	_ = x[OSXbox-12]
-	_ = x[OSNintendo-13]
-	_ = x[OSBot-14]
+	_ = x[OSChromeOS-6]
+	_ = x[OSLinux-7]
+	_ = x[OSBot-8]
 }
 
-const _OSName_name = "OSUnknownOSWindowsPhoneOSWindowsOSMacOSOSiOSOSAndroidOSBlackberryOSChromeOSOSKindleOSWebOSOSLinuxOSPlaystationOSXboxOSNintendoOSBot"
+const _OSName_name = "OSUnknownOSWindowsPhoneOSWindowsOSMacOSOSiOSOSAndroidOSChromeOSOSLinuxOSBot"
 
-var _OSName_index = [...]uint8{0, 9, 23, 32, 39, 44, 53, 65, 75, 83, 90, 97, 110, 116, 126, 131}
+var _OSName_index = [...]uint8{0, 9, 23, 32, 39, 44, 53, 63, 70, 75}
 
 func (i OSName) String() string {
 	if i < 0 || i >= OSName(len(_OSName_index)-1) {
@@ -118,17 +110,12 @@ func _() {
 	_ = x[PlatformiPad-4]
 	_ = x[PlatformiPhone-5]
 	_ = x[PlatformiPod-6]
-	_ = x[PlatformBlackberry-7]
-	_ = x[PlatformWindowsPhone-8]
-	_ = x[PlatformPlaystation-9]
-	_ = x[PlatformXbox-10]
-	_ = x[PlatformNintendo-11]
-	_ = x[PlatformBot-12]
+	_ = x[PlatformBot-7]
 }
 
-const _Platform_name = "PlatformUnknownPlatformWindowsPlatformMacPlatformLinuxPlatformiPadPlatformiPhonePlatformiPodPlatformBlackberryPlatformWindowsPhonePlatformPlaystationPlatformXboxPlatformNintendoPlatformBot"
+const _Platform_name = "PlatformUnknownPlatformWindowsPlatformMacPlatformLinuxPlatformiPadPlatformiPhonePlatformiPodPlatformBot"
 
-var _Platform_index = [...]uint8{0, 15, 30, 41, 54, 66, 80, 92, 110, 130, 149, 161, 177, 188}
+var _Platform_index = [...]uint8{0, 15, 30, 41, 54, 66, 80, 92, 103}
 
 func (i Platform) String() string {
 	if i < 0 || i >= Platform(len(_Platform_index)-1) {

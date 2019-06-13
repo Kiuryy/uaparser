@@ -35,10 +35,6 @@ func (u *UserAgent) evalOS(ua string) bool {
 	case "android":
 		u.evalLinux(ua, agentPlatform)
 
-	case "bb10", "playbook":
-		u.OS.Platform = PlatformBlackberry
-		u.OS.Name = OSBlackberry
-
 	case "x11", "linux":
 		u.evalLinux(ua, agentPlatform)
 
@@ -50,42 +46,14 @@ func (u *UserAgent) evalOS(ua string) bool {
 
 	default:
 		switch {
-		// Blackberry
-		case strings.Contains(ua, "blackberry") || strings.Contains(ua, "playbook"):
-			u.OS.Platform = PlatformBlackberry
-			u.OS.Name = OSBlackberry
-
-		// Windows Phone
-		case strings.Contains(agentPlatform, "windows phone "):
-			u.evalWindowsPhone(agentPlatform)
 
 		// Windows, Xbox
 		case strings.Contains(ua, "windows ") || strings.Contains(ua, "microsoft-cryptoapi"):
 			u.evalWindows(ua)
 
-		// Kindle
-		case strings.Contains(ua, "kindle/") || amazonFireFingerprint.MatchString(agentPlatform):
-			u.OS.Platform = PlatformLinux
-			u.OS.Name = OSKindle
-
 		// Linux (broader attempt)
 		case strings.Contains(ua, "linux"):
 			u.evalLinux(ua, agentPlatform)
-
-		// WebOS (non-linux flagged)
-		case strings.Contains(ua, "webos") || strings.Contains(ua, "hpwos"):
-			u.OS.Platform = PlatformLinux
-			u.OS.Name = OSWebOS
-
-		// Nintendo
-		case strings.Contains(ua, "nintendo"):
-			u.OS.Platform = PlatformNintendo
-			u.OS.Name = OSNintendo
-
-		// Playstation
-		case strings.Contains(ua, "playstation") || strings.Contains(ua, "vita") || strings.Contains(ua, "psp"):
-			u.OS.Platform = PlatformPlaystation
-			u.OS.Name = OSPlaystation
 
 		// Android
 		case strings.Contains(ua, "android"):
@@ -121,12 +89,6 @@ func (u *UserAgent) maybeBot() bool {
 func (u *UserAgent) evalLinux(ua string, agentPlatform string) {
 
 	switch {
-	// Kindle Fire
-	case strings.Contains(ua, "kindle") || amazonFireFingerprint.MatchString(agentPlatform):
-		// get the version of Android if available, though we don't call this OSAndroid
-		u.OS.Platform = PlatformLinux
-		u.OS.Name = OSKindle
-		u.OS.Version.findVersionNumber(agentPlatform, "android ")
 
 	// Android, Kindle Fire
 	case strings.Contains(ua, "android") || strings.Contains(ua, "googletv"):
@@ -139,11 +101,6 @@ func (u *UserAgent) evalLinux(ua string, agentPlatform string) {
 	case strings.Contains(ua, "cros"):
 		u.OS.Platform = PlatformLinux
 		u.OS.Name = OSChromeOS
-
-	// WebOS
-	case strings.Contains(ua, "webos") || strings.Contains(ua, "hpwos"):
-		u.OS.Platform = PlatformLinux
-		u.OS.Name = OSWebOS
 
 	// Linux, "Linux-like"
 	case strings.Contains(ua, "x11") || strings.Contains(ua, "bsd") || strings.Contains(ua, "suse") || strings.Contains(ua, "debian") || strings.Contains(ua, "ubuntu"):
@@ -185,28 +142,9 @@ func (u *UserAgent) evaliOS(uaPlatform string, agentPlatform string) {
 	}
 }
 
-func (u *UserAgent) evalWindowsPhone(agentPlatform string) {
-	u.OS.Platform = PlatformWindowsPhone
-
-	if u.OS.Version.findVersionNumber(agentPlatform, "windows phone os ") || u.OS.Version.findVersionNumber(agentPlatform, "windows phone ") {
-		u.OS.Name = OSWindowsPhone
-	} else {
-		u.OS.Name = OSUnknown
-	}
-}
-
 func (u *UserAgent) evalWindows(ua string) {
 
 	switch {
-	//Xbox -- it reads just like Windows
-	case strings.Contains(ua, "xbox"):
-		u.OS.Platform = PlatformXbox
-		u.OS.Name = OSXbox
-		if !u.OS.Version.findVersionNumber(ua, "windows nt ") {
-			u.OS.Version.Major = 6
-			u.OS.Version.Minor = 0
-			u.OS.Version.Patch = 0
-		}
 
 	// No windows version
 	case !strings.Contains(ua, "windows "):

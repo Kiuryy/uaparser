@@ -46,11 +46,9 @@ const (
 	BrowserOpera
 	BrowserBrave
 	BrowserVivaldi
-	BrowserBlackberry
 	BrowserUCBrowser
 	BrowserSilk
 	BrowserQQ
-	BrowserSpotify
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc
@@ -89,14 +87,8 @@ const (
 	OSMacOS
 	OSiOS
 	OSAndroid
-	OSBlackberry
 	OSChromeOS
-	OSKindle
-	OSWebOS
 	OSLinux
-	OSPlaystation
-	OSXbox
-	OSNintendo
 	OSBot
 )
 
@@ -120,11 +112,6 @@ const (
 	PlatformiPad
 	PlatformiPhone
 	PlatformiPod
-	PlatformBlackberry
-	PlatformWindowsPhone
-	PlatformPlaystation
-	PlatformXbox
-	PlatformNintendo
 	PlatformBot
 )
 

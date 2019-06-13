@@ -75,8 +75,6 @@ where example UserAgent is:
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
 * `BrowserSilk` - Amazon [Silk](https://en.wikipedia.org/wiki/Amazon_Silk)
 * `BrowserQQ` - Tencent [QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
-* `BrowserSpotify` - [Spotify](https://en.wikipedia.org/wiki/Spotify#Clients) desktop client
-* `BrowserBlackberry` - RIM [BlackBerry](https://en.wikipedia.org/wiki/BlackBerry)
 * `BrowserYandex` - [Yandex](https://en.wikipedia.org/wiki/Yandex_Browser)
 * `BrowserSamsung` - [Samsung Internet](https://en.wikipedia.org/wiki/Samsung_Internet_for_Android)
 * `BrowserCocCoc`- [Cốc Cốc](https://en.wikipedia.org/wiki/C%E1%BB%91c_C%E1%BB%91c)
@@ -90,16 +88,10 @@ Unknown version is returned as `0`.
 
 #### Platform
 * `PlatformWindows` - Microsoft Windows
-* `PlatformMac` - Apple Macintosh
+* `PlatformMac` - Apple Mac
 * `PlatformLinux` - Linux, including Android and other OSes
 * `PlatformiPad` - Apple iPad
 * `PlatformiPhone` - Apple iPhone
-* `PlatformBlackberry` - RIM Blackberry
-* `PlatformWindowsPhone` Microsoft Windows Phone & Mobile
-* `PlatformKindle` - Amazon Kindle & Kindle Fire
-* `PlatformPlaystation` - Sony Playstation, Vita, PSP
-* `PlatformXbox` - Microsoft Xbox
-* `PlatformNintendo` - Nintendo DS, Wii, etc.
 * `PlatformUnknown` - Unknown
 
 #### OS Name
@@ -108,11 +100,7 @@ Unknown version is returned as `0`.
 * `OSiOS`
 * `OSAndroid`
 * `OSChromeOS`
-* `OSWebOS`
 * `OSLinux`
-* `OSPlaystation`
-* `OSXbox`
-* `OSNintendo`
 * `OSUnknown`
 
 #### OS Version
@@ -146,7 +134,6 @@ DeviceType is typically quite accurate, though determining between phones and ta
 * `DevicePhone`
 * `DeviceTablet`
 * `DeviceTV`
-* `DeviceConsole`
 * `DeviceWearable`
 * `DeviceUnknown`
 

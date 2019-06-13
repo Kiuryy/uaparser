@@ -20,11 +20,6 @@ import (
 
 // Retrieve browser name from UA strings
 func (u *UserAgent) evalBrowserName(ua string) bool {
-	// Blackberry goes first because it reads as MSIE & Safari
-	if strings.Contains(ua, "blackberry") || strings.Contains(ua, "playbook") || strings.Contains(ua, "bb10") || strings.Contains(ua, "rim ") {
-		u.Browser.Name = BrowserBlackberry
-		return u.maybeBot()
-	}
 
 	if strings.Contains(ua, "applewebkit") {
 		switch {
@@ -77,9 +72,6 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 
 		case strings.Contains(ua, "fxios"):
 			u.Browser.Name = BrowserFirefox
-
-		case strings.Contains(ua, " spotify/"):
-			u.Browser.Name = BrowserSpotify
 
 			// AppleBot uses webkit signature as well
 		case strings.Contains(ua, "applebot"):
@@ -236,9 +228,6 @@ func (u *UserAgent) evalBrowserVersion(ua string) {
 
 	case BrowserSilk:
 		_ = u.Browser.Version.findVersionNumber(ua, "silk/")
-
-	case BrowserSpotify:
-		_ = u.Browser.Version.findVersionNumber(ua, "spotify/")
 
 	case BrowserCocCoc:
 		_ = u.Browser.Version.findVersionNumber(ua, "coc_coc_browser/")

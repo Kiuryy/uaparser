@@ -17,7 +17,7 @@ func (u *UserAgent) evalDevice(ua string) {
 	case u.OS.Platform == PlatformiPad || u.OS.Platform == PlatformiPod || strings.Contains(ua, "tablet") || strings.Contains(ua, "kindle/") || strings.Contains(ua, "playbook"):
 		u.DeviceType = DeviceTablet
 
-	case u.OS.Platform == PlatformiPhone || u.OS.Platform == PlatformBlackberry || strings.Contains(ua, "phone"):
+	case u.OS.Platform == PlatformiPhone || strings.Contains(ua, "phone"):
 		u.DeviceType = DevicePhone
 
 	// long list of smarttv and tv dongle identifiers
@@ -38,14 +38,14 @@ func (u *UserAgent) evalDevice(ua string) {
 
 		u.DeviceType = DevicePhone // default to phone
 
-	case u.OS.Platform == PlatformPlaystation || u.OS.Platform == PlatformXbox || u.OS.Platform == PlatformNintendo:
+	case strings.Contains(ua, "nintendo") || strings.Contains(ua, "xbox") || strings.Contains(ua, "playstation"):
 		u.DeviceType = DeviceConsole
 
 	case strings.Contains(ua, "glass") || strings.Contains(ua, "watch") || strings.Contains(ua, "sm-v"):
 		u.DeviceType = DeviceWearable
 
 	// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
-	case u.Browser.Name == BrowserSilk || u.OS.Name == OSKindle && !strings.Contains(ua, "sd4930ur"):
+	case u.Browser.Name == BrowserSilk || strings.Contains(ua, "kindle/")  && !strings.Contains(ua, "sd4930ur"):
 		u.DeviceType = DeviceTablet
 
 	case strings.Contains(ua, "mobile") || strings.Contains(ua, "touch") || strings.Contains(ua, " mobi") || strings.Contains(ua, "webos"): //anything "mobile"/"touch" that didn't get captured as tablet, console or wearable is presumed a phone

@@ -113,15 +113,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserFirefox, Version{38, 0, 0}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceComputer}},
 
-	// Silk
-	{"Mozilla/5.0 (Linux; U; Android 4.4.3; de-de; KFTHWI Build/KTU84M) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.47 like Chrome/37.0.2026.117 Safari/537.36",
-		UserAgent{
-			Browser{BrowserSilk, Version{3, 47, 0}}, OS{PlatformLinux, OSKindle, Version{4, 4, 3}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (Linux; U; en-us; KFJWI Build/IMM76D) AppleWebKit/535.19 (KHTML like Gecko) Silk/2.4 Safari/535.19 Silk-Acceleratedtrue",
-		UserAgent{
-			Browser{BrowserSilk, Version{2, 4, 0}}, OS{PlatformLinux, OSKindle, Version{0, 0, 0}}, DeviceTablet}},
-
 	// Opera
 	{"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 OPR/18.0.1284.68",
 		UserAgent{
@@ -152,10 +143,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C; rv:11.0) like Gecko",
 		UserAgent{
 			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 3, 0}}, DeviceComputer}},
-
-	{"Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Lumia 520) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537",
-		UserAgent{
-			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{8, 1, 0}}, DevicePhone}},
 
 	{"Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.3705; .NET CLR 2.0.50727)",
 		UserAgent{
@@ -194,10 +181,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserEdge, Version{76, 0, 176}}, OS{PlatformMac, OSMacOS, Version{10, 14, 5}}, DeviceComputer}},
 
-	{"Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.123",
-		UserAgent{
-			Browser{BrowserEdge, Version{12, 123, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{10, 0, 0}}, DevicePhone}},
-
 	// UC Browser
 	{"Mozilla/5.0 (Linux; U; Android 2.3.4; en-US; MT11i Build/4.0.2.A.0.62) AppleWebKit/534.31 (KHTML, like Gecko) UCBrowser/9.0.1.275 U3/0.8.0 Mobile Safari/534.31",
 		UserAgent{
@@ -225,15 +208,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserSafari, Version{6, 0, 0}}, OS{PlatformiPod, OSiOS, Version{6, 1, 6}}, DeviceTablet}},
 
-	// WebOS
-	{"Mozilla/5.0 (hp-tablet; Linux; hpwOS/3.0.0; U; de-DE) AppleWebKit/534.6 (KHTML, like Gecko) wOSBrowser/233.70 Safari/534.6 TouchPad/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (webOS/1.4.1.1; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{1, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DevicePhone}},
-
 	// Android WebView (Android <= 4.3)
 	{"Mozilla/5.0 (Linux; U; Android 2.2; en-us; DROID2 GLOBAL Build/S273) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
 		UserAgent{
@@ -242,68 +216,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari53/4.30",
 		UserAgent{
 			Browser{BrowserAndroid, Version{4, 0, 0}}, OS{PlatformLinux, OSAndroid, Version{4, 0, 3}}, DevicePhone}},
-
-	// BlackBerry
-	{"Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{7, 2, 1}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (BB10; Kbd) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.1.1925 Mobile Safari/537.35+",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{10, 2, 1}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0) BlackBerry8703e/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/104",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{0, 0, 0}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DevicePhone}},
-
-	// Windows Phone
-	{"Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 625; ANZ941)",
-		UserAgent{
-			Browser{BrowserIE, Version{10, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{8, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; NOKIA; Lumia 900)",
-		UserAgent{
-			Browser{BrowserIE, Version{9, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{7, 5, 0}}, DevicePhone}},
-
-	// Kindle eReader
-	{"Mozilla/5.0 (Linux; U; en-US) AppleWebKit/528.5+ (KHTML, like Gecko, Safari/528.5+) Version/4.0 Kindle/3.0 (screen 600×800; rotate)",
-		UserAgent{
-			Browser{BrowserUnknown, Version{4, 0, 0}}, OS{PlatformLinux, OSKindle, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+ Kindle/3.0+",
-		UserAgent{
-			Browser{BrowserUnknown, Version{5, 0, 0}}, OS{PlatformLinux, OSKindle, Version{0, 0, 0}}, DeviceTablet}},
-
-	// Amazon Fire
-	{"Mozilla/5.0 (Linux; U; Android 4.4.3; de-de; KFTHWI Build/KTU84M) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.67 like Chrome/39.0.2171.93 Safari/537.36",
-		UserAgent{
-			Browser{BrowserSilk, Version{3, 67, 0}}, OS{PlatformLinux, OSKindle, Version{4, 4, 3}}, DeviceTablet}}, // Fire tablet
-
-	{"Mozilla/5.0 (Linux; U; Android 4.2.2; en­us; KFTHWI Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.22 like Chrome/34.0.1847.137 Mobile Safari/537.36",
-		UserAgent{
-			Browser{BrowserSilk, Version{3, 22, 0}}, OS{PlatformLinux, OSKindle, Version{4, 2, 2}}, DeviceTablet}}, // Fire tablet, but with "Mobile"
-
-	{"Mozilla/5.0 (Linux; Android 4.4.4; SD4930UR Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/34.0.0.0 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/35.0.0.48.273;]",
-		UserAgent{
-			Browser{BrowserChrome, Version{34, 0, 0}}, OS{PlatformLinux, OSKindle, Version{4, 4, 4}}, DevicePhone}}, // Facebook app on Fire Phone
-
-	{"mozilla/5.0 (linux; android 4.4.3; kfthwi build/ktu84m) applewebkit/537.36 (khtml, like gecko) version/4.0 chrome/34.0.0.0 safari/537.36 [pinterest/android]",
-		UserAgent{
-			Browser{BrowserChrome, Version{34, 0, 0}}, OS{PlatformLinux, OSKindle, Version{4, 4, 3}}, DeviceTablet}}, // Fire tablet running pinterest
-
-	// Xbox
-	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)", //Xbox 360
-		UserAgent{
-			Browser{BrowserIE, Version{9, 0, 0}}, OS{PlatformXbox, OSXbox, Version{6, 1, 0}}, DeviceConsole}},
-
-	// Playstation
-	{"Mozilla/5.0 (PlayStation 4 4.50) AppleWebKit/601.2 (KHTML, like Gecko)",
-		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformPlaystation, OSPlaystation, Version{0, 0, 0}}, DeviceConsole}},
-
-	{"Mozilla/5.0 (Playstation Vita 1.61) AppleWebKit/531.22.8 (KHTML, like Gecko) Silk/3.2",
-		UserAgent{
-			Browser{BrowserSilk, Version{3, 2, 0}}, OS{PlatformPlaystation, OSPlaystation, Version{0, 0, 0}}, DeviceConsole}},
 
 	// Smart TVs and TV dongles
 	{"Mozilla/5.0 (CrKey armv7l 1.4.15250) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.0 Safari/537.36", // Chromecast
@@ -346,15 +258,6 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (iPad; CPU OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) GSA/6.0.51363 Mobile/12F69 Safari/600.1.4",
 		UserAgent{
 			Browser{BrowserSafari, Version{8, 3, 0}}, OS{PlatformiPad, OSiOS, Version{8, 3, 0}}, DeviceTablet}},
-
-	// Spotify (applicable for advertising applications)
-	{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Spotify/1.0.9.133 Safari/537.36",
-		UserAgent{
-			Browser{BrowserSpotify, Version{1, 0, 9}}, OS{PlatformWindows, OSWindows, Version{5, 1, 0}}, DeviceComputer}},
-
-	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Spotify/1.0.9.133 Safari/537.36",
-		UserAgent{
-			Browser{BrowserSpotify, Version{1, 0, 9}}, OS{PlatformMac, OSMacOS, Version{10, 10, 2}}, DeviceComputer}},
 
 	// OCSP fetchers
 	{"Microsoft-CryptoAPI/10.0",
@@ -595,28 +498,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserChrome, Version{52, 0, 2743}}, OS{PlatformLinux, OSAndroid, Version{7, 0, 0}}, DevicePhone}},
 
-	// BLACKBERRY TESTS
-
-	{"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0) BlackBerry8703e/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/104",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{0, 0, 0}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.1.0.4633 Mobile Safari/537.10+",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{10, 1, 0}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (BB10; Kbd) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.1.1925 Mobile Safari/537.35+",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{10, 2, 1}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.11 (KHTML, like Gecko) Version/7.1.0.7 Safari/534.11",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{7, 1, 0}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+",
-		UserAgent{
-			Browser{BrowserBlackberry, Version{7, 2, 1}}, OS{PlatformBlackberry, OSBlackberry, Version{0, 0, 0}}, DeviceTablet}},
-
 	{"Mozilla/5.0 (X11; U; CrOS i686 9.10.0; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.253.0 Safari/532.5",
 		UserAgent{
 			Browser{BrowserChrome, Version{4, 0, 253}}, OS{PlatformLinux, OSChromeOS, Version{0, 0, 0}}, DeviceComputer}},
@@ -742,27 +623,6 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserOpera, Version{10, 0, 0}}, OS{PlatformUnknown, OSUnknown, Version{0, 0, 0}}, DevicePhone}},
 
-	// WebOS reports itself as safari :(
-	{"Mozilla/5.0 (webOS/1.0; U; en-US) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Pre/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{1, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (webOS/1.4.1.1; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{1, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (hp-tablet; Linux; hpwOS/3.0.0; U; de-DE) AppleWebKit/534.6 (KHTML, like Gecko) wOSBrowser/233.70 Safari/534.6 TouchPad/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Mozilla/5.0 (hp-tablet; Linux; hpwOS/3.0.2; U; en-US) AppleWebKit/534.6 (KHTML, like Gecko) wOSBrowser/234.40.1 Safari/534.6 TouchPad/1.0",
-		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformLinux, OSWebOS, Version{0, 0, 0}}, DeviceTablet}},
-
-	{"Opera/9.30 (Nintendo Wii; U; ; 2047-7; fr)",
-		UserAgent{
-			Browser{BrowserOpera, Version{9, 30, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
-
 	{"Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.3705; .NET CLR 2.0.50727)",
 		UserAgent{
 			Browser{BrowserIE, Version{5, 0, 1}}, OS{PlatformWindows, OSWindows, Version{5, 0, 0}}, DeviceComputer}},
@@ -807,43 +667,15 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserIE, Version{7, 0, 0}}, OS{PlatformWindows, OSWindows, Version{5, 1, 0}}, DeviceComputer}},
 
-	// Can't parse due to limitation of user agent library
-	{"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Windows Phone 6.5.3.5)",
-		UserAgent{
-			Browser{BrowserIE, Version{6, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{6, 5, 3}}, DevicePhone}},
-
 	// desktop mode for Windows Phone 7
 	{"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; XBLWP7; ZuneWP7)",
 		UserAgent{
 			Browser{BrowserIE, Version{7, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 1, 0}}, DeviceComputer}},
 
-	// mobile mode for Windows Phone 7
-	{"Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.0; Trident/3.1; IEMobile/7.0; HTC; T8788)",
-		UserAgent{
-			Browser{BrowserIE, Version{7, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{7, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)",
-		UserAgent{
-			Browser{BrowserIE, Version{9, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{7, 5, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)",
-		UserAgent{
-			Browser{BrowserIE, Version{10, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{8, 0, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch IEMobile/11.0; HTC; Windows Phone 8S by HTC) like Gecko",
-		UserAgent{
-			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{8, 1, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch IEMobile/11.0; NOKIA; 909) like Gecko",
-		UserAgent{
-			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindowsPhone, OSWindowsPhone, Version{8, 1, 0}}, DevicePhone}},
-
-	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)",
-		UserAgent{
-			Browser{BrowserIE, Version{9, 0, 0}}, OS{PlatformXbox, OSXbox, Version{6, 1, 0}}, DeviceConsole}},
 	{"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/42.0 CoRom/36.0.1985.144 Chrome/36.0.1985.144 Safari/537.36",
 		UserAgent{
 			Browser{BrowserCocCoc, Version{42, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 3, 0}}, DeviceComputer}},
+
 	{"Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)",
 		UserAgent{
 			Browser{BrowserCocCocBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{0, 0, 0}}, DeviceComputer}},
