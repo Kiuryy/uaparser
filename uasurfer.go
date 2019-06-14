@@ -47,7 +47,6 @@ const (
 	BrowserBrave
 	BrowserVivaldi
 	BrowserUCBrowser
-	BrowserSilk
 	BrowserQQ
 	BrowserSamsung
 	BrowserYandex
@@ -161,7 +160,7 @@ type Browser struct {
 	Version Version
 }
 
-// Browser contains the name, version and platform of the OS
+// OS contains the name, version and platform of the OS
 type OS struct {
 	Platform Platform
 	Name     OSName

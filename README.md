@@ -73,7 +73,6 @@ where example UserAgent is:
 * `BrowserVivaldi` - [Vivaldi](https://en.wikipedia.org/wiki/Vivaldi_(web_browser))
 * `BrowserBrave` - [Brave](https://en.wikipedia.org/wiki/Brave_(web_browser))
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
-* `BrowserSilk` - Amazon [Silk](https://en.wikipedia.org/wiki/Amazon_Silk)
 * `BrowserQQ` - Tencent [QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
 * `BrowserYandex` - [Yandex](https://en.wikipedia.org/wiki/Yandex_Browser)
 * `BrowserSamsung` - [Samsung Internet](https://en.wikipedia.org/wiki/Samsung_Internet_for_Android)

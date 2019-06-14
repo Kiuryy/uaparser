@@ -47,9 +47,6 @@ func (u *UserAgent) evalWebkitBrowserName(ua string) bool {
 	case strings.Contains(ua, "vivaldi/"):
 		u.Browser.Name = BrowserVivaldi
 
-	case strings.Contains(ua, "silk/"):
-		u.Browser.Name = BrowserSilk
-
 	case strings.Contains(ua, "edge/") || strings.Contains(ua, "edg/") || strings.Contains(ua, "edgios/") || strings.Contains(ua, "edga/"):
 		u.Browser.Name = BrowserEdge
 
@@ -237,9 +234,6 @@ func (u *UserAgent) evalBrowserVersion(ua string) {
 
 	case BrowserBrave:
 		_ = u.Browser.Version.findVersionNumber(ua, "brave/") || u.Browser.Version.findVersionNumber(ua, "brave chrome/")
-
-	case BrowserSilk:
-		_ = u.Browser.Version.findVersionNumber(ua, "silk/")
 
 	case BrowserCocCoc:
 		_ = u.Browser.Version.findVersionNumber(ua, "coc_coc_browser/")

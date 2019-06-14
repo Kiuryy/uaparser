@@ -1,13 +1,8 @@
 package uasurfer
 
 import (
-	"regexp"
 	"strconv"
 	"strings"
-)
-
-var (
-	amazonFireFingerprint = regexp.MustCompile("\\s(k[a-z]{3,5}|sd\\d{4}ur)\\s") //tablet or phone
 )
 
 func (u *UserAgent) evalOS(ua string) bool {
