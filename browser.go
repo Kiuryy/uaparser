@@ -22,81 +22,93 @@ import (
 func (u *UserAgent) evalBrowserName(ua string) bool {
 
 	if strings.Contains(ua, "applewebkit") {
-		switch {
-		case strings.Contains(ua, "googlebot"):
-			u.Browser.Name = BrowserGoogleBot
+		return u.evalWebkitBrowserName(ua)
+	} else {
+		return u.evalNonWebkitBrowserName(ua)
+	}
+}
 
-		case strings.Contains(ua, "qq/") || strings.Contains(ua, "qqbrowser/"):
-			u.Browser.Name = BrowserQQ
+// Retrieve browser name from UA strings containing 'applewebkit'
+func (u *UserAgent) evalWebkitBrowserName(ua string) bool {
 
-		case strings.Contains(ua, "opr/") || strings.Contains(ua, "opios/"):
-			u.Browser.Name = BrowserOpera
+	switch {
+	case strings.Contains(ua, "googlebot"):
+		u.Browser.Name = BrowserGoogleBot
 
-		case strings.Contains(ua, "brave/") || strings.Contains(ua, "brave chrome/"):
-			u.Browser.Name = BrowserBrave
+	case strings.Contains(ua, "qq/") || strings.Contains(ua, "qqbrowser/"):
+		u.Browser.Name = BrowserQQ
 
-		case strings.Contains(ua, "vivaldi/"):
-			u.Browser.Name = BrowserVivaldi
+	case strings.Contains(ua, "opr/") || strings.Contains(ua, "opios/"):
+		u.Browser.Name = BrowserOpera
 
-		case strings.Contains(ua, "silk/"):
-			u.Browser.Name = BrowserSilk
+	case strings.Contains(ua, "brave/") || strings.Contains(ua, "brave chrome/"):
+		u.Browser.Name = BrowserBrave
 
-		case strings.Contains(ua, "edge/") || strings.Contains(ua, "edg/") || strings.Contains(ua, "edgios/") || strings.Contains(ua, "edga/"):
-			u.Browser.Name = BrowserEdge
+	case strings.Contains(ua, "vivaldi/"):
+		u.Browser.Name = BrowserVivaldi
 
-		case strings.Contains(ua, "iemobile/") || strings.Contains(ua, "msie "):
-			u.Browser.Name = BrowserIE
+	case strings.Contains(ua, "silk/"):
+		u.Browser.Name = BrowserSilk
 
-		case strings.Contains(ua, "ucbrowser/") || strings.Contains(ua, "ucweb/"):
-			u.Browser.Name = BrowserUCBrowser
+	case strings.Contains(ua, "edge/") || strings.Contains(ua, "edg/") || strings.Contains(ua, "edgios/") || strings.Contains(ua, "edga/"):
+		u.Browser.Name = BrowserEdge
 
-		case strings.Contains(ua, "samsungbrowser/"):
-			u.Browser.Name = BrowserSamsung
+	case strings.Contains(ua, "iemobile/") || strings.Contains(ua, "msie "):
+		u.Browser.Name = BrowserIE
 
-		case strings.Contains(ua, "coc_coc_browser/"):
-			u.Browser.Name = BrowserCocCoc
+	case strings.Contains(ua, "ucbrowser/") || strings.Contains(ua, "ucweb/"):
+		u.Browser.Name = BrowserUCBrowser
 
-		case strings.Contains(ua, "yabrowser/"):
-			u.Browser.Name = BrowserYandex
+	case strings.Contains(ua, "samsungbrowser/"):
+		u.Browser.Name = BrowserSamsung
 
-		case strings.Contains(ua, "chromium/"):
-			u.Browser.Name = BrowserChromium
+	case strings.Contains(ua, "coc_coc_browser/"):
+		u.Browser.Name = BrowserCocCoc
 
-			// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
-		case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "crmo/"):
-			u.Browser.Name = BrowserChrome
+	case strings.Contains(ua, "yabrowser/"):
+		u.Browser.Name = BrowserYandex
 
-		case strings.Contains(ua, "android") && !strings.Contains(ua, "chrome/") && strings.Contains(ua, "version/") && !strings.Contains(ua, "like android"):
-			// Android WebView on Android >= 4.4 is purposefully being identified as Chrome above -- https://developer.chrome.com/multidevice/webview/overview
-			u.Browser.Name = BrowserAndroid
+	case strings.Contains(ua, "chromium/"):
+		u.Browser.Name = BrowserChromium
 
-		case strings.Contains(ua, "fxios"):
-			u.Browser.Name = BrowserFirefox
+		// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
+	case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "crmo/"):
+		u.Browser.Name = BrowserChrome
 
-			// AppleBot uses webkit signature as well
-		case strings.Contains(ua, "applebot"):
-			u.Browser.Name = BrowserAppleBot
+	case strings.Contains(ua, "android") && !strings.Contains(ua, "chrome/") && strings.Contains(ua, "version/") && !strings.Contains(ua, "like android"):
+		// Android WebView on Android >= 4.4 is purposefully being identified as Chrome above -- https://developer.chrome.com/multidevice/webview/overview
+		u.Browser.Name = BrowserAndroid
 
-			// presume it's safari unless an esoteric browser is being specified (webOSBrowser, SamsungBrowser, etc.)
-		case strings.Contains(ua, "like gecko") && strings.Contains(ua, "mozilla/") && strings.Contains(ua, "safari/") && !strings.Contains(ua, "linux") && !strings.Contains(ua, "android") && !strings.Contains(ua, "browser/") && !strings.Contains(ua, "os/") && !strings.Contains(ua, "yabrowser/"):
-			u.Browser.Name = BrowserSafari
+	case strings.Contains(ua, "fxios"):
+		u.Browser.Name = BrowserFirefox
 
-			// if we got this far and the device is iPhone or iPad, assume safari. Some agents don't actually contain the word "safari"
-		case strings.Contains(ua, "iphone") || strings.Contains(ua, "ipad"):
-			u.Browser.Name = BrowserSafari
+		// AppleBot uses webkit signature as well
+	case strings.Contains(ua, "applebot"):
+		u.Browser.Name = BrowserAppleBot
 
-			// Google's search app on iPhone, leverages native Safari rather than Chrome
-		case strings.Contains(ua, " gsa/"):
-			u.Browser.Name = BrowserSafari
+		// presume it's safari unless an esoteric browser is being specified (webOSBrowser, SamsungBrowser, etc.)
+	case strings.Contains(ua, "like gecko") && strings.Contains(ua, "mozilla/") && strings.Contains(ua, "safari/") && !strings.Contains(ua, "linux") && !strings.Contains(ua, "android") && !strings.Contains(ua, "browser/") && !strings.Contains(ua, "os/") && !strings.Contains(ua, "yabrowser/"):
+		u.Browser.Name = BrowserSafari
 
-		default:
-			goto notwebkit
+		// if we got this far and the device is iPhone or iPad, assume safari. Some agents don't actually contain the word "safari"
+	case strings.Contains(ua, "iphone") || strings.Contains(ua, "ipad"):
+		u.Browser.Name = BrowserSafari
 
-		}
-		return u.maybeBot(ua)
+		// Google's search app on iPhone, leverages native Safari rather than Chrome
+	case strings.Contains(ua, " gsa/"):
+		u.Browser.Name = BrowserSafari
+
+	default:
+		return u.evalNonWebkitBrowserName(ua)
+
 	}
 
-notwebkit:
+	return u.maybeBot(ua)
+}
+
+// Retrieve browser name from UA strings not containing 'applewebkit'
+func (u *UserAgent) evalNonWebkitBrowserName(ua string) bool {
+
 	switch {
 	case strings.Contains(ua, "qq/") || strings.Contains(ua, "qqbrowser/"):
 		u.Browser.Name = BrowserQQ

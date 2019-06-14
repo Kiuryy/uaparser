@@ -712,7 +712,7 @@ func TestAgentSurfer(t *testing.T) {
 				}
 
 				if ua.OS.Name != determined.OS.Name {
-					t.Errorf("os: got %s, wanted %s", ua.OS.Name, determined.OS.Name)
+					t.Errorf("os: got %v, wanted %v", ua.OS.Name, determined.OS.Name)
 					t.Logf("agent: %s", determined.UA)
 				}
 
