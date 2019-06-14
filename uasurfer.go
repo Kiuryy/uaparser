@@ -51,7 +51,7 @@ const (
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc
-	BrowserBot // Bot list begins here
+	BrowserBot  // Bot list begins here
 	BrowserAppleBot
 	BrowserBaiduBot
 	BrowserBingBot
@@ -64,7 +64,7 @@ const (
 	BrowserTwitterBot
 	BrowserYandexBot
 	BrowserCocCocBot
-	BrowserYahooBot // Bot list ends here
+	BrowserYahooBot  // Bot list ends here
 )
 
 // StringTrimPrefix is like String() but trims the "Browser" prefix
@@ -81,7 +81,6 @@ type OSName int
 // the README.md file.
 const (
 	OSUnknown OSName = iota
-	OSWindowsPhone
 	OSWindows
 	OSMacOS
 	OSiOS
@@ -211,7 +210,7 @@ func parse(ua string, dest *UserAgent) {
 		dest.Browser.Name = BrowserUnknown
 		dest.DeviceType = DeviceUnknown
 
-	// stop on on first case returning true
+		// stop on on first case returning true
 	case dest.evalOS(ua):
 	case dest.evalBrowserName(ua):
 	default:

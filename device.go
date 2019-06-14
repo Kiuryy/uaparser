@@ -20,7 +20,7 @@ func (u *UserAgent) evalDevice(ua string) {
 	case u.OS.Platform == PlatformiPhone || strings.Contains(ua, "phone"):
 		u.DeviceType = DevicePhone
 
-	// long list of smarttv and tv dongle identifiers
+		// long list of smarttv and tv dongle identifiers
 	case strings.Contains(ua, "tv") || strings.Contains(ua, "crkey") || strings.Contains(ua, "googletv") || strings.Contains(ua, "aftb") || strings.Contains(ua, "aftt") || strings.Contains(ua, "aftm") || strings.Contains(ua, "adt-") || strings.Contains(ua, "roku") || strings.Contains(ua, "viera") || strings.Contains(ua, "aquos") || strings.Contains(ua, "dtv") || strings.Contains(ua, "appletv") || strings.Contains(ua, "smarttv") || strings.Contains(ua, "tuner") || strings.Contains(ua, "smart-tv") || strings.Contains(ua, "hbbtv") || strings.Contains(ua, "netcast") || strings.Contains(ua, "vizio"):
 		u.DeviceType = DeviceTV
 
@@ -44,7 +44,7 @@ func (u *UserAgent) evalDevice(ua string) {
 	case strings.Contains(ua, "glass") || strings.Contains(ua, "watch") || strings.Contains(ua, "sm-v"):
 		u.DeviceType = DeviceWearable
 
-	// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
+		// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
 	case strings.Contains(ua, "kindle/") || strings.Contains(ua, "silk/") && !strings.Contains(ua, "sd4930ur"):
 		u.DeviceType = DeviceTablet
 

@@ -78,19 +78,18 @@ func _() {
 	// Re-run the stringer command to generate them again.
 	var x [1]struct{}
 	_ = x[OSUnknown-0]
-	_ = x[OSWindowsPhone-1]
-	_ = x[OSWindows-2]
-	_ = x[OSMacOS-3]
-	_ = x[OSiOS-4]
-	_ = x[OSAndroid-5]
-	_ = x[OSChromeOS-6]
-	_ = x[OSLinux-7]
-	_ = x[OSBot-8]
+	_ = x[OSWindows-1]
+	_ = x[OSMacOS-2]
+	_ = x[OSiOS-3]
+	_ = x[OSAndroid-4]
+	_ = x[OSChromeOS-5]
+	_ = x[OSLinux-6]
+	_ = x[OSBot-7]
 }
 
-const _OSName_name = "OSUnknownOSWindowsPhoneOSWindowsOSMacOSOSiOSOSAndroidOSChromeOSOSLinuxOSBot"
+const _OSName_name = "OSUnknownOSWindowsOSMacOSOSiOSOSAndroidOSChromeOSOSLinuxOSBot"
 
-var _OSName_index = [...]uint8{0, 9, 23, 32, 39, 44, 53, 63, 70, 75}
+var _OSName_index = [...]uint8{0, 9, 18, 25, 30, 39, 49, 56, 61}
 
 func (i OSName) String() string {
 	if i < 0 || i >= OSName(len(_OSName_index)-1) {

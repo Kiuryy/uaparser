@@ -37,7 +37,7 @@ func (u *UserAgent) evalOS(ua string) bool {
 		u.evaliOS(specs, agentPlatform)
 
 	case "macintosh":
-		u.evalMacintosh(ua)
+		u.evalMac(ua)
 
 	default:
 		switch {
@@ -46,17 +46,13 @@ func (u *UserAgent) evalOS(ua string) bool {
 		case strings.Contains(ua, "windows ") || strings.Contains(ua, "microsoft-cryptoapi"):
 			u.evalWindows(ua)
 
-		// Linux (broader attempt)
-		case strings.Contains(ua, "linux"):
+			// Linux, Android
+		case strings.Contains(ua, "linux") || strings.Contains(ua, "android"):
 			u.evalLinux(ua, agentPlatform)
 
-		// Android
-		case strings.Contains(ua, "android"):
-			u.evalLinux(ua, agentPlatform)
-
-		// Apple CFNetwork
+			// Apple CFNetwork
 		case strings.Contains(ua, "cfnetwork") && strings.Contains(ua, "darwin"):
-			u.evalMacintosh(ua)
+			u.evalMac(ua)
 
 		default:
 			u.OS.Platform = PlatformUnknown
@@ -92,12 +88,12 @@ func (u *UserAgent) evalLinux(ua string, agentPlatform string) {
 		u.OS.Name = OSAndroid
 		u.OS.Version.findVersionNumber(agentPlatform, "android ")
 
-	// ChromeOS
+		// ChromeOS
 	case strings.Contains(ua, "cros"):
 		u.OS.Platform = PlatformLinux
 		u.OS.Name = OSChromeOS
 
-	// Linux, "Linux-like"
+		// Linux, "Linux-like"
 	case strings.Contains(ua, "x11") || strings.Contains(ua, "bsd") || strings.Contains(ua, "suse") || strings.Contains(ua, "debian") || strings.Contains(ua, "ubuntu"):
 		u.OS.Platform = PlatformLinux
 		u.OS.Name = OSLinux
@@ -119,13 +115,13 @@ func (u *UserAgent) evaliOS(uaPlatform string, agentPlatform string) {
 		u.OS.Name = OSiOS
 		u.OS.getiOSVersion(agentPlatform)
 
-	// iPad
+		// iPad
 	case "ipad":
 		u.OS.Platform = PlatformiPad
 		u.OS.Name = OSiOS
 		u.OS.getiOSVersion(agentPlatform)
 
-	// iPod
+		// iPod
 	case "ipod touch", "ipod":
 		u.OS.Platform = PlatformiPod
 		u.OS.Name = OSiOS
@@ -164,7 +160,7 @@ func (u *UserAgent) evalWindows(ua string) {
 	}
 }
 
-func (u *UserAgent) evalMacintosh(uaPlatformGroup string) {
+func (u *UserAgent) evalMac(uaPlatformGroup string) {
 	u.OS.Platform = PlatformMac
 	if i := strings.Index(uaPlatformGroup, "os x 10"); i != -1 {
 		u.OS.Name = OSMacOS
