@@ -120,12 +120,14 @@ func (p Platform) StringTrimPrefix() string {
 	return strings.TrimPrefix(p.String(), "Platform")
 }
 
+// Version contains three segments: 'Major', 'Minor' and 'Patch'
 type Version struct {
 	Major int
 	Minor int
 	Patch int
 }
 
+// Less compares the given version with the current version object: `if ver1.Less(ver2) {}`
 func (v Version) Less(c Version) bool {
 	if v.Major < c.Major {
 		return true
@@ -146,17 +148,20 @@ func (v Version) Less(c Version) bool {
 	return v.Patch < c.Patch
 }
 
+// UserAgent stores the info about the browser, OS and device type
 type UserAgent struct {
 	Browser    Browser
 	OS         OS
 	DeviceType DeviceType
 }
 
+// Browser contains the name and version of the browser
 type Browser struct {
 	Name    BrowserName
 	Version Version
 }
 
+// Browser contains the name, version and platform of the OS
 type OS struct {
 	Platform Platform
 	Name     OSName

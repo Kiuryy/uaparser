@@ -23,9 +23,9 @@ func (u *UserAgent) evalBrowserName(ua string) bool {
 
 	if strings.Contains(ua, "applewebkit") {
 		return u.evalWebkitBrowserName(ua)
-	} else {
-		return u.evalNonWebkitBrowserName(ua)
 	}
+
+	return u.evalNonWebkitBrowserName(ua)
 }
 
 // Retrieve browser name from UA strings containing 'applewebkit'
