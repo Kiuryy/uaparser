@@ -8,6 +8,7 @@ package uasurfer
 import "strings"
 
 //go:generate stringer -type=DeviceType,BrowserName,OSName,Platform -output=const_string.go
+//go:generate gofmt -s -w .
 
 // DeviceType (int) returns a constant.
 type DeviceType int
@@ -51,7 +52,7 @@ const (
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc
-	BrowserBot  // Bot list begins here
+	BrowserBot // Bot list begins here
 	BrowserAppleBot
 	BrowserBaiduBot
 	BrowserBingBot
@@ -64,7 +65,7 @@ const (
 	BrowserTwitterBot
 	BrowserYandexBot
 	BrowserCocCocBot
-	BrowserYahooBot  // Bot list ends here
+	BrowserYahooBot // Bot list ends here
 )
 
 // StringTrimPrefix is like String() but trims the "Browser" prefix
