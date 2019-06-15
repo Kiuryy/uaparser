@@ -133,6 +133,7 @@ DeviceType is typically quite accurate, though determining between phones and ta
 * `DevicePhone`
 * `DeviceTablet`
 * `DeviceTV`
+* `DeviceConsole`
 * `DeviceWearable`
 * `DeviceUnknown`
 
