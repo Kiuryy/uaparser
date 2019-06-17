@@ -681,7 +681,7 @@ var testUAVars = []struct {
 			Browser{BrowserCocCocBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{0, 0, 0}}, DeviceUnknown}},
 }
 
-func TestAgentSurfer(t *testing.T) {
+func TestAgentParser(t *testing.T) {
 	for _, determined := range testUAVars {
 		t.Run("", func(t *testing.T) {
 			testFuncs := []func(string) *UserAgent{
@@ -730,7 +730,7 @@ func TestAgentSurfer(t *testing.T) {
 	}
 }
 
-func BenchmarkAgentSurfer(b *testing.B) {
+func BenchmarkAgentParser(b *testing.B) {
 	num := len(testUAVars)
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -738,7 +738,7 @@ func BenchmarkAgentSurfer(b *testing.B) {
 	}
 }
 
-func BenchmarkAgentSurferReuse(b *testing.B) {
+func BenchmarkAgentParserReuse(b *testing.B) {
 	dest := new(UserAgent)
 	num := len(testUAVars)
 	b.ResetTimer()

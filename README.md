@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Kiuryy/Bookmark_Sidebar/master/asset/logo-small.png" height="88" align="left" /> UAParser
+# <img src="https://raw.githubusercontent.com/Kiuryy/uaparser/master/asset/logo-small.png" height="88" align="left" /> UAParser
 
 [![Build Status](https://travis-ci.com/Kiuryy/uaparser.svg?branch=master)](https://travis-ci.org/Kiuryy/uaparser)
 [![GoDoc](https://godoc.org/github.com/Kiuryy/uaparser?status.svg)](https://godoc.org/github.com/Kiuryy/uaparser)
@@ -7,9 +7,13 @@
 
 ---
 
-UAParser is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with the focus on the currently popular browsers and OSes.
+`UAParser` is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with the focus on the currently popular browsers and OSes.
 
-The following information is returned by UAParser from a raw HTTP User-Agent string:
+This project is a fork of `uasurfer`. For more information, you can take a look at their [repository](https://github.com/avct/uasurfer).
+
+---
+
+The following information is returned by `UAParser` from a raw HTTP User-Agent string:
 
 | Name           | Example | Coverage in 192,792 parses |
 |----------------|---------|--------------------------------|
