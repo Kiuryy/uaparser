@@ -1,0 +1,10 @@
+{
+  "name": "uaparser",
+  "version": "1.0.0",
+  "author": "Philipp König",
+  "homepage": "https://blockbyte.de/",
+  "scripts": {
+    "init": "go get -u golang.org/x/tools/cmd/stringer",
+    "update": "stringer -type=DeviceType,BrowserName,OSName,Platform -output=const_string.go && gofmt -s -w ."
+  }
+}
