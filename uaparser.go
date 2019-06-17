@@ -1,9 +1,9 @@
-// Package uasurfer provides fast and reliable abstraction
+// Package uaparser provides fast and reliable abstraction
 // of HTTP User-Agent strings. The philosophy is to identify
 // technologies that holds >1% market share, and to avoid
 // expending resources and accuracy on guessing at esoteric UA
 // strings.
-package uasurfer
+package uaparser
 
 import "strings"
 

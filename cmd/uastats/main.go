@@ -8,23 +8,23 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	"github.com/Kiuryy/uasurfer"
+	"github.com/Kiuryy/uaparser"
 )
 
 func main() {
 	var count int
-	ua := &uasurfer.UserAgent{}
+	ua := &uaparser.UserAgent{}
 	stats := stats{
-		BrowserNames: make(map[uasurfer.BrowserName]int),
-		OSNames:      make(map[uasurfer.OSName]int),
-		DeviceTypes:  make(map[uasurfer.DeviceType]int),
+		BrowserNames: make(map[uaparser.BrowserName]int),
+		OSNames:      make(map[uaparser.OSName]int),
+		DeviceTypes:  make(map[uaparser.DeviceType]int),
 	}
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		count++
 		ua.Reset()
-		uasurfer.ParseUserAgent(scanner.Text(), ua)
+		uaparser.ParseUserAgent(scanner.Text(), ua)
 		stats.BrowserNames[ua.Browser.Name]++
 		stats.OSNames[ua.OS.Name]++
 		stats.DeviceTypes[ua.DeviceType]++
@@ -38,9 +38,9 @@ func main() {
 }
 
 type stats struct {
-	OSNames      map[uasurfer.OSName]int
-	BrowserNames map[uasurfer.BrowserName]int
-	DeviceTypes  map[uasurfer.DeviceType]int
+	OSNames      map[uaparser.OSName]int
+	BrowserNames map[uaparser.BrowserName]int
+	DeviceTypes  map[uaparser.DeviceType]int
 }
 
 func (s *stats) Summary(total int, dest io.Writer) {

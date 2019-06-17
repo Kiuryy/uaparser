@@ -1,4 +1,4 @@
-package uasurfer
+package uaparser
 
 import (
 	"strings"

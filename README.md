@@ -1,12 +1,15 @@
-[![Build Status](https://travis-ci.com/Kiuryy/uasurfer.svg?branch=master)](https://travis-ci.org/Kiuryy/uasurfer)  [![GoDoc](https://godoc.org/github.com/Kiuryy/uasurfer?status.svg)](https://godoc.org/github.com/Kiuryy/uasurfer)  [![Go Report Card](https://goreportcard.com/badge/github.com/Kiuryy/uasurfer)](https://goreportcard.com/report/github.com/Kiuryy/uasurfer)
+# <img src="https://raw.githubusercontent.com/Kiuryy/Bookmark_Sidebar/master/asset/logo-small.png" height="88" align="left" /> UAParser
 
-# uasurfer
+[![Build Status](https://travis-ci.com/Kiuryy/uaparser.svg?branch=master)](https://travis-ci.org/Kiuryy/uaparser)
+[![GoDoc](https://godoc.org/github.com/Kiuryy/uaparser?status.svg)](https://godoc.org/github.com/Kiuryy/uaparser)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Kiuryy/uaparser)](https://goreportcard.com/report/github.com/Kiuryy/uaparser)
+[![License: Apache v2](https://img.shields.io/badge/License-Apache%20v2-lightgray.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-![uasurfer-100px](https://cloud.githubusercontent.com/assets/597902/16172506/9debc136-357a-11e6-90fb-c7c46f50dff0.png)
+---
 
-**User Agent Surfer** (uasurfer) is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with particular attention to device type.
+UAParser is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with the focus on the currently popular browsers and OSes.
 
-The following information is returned by uasurfer from a raw HTTP User-Agent string:
+The following information is returned by UAParser from a raw HTTP User-Agent string:
 
 | Name           | Example | Coverage in 192,792 parses |
 |----------------|---------|--------------------------------|
@@ -17,7 +20,7 @@ The following information is returned by uasurfer from a raw HTTP User-Agent str
 | OS version      | `10`   | 98.81%                         |
 | Device type    |  `tablet` | 99.98%                         |
 
-Layout engine, browser language, and other esoteric attributes are not parsed.
+Layout engine, browser language, and other possible attributes are not parsed.
 
 Coverage is estimated from a random sample of real UA strings collected across thousands of sources in US and EU mid-2016.
 
@@ -25,14 +28,14 @@ Coverage is estimated from a random sample of real UA strings collected across t
 
 ### Parse(ua string) Function
 
-The `Parse()` function accepts a user agent `string` and returns UserAgent struct with named constants and integers for versions (minor, major and patch separately), and the full UA string that was parsed (lowercase). A string can be retrieved by adding `.String()` to a variable, such as `uasurfer.BrowserName.String()`.
+The `Parse()` function accepts a user agent `string` and returns UserAgent struct with named constants and integers for versions (minor, major and patch separately), and the full UA string that was parsed (lowercase). A string can be retrieved by adding `.String()` to a variable, such as `uaparser.BrowserName.String()`.
 
 ```
 // Define a user agent string
 myUA := "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
 
 // Parse() returns all attributes, including returning the full UA string last
-ua, uaString := uasurfer.Parse(myUA)
+ua, uaString := uaparser.Parse(myUA)
 ```
 
 where example UserAgent is:
