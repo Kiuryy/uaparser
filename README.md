@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Kiuryy/uaparser/master/asset/logo-small.png" height="88" align="left" /> UAParser
+# <img src="https://raw.githubusercontent.com/Kiuryy/uaparser/master/__asset/logo-small.png" height="88" align="left" /> UAParser
 
 [![Build Status](https://travis-ci.com/Kiuryy/uaparser.svg?branch=master)](https://travis-ci.org/Kiuryy/uaparser)
 [![GoDoc](https://godoc.org/github.com/Kiuryy/uaparser?status.svg)](https://godoc.org/github.com/Kiuryy/uaparser)
