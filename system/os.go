@@ -1,9 +1,9 @@
 package system
 
 import (
-	"github.com/Kiuryy/uaparser/const"
 	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/useragent"
+	"github.com/Kiuryy/uaparser/vars"
 	"github.com/Kiuryy/uaparser/version"
 	"strings"
 )
@@ -59,8 +59,8 @@ func Eval(u *useragent.UserAgent, ua string) bool {
 			evalMac(u, ua)
 
 		default:
-			u.OS.Platform = _const.PlatformUnknown
-			u.OS.Name = _const.OSUnknown
+			u.OS.Platform = vars.PlatformUnknown
+			u.OS.Name = vars.OSUnknown
 		}
 	}
 
@@ -71,8 +71,8 @@ func Eval(u *useragent.UserAgent, ua string) bool {
 // all bot related fields if it is
 func MaybeBot(u *useragent.UserAgent, ua string) bool {
 	if u.IsBot() {
-		u.OS.Platform = _const.PlatformBot
-		u.OS.Name = _const.OSBot
+		u.OS.Platform = vars.PlatformBot
+		u.OS.Name = vars.OSBot
 		device.Eval(u, ua)
 		return true
 	}
@@ -88,8 +88,8 @@ func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
 	// Android, Kindle Fire
 	case strings.Contains(ua, "android") || strings.Contains(ua, "googletv"):
 		// Android
-		u.OS.Platform = _const.PlatformLinux
-		u.OS.Name = _const.OSAndroid
+		u.OS.Platform = vars.PlatformLinux
+		u.OS.Name = vars.OSAndroid
 		u.OS.Version.FindVersionNumber(agentPlatform, "android ")
 
 		if versionAlias, ok := androidVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
@@ -98,17 +98,17 @@ func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
 
 		// ChromeOS
 	case strings.Contains(ua, "cros"):
-		u.OS.Platform = _const.PlatformLinux
-		u.OS.Name = _const.OSChromeOS
+		u.OS.Platform = vars.PlatformLinux
+		u.OS.Name = vars.OSChromeOS
 
 		// Linux, "Linux-like"
 	case strings.Contains(ua, "x11") || strings.Contains(ua, "bsd") || strings.Contains(ua, "suse") || strings.Contains(ua, "debian") || strings.Contains(ua, "ubuntu"):
-		u.OS.Platform = _const.PlatformLinux
-		u.OS.Name = _const.OSLinux
+		u.OS.Platform = vars.PlatformLinux
+		u.OS.Name = vars.OSLinux
 
 	default:
-		u.OS.Platform = _const.PlatformLinux
-		u.OS.Name = _const.OSLinux
+		u.OS.Platform = vars.PlatformLinux
+		u.OS.Name = vars.OSLinux
 	}
 }
 
@@ -119,25 +119,25 @@ func evaliOS(u *useragent.UserAgent, uaPlatform string, agentPlatform string) {
 	switch uaPlatform {
 	// iPhone
 	case "iphone":
-		u.OS.Platform = _const.PlatformiPhone
-		u.OS.Name = _const.OSiOS
+		u.OS.Platform = vars.PlatformiPhone
+		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
 
 		// iPad
 	case "ipad":
-		u.OS.Platform = _const.PlatformiPad
-		u.OS.Name = _const.OSiOS
+		u.OS.Platform = vars.PlatformiPad
+		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
 
 		// iPod
 	case "ipod touch", "ipod":
-		u.OS.Platform = _const.PlatformiPod
-		u.OS.Name = _const.OSiOS
+		u.OS.Platform = vars.PlatformiPod
+		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
 
 	default:
-		u.OS.Platform = _const.PlatformiPad
-		u.OS.Name = _const.OSUnknown
+		u.OS.Platform = vars.PlatformiPad
+		u.OS.Name = vars.OSUnknown
 	}
 }
 
@@ -162,23 +162,23 @@ func evalWindows(u *useragent.UserAgent, ua string) {
 
 	// No windows version
 	case !strings.Contains(ua, "windows "):
-		u.OS.Platform = _const.PlatformWindows
-		u.OS.Name = _const.OSUnknown
+		u.OS.Platform = vars.PlatformWindows
+		u.OS.Name = vars.OSUnknown
 
 	case strings.Contains(ua, "windows nt ") && u.OS.Version.FindVersionNumber(ua, "windows nt "):
-		u.OS.Platform = _const.PlatformWindows
-		u.OS.Name = _const.OSWindows
+		u.OS.Platform = vars.PlatformWindows
+		u.OS.Name = vars.OSWindows
 
 	case strings.Contains(ua, "windows xp"):
-		u.OS.Platform = _const.PlatformWindows
-		u.OS.Name = _const.OSWindows
+		u.OS.Platform = vars.PlatformWindows
+		u.OS.Name = vars.OSWindows
 		u.OS.Version.Major = 5
 		u.OS.Version.Minor = 1
 		u.OS.Version.Patch = 0
 
 	default:
-		u.OS.Platform = _const.PlatformWindows
-		u.OS.Name = _const.OSUnknown
+		u.OS.Platform = vars.PlatformWindows
+		u.OS.Name = vars.OSUnknown
 
 	}
 
@@ -188,11 +188,11 @@ func evalWindows(u *useragent.UserAgent, ua string) {
 }
 
 func evalMac(u *useragent.UserAgent, uaPlatformGroup string) {
-	u.OS.Platform = _const.PlatformMac
-	u.OS.Name = _const.OSUnknown
+	u.OS.Platform = vars.PlatformMac
+	u.OS.Name = vars.OSUnknown
 
 	if i := strings.Index(uaPlatformGroup, "os x 10"); i != -1 {
-		u.OS.Name = _const.OSMacOS
+		u.OS.Name = vars.OSMacOS
 		u.OS.Version.Parse(uaPlatformGroup[i+5:])
 
 		if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {

@@ -7,10 +7,10 @@ package uaparser
 
 import (
 	"github.com/Kiuryy/uaparser/browser"
-	"github.com/Kiuryy/uaparser/const"
 	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/system"
 	"github.com/Kiuryy/uaparser/useragent"
+	"github.com/Kiuryy/uaparser/vars"
 	"strings"
 )
 
@@ -32,10 +32,10 @@ func parse(ua string, dest *useragent.UserAgent) {
 	ua = normalise(ua)
 	switch {
 	case len(ua) == 0:
-		dest.OS.Platform = _const.PlatformUnknown
-		dest.OS.Name = _const.OSUnknown
-		dest.Browser.Name = _const.BrowserUnknown
-		dest.DeviceType = _const.DeviceUnknown
+		dest.OS.Platform = vars.PlatformUnknown
+		dest.OS.Name = vars.OSUnknown
+		dest.Browser.Name = vars.BrowserUnknown
+		dest.DeviceType = vars.DeviceUnknown
 
 		// stop on on first case returning true
 	case system.Eval(dest, ua):

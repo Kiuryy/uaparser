@@ -1,4 +1,4 @@
-package _const
+package vars
 
 // DeviceType (int) returns a constant.
 type DeviceType int
@@ -53,7 +53,7 @@ const (
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc
-	BrowserBot  // Bot list begins here
+	BrowserBot // Bot list begins here
 	BrowserAppleBot
 	BrowserBaiduBot
 	BrowserBingBot
@@ -66,7 +66,7 @@ const (
 	BrowserTwitterBot
 	BrowserYandexBot
 	BrowserCocCocBot
-	BrowserYahooBot  // Bot list ends here
+	BrowserYahooBot // Bot list ends here
 )
 
 // Platform (int) returns a constant.
