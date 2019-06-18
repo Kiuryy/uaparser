@@ -13,9 +13,10 @@ type Browser struct {
 
 // OS contains the name, version and platform of the OS
 type OS struct {
-	Platform _const.Platform
-	Name     _const.OSName
-	Version  version.Version
+	Platform     _const.Platform
+	Name         _const.OSName
+	Version      version.Version
+	VersionAlias string
 }
 
 // UserAgent stores the info about the browser, OS and device type

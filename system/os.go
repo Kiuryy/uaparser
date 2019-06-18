@@ -4,8 +4,37 @@ import (
 	"github.com/Kiuryy/uaparser/const"
 	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/userAgent"
+	"github.com/Kiuryy/uaparser/version"
 	"strings"
 )
+
+var macVersionAlias = map[version.Version]string{
+	{10, 1, 0}:  "Puma",
+	{10, 2, 0}:  "Jaguar",
+	{10, 3, 0}:  "Panther",
+	{10, 4, 0}:  "Tiger",
+	{10, 5, 0}:  "Leopard",
+	{10, 6, 0}:  "Snow Leopard",
+	{10, 7, 0}:  "Lion",
+	{10, 8, 0}:  "Mountain Lion",
+	{10, 9, 0}:  "Mavericks",
+	{10, 10, 0}: "Yosemite",
+	{10, 11, 0}: "El Capitan",
+	{10, 12, 0}: "Sierra",
+	{10, 13, 0}: "High Sierra",
+	{10, 14, 0}: "Mojave",
+	{10, 15, 0}: "Catalina",
+}
+
+var windowsVersionAlias = map[version.Version]string{
+	{6, 3, 0}: "8.1",
+	{6, 2, 0}: "8",
+	{6, 1, 0}: "7",
+	{6, 0, 0}: "Vista",
+	{5, 2, 0}: "XP",
+	{5, 1, 0}: "XP",
+	{5, 0, 0}: "2000",
+}
 
 func Eval(u *userAgent.UserAgent, ua string) bool {
 	s := strings.IndexRune(ua, '(')
@@ -175,15 +204,22 @@ func evalWindows(u *userAgent.UserAgent, ua string) {
 		u.OS.Name = _const.OSUnknown
 
 	}
+
+	if versionAlias, ok := windowsVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
+		u.OS.VersionAlias = versionAlias
+	}
 }
 
 func evalMac(u *userAgent.UserAgent, uaPlatformGroup string) {
 	u.OS.Platform = _const.PlatformMac
+	u.OS.Name = _const.OSUnknown
+
 	if i := strings.Index(uaPlatformGroup, "os x 10"); i != -1 {
 		u.OS.Name = _const.OSMacOS
 		u.OS.Version.Parse(uaPlatformGroup[i+5:])
 
-		return
+		if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
+			u.OS.VersionAlias = versionAlias
+		}
 	}
-	u.OS.Name = _const.OSUnknown
 }
