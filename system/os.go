@@ -8,34 +8,6 @@ import (
 	"strings"
 )
 
-var macVersionAlias = map[version.Version]string{
-	{10, 1, 0}:  "Puma",
-	{10, 2, 0}:  "Jaguar",
-	{10, 3, 0}:  "Panther",
-	{10, 4, 0}:  "Tiger",
-	{10, 5, 0}:  "Leopard",
-	{10, 6, 0}:  "Snow Leopard",
-	{10, 7, 0}:  "Lion",
-	{10, 8, 0}:  "Mountain Lion",
-	{10, 9, 0}:  "Mavericks",
-	{10, 10, 0}: "Yosemite",
-	{10, 11, 0}: "El Capitan",
-	{10, 12, 0}: "Sierra",
-	{10, 13, 0}: "High Sierra",
-	{10, 14, 0}: "Mojave",
-	{10, 15, 0}: "Catalina",
-}
-
-var windowsVersionAlias = map[version.Version]string{
-	{6, 3, 0}: "8.1",
-	{6, 2, 0}: "8",
-	{6, 1, 0}: "7",
-	{6, 0, 0}: "Vista",
-	{5, 2, 0}: "XP",
-	{5, 1, 0}: "XP",
-	{5, 0, 0}: "2000",
-}
-
 func Eval(u *userAgent.UserAgent, ua string) bool {
 	s := strings.IndexRune(ua, '(')
 	e := strings.IndexRune(ua, ')')
@@ -118,6 +90,10 @@ func evalLinux(u *userAgent.UserAgent, ua string, agentPlatform string) {
 		u.OS.Platform = _const.PlatformLinux
 		u.OS.Name = _const.OSAndroid
 		u.OS.Version.FindVersionNumber(agentPlatform, "android ")
+
+		if versionAlias, ok := androidVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
+			u.OS.VersionAlias = versionAlias
+		}
 
 		// ChromeOS
 	case strings.Contains(ua, "cros"):
