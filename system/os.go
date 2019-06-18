@@ -3,12 +3,13 @@ package system
 import (
 	"github.com/Kiuryy/uaparser/const"
 	"github.com/Kiuryy/uaparser/device"
-	"github.com/Kiuryy/uaparser/userAgent"
+	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/version"
 	"strings"
 )
 
-func Eval(u *userAgent.UserAgent, ua string) bool {
+// Eval parses the user agent and sets the system information (OS, Platform)
+func Eval(u *useragent.UserAgent, ua string) bool {
 	s := strings.IndexRune(ua, '(')
 	e := strings.IndexRune(ua, ')')
 	if s > e {
@@ -66,9 +67,9 @@ func Eval(u *userAgent.UserAgent, ua string) bool {
 	return MaybeBot(u, ua)
 }
 
-// maybeBot checks if the UserAgent is a bot and sets
+// MaybeBot checks if the UserAgent is a bot and sets
 // all bot related fields if it is
-func MaybeBot(u *userAgent.UserAgent, ua string) bool {
+func MaybeBot(u *useragent.UserAgent, ua string) bool {
 	if u.IsBot() {
 		u.OS.Platform = _const.PlatformBot
 		u.OS.Name = _const.OSBot
@@ -80,7 +81,7 @@ func MaybeBot(u *userAgent.UserAgent, ua string) bool {
 
 // evalLinux returns the `Platform`, `OSName` and Version of UAs with
 // 'linux' listed as their platform.
-func evalLinux(u *userAgent.UserAgent, ua string, agentPlatform string) {
+func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
 
 	switch {
 
@@ -113,7 +114,7 @@ func evalLinux(u *userAgent.UserAgent, ua string, agentPlatform string) {
 
 // evaliOS returns the `Platform`, `OSName` and Version of UAs with
 // 'ipad' or 'iphone' listed as their platform.
-func evaliOS(u *userAgent.UserAgent, uaPlatform string, agentPlatform string) {
+func evaliOS(u *useragent.UserAgent, uaPlatform string, agentPlatform string) {
 
 	switch uaPlatform {
 	// iPhone
@@ -141,7 +142,7 @@ func evaliOS(u *userAgent.UserAgent, uaPlatform string, agentPlatform string) {
 }
 
 // getiOSVersion accepts the platform portion of a UA string and returns a Version.
-func evaliOSVersion(u *userAgent.UserAgent, uaPlatformGroup string) {
+func evaliOSVersion(u *useragent.UserAgent, uaPlatformGroup string) {
 	if i := strings.Index(uaPlatformGroup, "cpu iphone os "); i != -1 {
 		u.OS.Version.Parse(uaPlatformGroup[i+14:])
 		return
@@ -155,7 +156,7 @@ func evaliOSVersion(u *userAgent.UserAgent, uaPlatformGroup string) {
 	u.OS.Version.Parse(uaPlatformGroup)
 }
 
-func evalWindows(u *userAgent.UserAgent, ua string) {
+func evalWindows(u *useragent.UserAgent, ua string) {
 
 	switch {
 
@@ -186,7 +187,7 @@ func evalWindows(u *userAgent.UserAgent, ua string) {
 	}
 }
 
-func evalMac(u *userAgent.UserAgent, uaPlatformGroup string) {
+func evalMac(u *useragent.UserAgent, uaPlatformGroup string) {
 	u.OS.Platform = _const.PlatformMac
 	u.OS.Name = _const.OSUnknown
 

@@ -10,13 +10,13 @@ import (
 	"github.com/Kiuryy/uaparser/const"
 	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/system"
-	"github.com/Kiuryy/uaparser/userAgent"
+	"github.com/Kiuryy/uaparser/useragent"
 	"strings"
 )
 
 // Parse accepts a raw user agent (string) and returns the UserAgent.
-func Parse(ua string) *userAgent.UserAgent {
-	dest := new(userAgent.UserAgent)
+func Parse(ua string) *useragent.UserAgent {
+	dest := new(useragent.UserAgent)
 	parse(ua, dest)
 	return dest
 }
@@ -24,11 +24,11 @@ func Parse(ua string) *userAgent.UserAgent {
 // ParseUserAgent is the same as Parse, but populates the supplied UserAgent.
 // It is the caller's responsibility to call Reset() on the UserAgent before
 // passing it to this function.
-func ParseUserAgent(ua string, dest *userAgent.UserAgent) {
+func ParseUserAgent(ua string, dest *useragent.UserAgent) {
 	parse(ua, dest)
 }
 
-func parse(ua string, dest *userAgent.UserAgent) {
+func parse(ua string, dest *useragent.UserAgent) {
 	ua = normalise(ua)
 	switch {
 	case len(ua) == 0:

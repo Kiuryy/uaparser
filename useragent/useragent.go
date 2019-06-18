@@ -1,4 +1,4 @@
-package userAgent
+package useragent
 
 import (
 	"github.com/Kiuryy/uaparser/const"

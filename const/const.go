@@ -3,6 +3,8 @@ package _const
 // DeviceType (int) returns a constant.
 type DeviceType int
 
+// A complete list of supported device types in the
+// form of constants.
 const (
 	DeviceUnknown DeviceType = iota
 	DeviceComputer
@@ -17,9 +19,7 @@ const (
 type OSName int
 
 // A complete list of supported OSes in the
-// form of constants. For handling particular versions
-// of operating systems (e.g. Windows 2000), see
-// the README.md file.
+// form of constants.
 const (
 	OSUnknown OSName = iota
 	OSWindows
@@ -53,7 +53,7 @@ const (
 	BrowserSamsung
 	BrowserYandex
 	BrowserCocCoc
-	BrowserBot // Bot list begins here
+	BrowserBot  // Bot list begins here
 	BrowserAppleBot
 	BrowserBaiduBot
 	BrowserBingBot
@@ -66,7 +66,7 @@ const (
 	BrowserTwitterBot
 	BrowserYandexBot
 	BrowserCocCocBot
-	BrowserYahooBot // Bot list ends here
+	BrowserYahooBot  // Bot list ends here
 )
 
 // Platform (int) returns a constant.

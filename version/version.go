@@ -32,6 +32,7 @@ func (v Version) Less(c Version) bool {
 	return v.Patch < c.Patch
 }
 
+// FindVersionNumber searches for the version number next to the given string
 func (v *Version) FindVersionNumber(s string, m string) bool {
 	if ind := strings.Index(s, m); ind != -1 {
 		return v.Parse(s[ind+len(m):])
@@ -39,7 +40,7 @@ func (v *Version) FindVersionNumber(s string, m string) bool {
 	return false
 }
 
-// parse accepts a string and extracts the version information
+// Parse accepts a string and extracts the version information
 // with {0, 0, 0} being default.
 func (v *Version) Parse(str string) bool {
 	if len(str) == 0 || str[0] < '0' || str[0] > '9' {
