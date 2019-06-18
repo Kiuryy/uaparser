@@ -1,13 +1,13 @@
 package uaparser
 
 import (
+	"github.com/Kiuryy/uaparser/browser"
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/device"
+	"github.com/Kiuryy/uaparser/system"
+	"github.com/Kiuryy/uaparser/userAgent"
+	"github.com/Kiuryy/uaparser/version"
 	"testing"
-	"uaparser/browser"
-	"uaparser/const"
-	"uaparser/device"
-	"uaparser/system"
-	"uaparser/userAgent"
-	"uaparser/version"
 )
 
 var testUAVars = []struct {

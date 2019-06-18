@@ -1,10 +1,10 @@
 package system
 
 import (
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/device"
+	"github.com/Kiuryy/uaparser/userAgent"
 	"strings"
-	"uaparser/const"
-	"uaparser/device"
-	"uaparser/userAgent"
 )
 
 func Eval(u *userAgent.UserAgent, ua string) bool {

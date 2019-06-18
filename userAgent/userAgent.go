@@ -1,8 +1,8 @@
 package userAgent
 
 import (
-	"uaparser/const"
-	"uaparser/version"
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/version"
 )
 
 // Browser contains the name and version of the browser

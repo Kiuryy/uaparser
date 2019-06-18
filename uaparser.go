@@ -6,12 +6,12 @@
 package uaparser
 
 import (
+	"github.com/Kiuryy/uaparser/browser"
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/device"
+	"github.com/Kiuryy/uaparser/system"
+	"github.com/Kiuryy/uaparser/userAgent"
 	"strings"
-	"uaparser/browser"
-	"uaparser/const"
-	"uaparser/device"
-	"uaparser/system"
-	"uaparser/userAgent"
 )
 
 // Parse accepts a raw user agent (string) and returns the UserAgent.

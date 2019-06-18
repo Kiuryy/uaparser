@@ -1,9 +1,9 @@
 package device
 
 import (
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/userAgent"
 	"strings"
-	"uaparser/const"
-	"uaparser/userAgent"
 )
 
 func Eval(u *userAgent.UserAgent, ua string) {

@@ -1,10 +1,10 @@
 package browser
 
 import (
+	"github.com/Kiuryy/uaparser/const"
+	"github.com/Kiuryy/uaparser/system"
+	"github.com/Kiuryy/uaparser/userAgent"
 	"strings"
-	"uaparser/const"
-	"uaparser/system"
-	"uaparser/userAgent"
 )
 
 // Browser struct contains the lowercase name of the browser, along

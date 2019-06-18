@@ -3,8 +3,13 @@ sudo: false
 language: go
 
 go:
-- 1.12.x
-- 1.11.x
+  - 1.12.x
+  - 1.11.x
+
+env:
+  - GO111MODULE=on
+
+install: true
 
 script:
-- go test
+  - go test
