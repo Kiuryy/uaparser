@@ -32,14 +32,14 @@ Coverage is estimated from a random sample of real UA strings collected across t
 
 ### Parse(ua string) Function
 
-The `Parse()` function accepts a user agent `string` and returns UserAgent struct with named constants and integers for versions (minor, major and patch separately), and the full UA string that was parsed (lowercase). A string can be retrieved by adding `.String()` to a variable, such as `uaparser.BrowserName.String()`.
+The `Parse()` function accepts a user agent `string` and returns UserAgent struct with named constants and integers for versions (minor, major and patch separately). A string can be retrieved by adding `.String()` to a variable, such as `uaparser.BrowserName.String()`.
 
 ```
 // Define a user agent string
-myUA := "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
+uaStr := "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3824.6 Safari/537.36"
 
-// Parse() returns all attributes, including returning the full UA string last
-ua, uaString := uaparser.Parse(myUA)
+// Parse() returns an UserAgent object
+ua := uaparser.Parse(uaStr)
 ```
 
 where example UserAgent is:
@@ -48,9 +48,9 @@ where example UserAgent is:
     Browser {
         BrowserName: BrowserChrome,
         Version: {
-            Major: 45,
+            Major: 77,
             Minor: 0,
-            Patch: 2454,
+            Patch: 3824,
         },
     },
     OS {
@@ -58,9 +58,10 @@ where example UserAgent is:
         Name: OSMacOS,
         Version: {
             Major: 10,
-            Minor: 10,
-            Patch: 5,
+            Minor: 15,
+            Patch: 1,
         },
+        VersionAlias: "Catalina",
     },
     DeviceType: DeviceComputer,
 }
