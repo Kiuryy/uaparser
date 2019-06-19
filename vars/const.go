@@ -18,7 +18,7 @@ const (
 // OSName (int) returns a constant.
 type OSName int
 
-// A complete list of supported OSes in the
+// A complete list of supported OS in the
 // form of constants.
 const (
 	OSUnknown OSName = iota
@@ -73,8 +73,8 @@ const (
 type Platform int
 
 // A complete list of supported platforms in the
-// form of constants. Many OSes report their
-// true platform, such as Android OS being Linux
+// form of constants. Many OS report their true
+// platform, such as Android OS being Linux
 // platform.
 const (
 	PlatformUnknown Platform = iota

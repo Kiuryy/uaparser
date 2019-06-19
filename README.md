@@ -7,7 +7,7 @@
 
 ---
 
-`UAParser` is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with the focus on the currently popular browsers and OSes.
+`UAParser` is a lightweight Golang package that parses and abstracts [HTTP User-Agent strings](https://en.wikipedia.org/wiki/User_agent) with the focus on the currently popular browsers and OS.
 
 This project is a fork of `uasurfer`. For more information, you can take a look at their [repository](https://github.com/avct/uasurfer).
 
@@ -66,7 +66,7 @@ where example UserAgent is:
 }
 ```
 
-**Usage note:** There are some OSes that do not return a version, see docs below. Linux is typically not reported with a specific Linux distro name or version.
+**Usage note:** There are some OS that do not return a version, see docs below. Linux is typically not reported with a specific Linux distro name or version.
 
 #### Browser Name
 * `BrowserChrome` - Google [Chrome](https://en.wikipedia.org/wiki/Google_Chrome)
@@ -95,7 +95,7 @@ Unknown version is returned as `0`.
 #### Platform
 * `PlatformWindows` - Microsoft Windows
 * `PlatformMac` - Apple Mac
-* `PlatformLinux` - Linux, including Android and other OSes
+* `PlatformLinux` - Linux, including Android and other OS
 * `PlatformiPad` - Apple iPad
 * `PlatformiPhone` - Apple iPhone
 * `PlatformUnknown` - Unknown
@@ -111,7 +111,7 @@ Unknown version is returned as `0`.
 
 #### OS Version
 
-MacOS major version is alway 10 with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
+MacOS major version is always 10 with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
 Versions can be compared using `Less` function: `if ver1.Less(ver2) {}`
 
 Here are some examples across the platform, os.name, and os.version:
@@ -121,7 +121,31 @@ Here are some examples across the platform, os.name, and os.version:
 * For Android 5.1, "`PlatformLinux`" is the platform, "`OSAndroid`" is the name, and `{5, 1, 0}` the version.
 * For iOS 5.1, "`PlatformiPhone`" or "`PlatformiPad`" is the platform, "`OSiOS`" is the name, and `{5, 1, 0}` the version.
 
-###### Windows Version Guide
+#### OS Version Alias
+
+Some OS use version aliases, which are commonly used to identify specific versions of OS. Besides the internal representation of the version, `UAParser` also returns these version aliases. 
+
+###### macOS Version Aliases
+
+* macOS 10.15 Catalina - `{10, 15, 0}`
+* macOS 10.14 Mojave - `{10, 14, 0}`
+* macOS 10.13 High Sierra - `{10, 13, 0}`
+* macOS 10.12 Sierra - `{10, 12, 0}`
+* OS X 10.11 El Capitan -  `{10, 11, 0}`
+* OS X 10.10 Yosemite -  `{10, 10, 0}`
+* ...
+
+###### Android Version Aliases
+
+* Android 9 Pie - `{9, 0, 0}`
+* Android 8 Oreo - `{8, 0, 0}`
+* Android 7 Nougat - `{7, 0, 0}`
+* Android 6 Marshmallow - `{6, 0, 0}`
+* Android 5 Lollipop - `{5, 0, 0}`
+* Android 4.4 KitKat - `{4, 4, 0}`
+* ...
+
+###### Windows Version Aliases
 
 * Windows 10 - `{10, 0, 0}`
 * Windows 8.1 - `{6, 3, 0}`
@@ -131,7 +155,7 @@ Here are some examples across the platform, os.name, and os.version:
 * Windows XP - `{5, 1, 0}` or `{5, 2, 0}`
 * Windows 2000 - `{5, 0, 0}`
 
-Windows 95, 98, and ME represent 0.01% of traffic worldwide and are not available through this package at this time.
+Windows 95, 98, and ME represent 0.01% of traffic worldwide and are not available through this package.
 
 #### DeviceType
 DeviceType is typically quite accurate, though determining between phones and tablets on Android is not always possible due to how some vendors design their UA strings. A mobile Android device without tablet indicator defaults to being classified as a phone. DeviceTV supports major brands such as Philips, Sharp, Vizio and steaming boxes such as Apple, Google, Roku, Amazon.
@@ -143,7 +167,3 @@ DeviceType is typically quite accurate, though determining between phones and ta
 * `DeviceConsole`
 * `DeviceWearable`
 * `DeviceUnknown`
-
-## Example Combinations of Attributes
-* Surface RT -> `OSWindows8`, `DeviceTablet`, OSVersion >= `6`
-* Android Tablet -> `OSAndroid`, `DeviceTablet`

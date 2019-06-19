@@ -1,6 +1,6 @@
 // Package uaparser provides fast and reliable abstraction
 // of HTTP User-Agent strings. The philosophy is to identify
-// browsers and OSes that are currently popular, and to avoid
+// browsers and OS that are currently popular, and to avoid
 // expending resources and accuracy on guessing at barely used
 // or legacy technologies.
 package uaparser
