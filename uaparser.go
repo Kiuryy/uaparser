@@ -16,9 +16,9 @@ import (
 
 // Parse accepts a raw user agent (string) and returns the UserAgent.
 func Parse(ua string) *useragent.UserAgent {
-	dest := new(useragent.UserAgent)
-	parse(ua, dest)
-	return dest
+	dest := useragent.UserAgent{}
+	parse(ua, &dest)
+	return &dest
 }
 
 // ParseUserAgent is the same as Parse, but populates the supplied UserAgent.
@@ -30,19 +30,22 @@ func ParseUserAgent(ua string, dest *useragent.UserAgent) {
 
 func parse(ua string, dest *useragent.UserAgent) {
 	ua = normalise(ua)
-	switch {
-	case len(ua) == 0:
+
+	if len(ua) == 0 {
 		dest.OS.Platform = vars.PlatformUnknown
 		dest.OS.Name = vars.OSUnknown
 		dest.Browser.Name = vars.BrowserUnknown
 		dest.DeviceType = vars.DeviceUnknown
-
-		// stop on on first case returning true
-	case system.Eval(dest, ua):
-	case browser.EvalName(dest, ua):
-	default:
+	} else {
+		system.Eval(dest, ua)
+		browser.EvalName(dest, ua)
 		browser.EvalVersion(dest, ua)
 		device.Eval(dest, ua)
+
+		if dest.IsBot() {
+			dest.OS.Platform = vars.PlatformBot
+			dest.OS.Name = vars.OSBot
+		}
 	}
 }
 

@@ -1,7 +1,6 @@
 package browser
 
 import (
-	"github.com/Kiuryy/uaparser/system"
 	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"strings"
@@ -90,17 +89,17 @@ func EvalVersion(u *useragent.UserAgent, ua string) {
 }
 
 // EvalName retrieves the browser name from the given UA string
-func EvalName(u *useragent.UserAgent, ua string) bool {
+func EvalName(u *useragent.UserAgent, ua string) {
 
 	if strings.Contains(ua, "applewebkit") {
-		return evalWebkitBrowserName(u, ua)
+		evalWebkitBrowserName(u, ua)
+	} else {
+		evalNonWebkitBrowserName(u, ua)
 	}
-
-	return evalNonWebkitBrowserName(u, ua)
 }
 
 // Retrieve browser name from UA strings containing 'applewebkit'
-func evalWebkitBrowserName(u *useragent.UserAgent, ua string) bool {
+func evalWebkitBrowserName(u *useragent.UserAgent, ua string) {
 
 	switch {
 	case strings.Contains(ua, "googlebot"):
@@ -139,7 +138,7 @@ func evalWebkitBrowserName(u *useragent.UserAgent, ua string) bool {
 	case strings.Contains(ua, "chromium/"):
 		u.Browser.Name = vars.BrowserChromium
 
-		// Edge, Silk and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
+		// Edge, Vivaldi and other chrome-identifying browsers must evaluate before chrome, unless we want to add more overhead
 	case strings.Contains(ua, "chrome/") || strings.Contains(ua, "crios/") || strings.Contains(ua, "crmo/"):
 		u.Browser.Name = vars.BrowserChrome
 
@@ -167,15 +166,13 @@ func evalWebkitBrowserName(u *useragent.UserAgent, ua string) bool {
 		u.Browser.Name = vars.BrowserSafari
 
 	default:
-		return evalNonWebkitBrowserName(u, ua)
+		evalNonWebkitBrowserName(u, ua)
 
 	}
-
-	return system.MaybeBot(u, ua)
 }
 
 // Retrieve browser name from UA strings not containing 'applewebkit'
-func evalNonWebkitBrowserName(u *useragent.UserAgent, ua string) bool {
+func evalNonWebkitBrowserName(u *useragent.UserAgent, ua string) {
 
 	switch {
 	case strings.Contains(ua, "qq/") || strings.Contains(ua, "qqbrowser/"):
@@ -239,6 +236,4 @@ func evalNonWebkitBrowserName(u *useragent.UserAgent, ua string) bool {
 		u.Browser.Name = vars.BrowserUnknown
 
 	}
-
-	return system.MaybeBot(u, ua)
 }

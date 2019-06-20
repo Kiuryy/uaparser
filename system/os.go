@@ -1,7 +1,6 @@
 package system
 
 import (
-	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"github.com/Kiuryy/uaparser/version"
@@ -9,7 +8,7 @@ import (
 )
 
 // Eval parses the user agent and sets the system information (OS, Platform)
-func Eval(u *useragent.UserAgent, ua string) bool {
+func Eval(u *useragent.UserAgent, ua string) {
 	s := strings.IndexRune(ua, '(')
 	e := strings.IndexRune(ua, ')')
 	if s > e {
@@ -63,20 +62,6 @@ func Eval(u *useragent.UserAgent, ua string) bool {
 			u.OS.Name = vars.OSUnknown
 		}
 	}
-
-	return MaybeBot(u, ua)
-}
-
-// MaybeBot checks if the UserAgent is a bot and sets
-// all bot related fields if it is
-func MaybeBot(u *useragent.UserAgent, ua string) bool {
-	if u.IsBot() {
-		u.OS.Platform = vars.PlatformBot
-		u.OS.Name = vars.OSBot
-		device.Eval(u, ua)
-		return true
-	}
-	return false
 }
 
 // evalLinux returns the `Platform`, `OSName` and Version of UAs with
