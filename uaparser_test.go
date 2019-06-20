@@ -461,7 +461,7 @@ var testUAVars = []struct {
 	// Google search app (GSA) for iOS -- it's Safari in disguise as of v6
 	{"Mozilla/5.0 (iPad; CPU OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) GSA/6.0.51363 Mobile/12F69 Safari/600.1.4",
 		useragent.UserAgent{
-			useragent.Browser{vars.BrowserSafari, version.Version{8, 3, 0}},
+			useragent.Browser{vars.BrowserSafari, version.Version{0, 0, 0}},
 			useragent.OS{vars.PlatformiPad, vars.OSiOS, version.Version{8, 3, 0}, ""},
 			vars.DeviceTablet,
 		},
@@ -967,7 +967,7 @@ var testUAVars = []struct {
 	},
 	{"Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Mobile/14D27 [FBAN/FBIOS;FBAV/86.0.0.48.52;FBBV/53842252;FBDV/iPhone9,1;FBMD/iPhone;FBSN/iOS;FBSV/10.2.1;FBSS/2;FBCR/Verizon;FBID/phone;FBLC/en_US;FBOP/5;FBRV/0]",
 		useragent.UserAgent{
-			useragent.Browser{vars.BrowserSafari, version.Version{10, 2, 1}},
+			useragent.Browser{vars.BrowserSafari, version.Version{0, 0, 0}},
 			useragent.OS{vars.PlatformiPhone, vars.OSiOS, version.Version{10, 2, 1}, ""},
 			vars.DevicePhone,
 		},
@@ -1264,16 +1264,6 @@ func BenchmarkAgentParser(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Parse(testUAVars[i%num].UA)
-	}
-}
-
-func BenchmarkAgentParserReuse(b *testing.B) {
-	dest := useragent.UserAgent{}
-	num := len(testUAVars)
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		dest.Reset()
-		ParseUserAgent(testUAVars[i%num].UA, &dest)
 	}
 }
 

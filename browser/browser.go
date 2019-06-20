@@ -14,7 +14,7 @@ import (
 // type Browser struct {
 // 		Name    BrowserName
 // 		Version struct {
-// 				Major int
+// 			Major int
 // 			Minor int
 // 			Patch int
 // 		}
@@ -66,13 +66,6 @@ func EvalVersion(u *useragent.UserAgent, ua string) {
 
 	case vars.BrowserFirefox:
 		_ = u.Browser.Version.FindVersionNumber(ua, "firefox/") || u.Browser.Version.FindVersionNumber(ua, "fxios/")
-
-	case vars.BrowserSafari: // executes typically if we're on iOS and not using a familiar browser
-		u.Browser.Version = u.OS.Version
-		// early Safari used a version number +1 to OS version
-		if (u.Browser.Version.Major <= 3) && (u.Browser.Version.Major >= 1) {
-			u.Browser.Version.Major++
-		}
 
 	case vars.BrowserUCBrowser:
 		_ = u.Browser.Version.FindVersionNumber(ua, "ucbrowser/")

@@ -26,13 +26,6 @@ type UserAgent struct {
 	DeviceType vars.DeviceType
 }
 
-// Reset resets the UserAgent to it's zero value
-func (ua *UserAgent) Reset() {
-	ua.Browser = Browser{}
-	ua.OS = OS{}
-	ua.DeviceType = vars.DeviceUnknown
-}
-
 // IsBot returns true if the UserAgent represent a bot
 func (ua *UserAgent) IsBot() bool {
 	if ua.Browser.Name >= vars.BrowserBot && ua.Browser.Name <= vars.BrowserYahooBot {
