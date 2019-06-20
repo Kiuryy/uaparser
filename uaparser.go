@@ -17,11 +17,6 @@ import (
 // Parse accepts a raw user agent (string) and returns the UserAgent.
 func Parse(ua string) *useragent.UserAgent {
 	dest := useragent.UserAgent{}
-	parse(ua, &dest)
-	return &dest
-}
-
-func parse(ua string, dest *useragent.UserAgent) {
 	ua = normalise(ua)
 
 	if len(ua) == 0 {
@@ -30,16 +25,18 @@ func parse(ua string, dest *useragent.UserAgent) {
 		dest.Browser.Name = vars.BrowserUnknown
 		dest.DeviceType = vars.DeviceUnknown
 	} else {
-		system.Eval(dest, ua)
-		browser.EvalName(dest, ua)
-		browser.EvalVersion(dest, ua)
-		device.Eval(dest, ua)
+		system.Eval(&dest, ua)
+		browser.EvalName(&dest, ua)
+		browser.EvalVersion(&dest, ua)
+		device.Eval(&dest, ua)
 
 		if dest.IsBot() {
 			dest.OS.Platform = vars.PlatformBot
 			dest.OS.Name = vars.OSBot
 		}
 	}
+
+	return &dest
 }
 
 // normalise normalises the user supplied agent string so that
