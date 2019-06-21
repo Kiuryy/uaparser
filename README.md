@@ -11,23 +11,6 @@
 
 This project is a fork of `uasurfer`. For more information, you can take a look at their [repository](https://github.com/avct/uasurfer).
 
----
-
-The following information is returned by `UAParser` from a raw HTTP User-Agent string:
-
-| Name           | Example | Coverage in 192,792 parses |
-|----------------|---------|--------------------------------|
-| Browser name    | `chrome` | 99.85%                         |
-| Browser version | `53` | 99.17%                         |
-| Platform       | `ipad`  | 99.97%                         |
-| OS name         | `ios`  | 99.96%                         |
-| OS version      | `10`   | 98.81%                         |
-| Device type    |  `tablet` | 99.98%                         |
-
-Layout engine, browser language, and other possible attributes are not parsed.
-
-Coverage is estimated from a random sample of real UA strings collected across thousands of sources in US and EU mid-2016.
-
 ## Usage
 
 ### Parse(ua string) Function
@@ -73,7 +56,7 @@ where example UserAgent is:
 * `BrowserChrome` - Google [Chrome](https://en.wikipedia.org/wiki/Google_Chrome)
 * `BrowserSafari` - Apple [Safari](https://en.wikipedia.org/wiki/Safari_(web_browser)), Google Search ([GSA](https://itunes.apple.com/us/app/google/id284815942))
 * `BrowserEdge` - Microsoft [Edge](https://en.wikipedia.org/wiki/Microsoft_Edge)
-* `BrowserFirefox` - Mozilla [Firefox](https://en.wikipedia.org/wiki/Firefox), GNU [IceCat](https://en.wikipedia.org/wiki/GNU_IceCat), [Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel), [Seamonkey](https://en.wikipedia.org/wiki/SeaMonkey)
+* `BrowserFirefox` - Mozilla [Firefox](https://en.wikipedia.org/wiki/Firefox)
 * `BrowserIE` - Microsoft [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer)
 * `BrowserAndroid` - Android [WebView](https://developer.chrome.com/multidevice/webview/overview) (Android OS <4.4 only)
 * `BrowserOpera` - [Opera](https://en.wikipedia.org/wiki/Opera_(web_browser))
@@ -128,22 +111,22 @@ Some OS use version aliases, which are commonly used to identify specific versio
 
 ###### macOS Version Aliases
 
-* macOS 10.15 Catalina - `{10, 15, 0}`
-* macOS 10.14 Mojave - `{10, 14, 0}`
-* macOS 10.13 High Sierra - `{10, 13, 0}`
-* macOS 10.12 Sierra - `{10, 12, 0}`
-* OS X 10.11 El Capitan -  `{10, 11, 0}`
-* OS X 10.10 Yosemite -  `{10, 10, 0}`
+* macOS 10.15 - `Catalina` - `{10, 15, 0}`
+* macOS 10.14 - `Mojave` - `{10, 14, 0}`
+* macOS 10.13 - `High Sierra` - `{10, 13, 0}`
+* macOS 10.12 - `Sierra` - `{10, 12, 0}`
+* OS X 10.11 - `El Capitan` -  `{10, 11, 0}`
+* OS X 10.10 - `Yosemite` -  `{10, 10, 0}`
 * ...
 
 ###### Android Version Aliases
 
-* Android 9 Pie - `{9, 0, 0}`
-* Android 8 Oreo - `{8, 0, 0}`
-* Android 7 Nougat - `{7, 0, 0}`
-* Android 6 Marshmallow - `{6, 0, 0}`
-* Android 5 Lollipop - `{5, 0, 0}`
-* Android 4.4 KitKat - `{4, 4, 0}`
+* Android 9 - `Pie` - `{9, 0, 0}`
+* Android 8 - `Oreo` - `{8, 0, 0}`
+* Android 7 - `Nougat` - `{7, 0, 0}`
+* Android 6 - `Marshmallow` - `{6, 0, 0}`
+* Android 5 - `Lollipop` - `{5, 0, 0}`
+* Android 4.4 - `KitKat` - `{4, 4, 0}`
 * ...
 
 ###### Windows Version Aliases

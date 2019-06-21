@@ -174,7 +174,7 @@ func evalNonWebkitBrowserName(u *useragent.UserAgent, ua string) {
 	case strings.Contains(ua, "msie") || strings.Contains(ua, "trident"):
 		u.Browser.Name = vars.BrowserIE
 
-	case strings.Contains(ua, "gecko") && (strings.Contains(ua, "firefox") || strings.Contains(ua, "iceweasel") || strings.Contains(ua, "seamonkey") || strings.Contains(ua, "icecat")):
+	case strings.Contains(ua, "gecko") && strings.Contains(ua, "firefox"):
 		u.Browser.Name = vars.BrowserFirefox
 
 	case strings.Contains(ua, "presto") || strings.Contains(ua, "opera"):
