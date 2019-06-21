@@ -603,20 +603,6 @@ var testUAVars = []struct {
 	},
 
 	// Unknown or partially handled
-	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.1b3pre) Gecko/20090223 SeaMonkey/2.0a3", //Seamonkey (~FF)
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserFirefox, version.Version{0, 0, 0}},
-			useragent.OS{vars.PlatformMac, vars.OSMacOS, version.Version{10, 4, 0}, "Tiger"},
-			vars.DeviceComputer,
-		},
-	},
-	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en; rv:1.9.0.8pre) Gecko/2009022800 Camino/2.0b3pre", //Camino (~FF)
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserUnknown, version.Version{0, 0, 0}},
-			useragent.OS{vars.PlatformMac, vars.OSMacOS, version.Version{10, 5, 0}, "Leopard"},
-			vars.DeviceComputer,
-		},
-	},
 	{"Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0", //firefox OS
 		useragent.UserAgent{
 			useragent.Browser{vars.BrowserFirefox, version.Version{26, 0, 0}},
@@ -1006,13 +992,6 @@ var testUAVars = []struct {
 		useragent.UserAgent{
 			useragent.Browser{vars.BrowserFirefox, version.Version{3, 5, 5}},
 			useragent.OS{vars.PlatformLinux, vars.OSLinux, version.Version{0, 0, 0}, ""},
-			vars.DeviceComputer,
-		},
-	},
-	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.1b3pre) Gecko/20090223 SeaMonkey/2.0a3",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserFirefox, version.Version{0, 0, 0}},
-			useragent.OS{vars.PlatformMac, vars.OSMacOS, version.Version{10, 4, 0}, "Tiger"},
 			vars.DeviceComputer,
 		},
 	},
