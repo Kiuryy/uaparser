@@ -66,7 +66,7 @@ where example UserAgent is:
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
 * `BrowserQQ` - Tencent [QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
 * `BrowserYandex` - [Yandex](https://en.wikipedia.org/wiki/Yandex_Browser)
-* `BrowserSamsung` - [Samsung Internet](https://en.wikipedia.org/wiki/Samsung_Internet_for_Android)
+* `BrowserSamsung` - [Samsung Internet](https://en.wikipedia.org/wiki/Samsung_Internet)
 * `BrowserCocCoc`- [Cốc Cốc](https://en.wikipedia.org/wiki/C%E1%BB%91c_C%E1%BB%91c)
 * `BrowserUnknown` - Unknown
 
