@@ -45,6 +45,9 @@ func EvalVersion(u *useragent.UserAgent, ua string) {
 	case vars.BrowserVivaldi:
 		_ = u.Browser.Version.FindVersionNumber(ua, "vivaldi/")
 
+	case vars.BrowserSamsung:
+		_ = u.Browser.Version.FindVersionNumber(ua, "samsungbrowser/")
+
 	case vars.BrowserQQ:
 		_ = u.Browser.Version.FindVersionNumber(ua, "qq/") || u.Browser.Version.FindVersionNumber(ua, "qqbrowser/")
 
