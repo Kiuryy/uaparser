@@ -29,4 +29,11 @@ var Datasets_Linux = []test_datasets.TestDataset{
 			vars.DeviceComputer,
 		},
 	},
+	{"Mozilla/5.0 (X11; U; Linux x86_64; en; rv:1.9.0.14) Gecko/20080528 Ubuntu/9.10 (karmic) Epiphany/2.22 Firefox/3.0",
+		useragent.UserAgent{
+			useragent.Browser{vars.BrowserFirefox, version.Version{3, 0, 0}},
+			useragent.OS{vars.PlatformLinux, vars.OSLinux, version.Version{0, 0, 0}, ""},
+			vars.DeviceComputer,
+		},
+	},
 }
