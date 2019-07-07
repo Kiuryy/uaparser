@@ -36,4 +36,25 @@ var Datasets_Chrome = []test_datasets.TestDataset{
 			vars.DeviceComputer,
 		},
 	},
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+		useragent.UserAgent{
+			useragent.Browser{vars.BrowserChrome, version.Version{74, 0, 3729}},
+			useragent.OS{vars.PlatformWindows, vars.OSWindows, version.Version{10, 0, 0}, ""},
+			vars.DeviceComputer,
+		},
+	},
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36",
+		useragent.UserAgent{
+			useragent.Browser{vars.BrowserChrome, version.Version{75, 0, 3770}},
+			useragent.OS{vars.PlatformWindows, vars.OSWindows, version.Version{10, 0, 0}, ""},
+			vars.DeviceComputer,
+		},
+	},
+	{"Mozilla/5.0 (X11; CrOS x86_64 11895.95.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.125 Safari/537.36",
+		useragent.UserAgent{
+			useragent.Browser{vars.BrowserChrome, version.Version{74, 0, 3729}},
+			useragent.OS{vars.PlatformLinux, vars.OSChromeOS, version.Version{74, 0, 3729}, ""},
+			vars.DeviceComputer,
+		},
+	},
 }

@@ -85,6 +85,7 @@ func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
 	case strings.Contains(ua, "cros"):
 		u.OS.Platform = vars.PlatformLinux
 		u.OS.Name = vars.OSChromeOS
+		u.OS.Version.FindVersionNumber(ua, "chrome/")
 
 		// Linux, "Linux-like"
 	case strings.Contains(ua, "x11") || strings.Contains(ua, "bsd") || strings.Contains(ua, "suse") || strings.Contains(ua, "debian") || strings.Contains(ua, "ubuntu"):

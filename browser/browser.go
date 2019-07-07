@@ -36,6 +36,7 @@ func EvalVersion(u *useragent.UserAgent, ua string) {
 	case vars.BrowserChrome:
 		// match both chrome and crios
 		_ = u.Browser.Version.FindVersionNumber(ua, "chrome/") || u.Browser.Version.FindVersionNumber(ua, "crios/") || u.Browser.Version.FindVersionNumber(ua, "crmo/")
+
 	case vars.BrowserChromium:
 		_ = u.Browser.Version.FindVersionNumber(ua, "chromium/") || u.Browser.Version.FindVersionNumber(ua, "chrome/")
 
@@ -149,8 +150,8 @@ func evalWebkitBrowserName(u *useragent.UserAgent, ua string) {
 	case strings.Contains(ua, "applebot"):
 		u.Browser.Name = vars.BrowserAppleBot
 
-		// presume it's safari unless an esoteric browser is being specified (webOSBrowser, SamsungBrowser, etc.)
-	case strings.Contains(ua, "like gecko") && strings.Contains(ua, "mozilla/") && strings.Contains(ua, "safari/") && !strings.Contains(ua, "linux") && !strings.Contains(ua, "android") && !strings.Contains(ua, "browser/") && !strings.Contains(ua, "os/") && !strings.Contains(ua, "yabrowser/"):
+		// presume it's safari unless an esoteric browser is being specified
+	case strings.Contains(ua, "like gecko") && strings.Contains(ua, "mozilla/") && strings.Contains(ua, "safari/") && !strings.Contains(ua, "linux") && !strings.Contains(ua, "android") && !strings.Contains(ua, "browser/") && !strings.Contains(ua, "os/"):
 		u.Browser.Name = vars.BrowserSafari
 
 		// if we got this far and the device is iPhone or iPad, assume safari. Some agents don't actually contain the word "safari"

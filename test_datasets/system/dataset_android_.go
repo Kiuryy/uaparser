@@ -239,20 +239,6 @@ var Datasets_Android = []test_datasets.TestDataset{
 			vars.DevicePhone,
 		},
 	},
-	{"Mozilla/5.0 (X11; U; CrOS i686 9.10.0; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.253.0 Safari/532.5",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{4, 0, 253}},
-			useragent.OS{vars.PlatformLinux, vars.OSChromeOS, version.Version{0, 0, 0}, ""},
-			vars.DeviceComputer,
-		},
-	},
-	{"Mozilla/5.0 (X11; CrOS armv7l 5500.100.6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.120 Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{34, 0, 1847}},
-			useragent.OS{vars.PlatformLinux, vars.OSChromeOS, version.Version{0, 0, 0}, ""},
-			vars.DeviceComputer,
-		},
-	},
 	{"Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10",
 		useragent.UserAgent{
 			useragent.Browser{vars.BrowserSafari, version.Version{4, 0, 4}},
