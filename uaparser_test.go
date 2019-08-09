@@ -9,7 +9,7 @@ import (
 	testDatasetsBot "github.com/Kiuryy/uaparser/test_datasets/bot"
 	testDatasetsBrowser "github.com/Kiuryy/uaparser/test_datasets/browser"
 	testDatasetsSystem "github.com/Kiuryy/uaparser/test_datasets/system"
-	"github.com/Kiuryy/uaparser/useragent"
+	"github.com/Kiuryy/uaparser/vars"
 	"testing"
 )
 
@@ -50,6 +50,11 @@ func validateParserResult(t *testing.T, datasets []test_datasets.TestDataset) {
 
 			if ua.OS.VersionAlias != dataset.OS.VersionAlias {
 				t.Errorf("OS version alias: got %s, wanted %s", ua.OS.VersionAlias, dataset.OS.VersionAlias)
+				t.Logf("agent: %s", dataset.UA)
+			}
+
+			if ua.OS.String() != dataset.OSAlias {
+				t.Errorf("OS toString: got %s, wanted %s", ua.OS.String(), dataset.OSAlias)
 				t.Logf("agent: %s", dataset.UA)
 			}
 
@@ -239,7 +244,7 @@ func BenchmarkParser(b *testing.B) {
 func BenchmarkEvalSystem(b *testing.B) {
 	datasets := getCompleteDataset()
 	num := len(datasets)
-	v := useragent.UserAgent{}
+	v := vars.UserAgent{}
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		system.Eval(&v, datasets[i%num].UA)
@@ -249,7 +254,7 @@ func BenchmarkEvalSystem(b *testing.B) {
 func BenchmarkEvalBrowserName(b *testing.B) {
 	datasets := getCompleteDataset()
 	num := len(datasets)
-	v := useragent.UserAgent{}
+	v := vars.UserAgent{}
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		browser.EvalName(&v, datasets[i%num].UA)
@@ -259,7 +264,7 @@ func BenchmarkEvalBrowserName(b *testing.B) {
 func BenchmarkEvalBrowserVersion(b *testing.B) {
 	datasets := getCompleteDataset()
 	num := len(datasets)
-	v := useragent.UserAgent{}
+	v := vars.UserAgent{}
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		v.Browser.Name = datasets[i%num].Browser.Name
@@ -270,7 +275,7 @@ func BenchmarkEvalBrowserVersion(b *testing.B) {
 func BenchmarkEvalDevice(b *testing.B) {
 	datasets := getCompleteDataset()
 	num := len(datasets)
-	v := useragent.UserAgent{}
+	v := vars.UserAgent{}
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {

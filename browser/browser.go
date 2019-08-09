@@ -1,7 +1,6 @@
 package browser
 
 import (
-	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"strings"
 )
@@ -25,7 +24,7 @@ import (
 // 1st: look for generic version/#
 // 2nd: look for browser-specific instructions (e.g. chrome/34)
 // 3rd: infer from OS (iOS only)
-func EvalVersion(u *useragent.UserAgent, ua string) {
+func EvalVersion(u *vars.UserAgent, ua string) {
 	// if there is a 'version/#' attribute with numeric version, use it -- except for Chrome since Android vendors sometimes hijack version/#
 	if u.Browser.Name != vars.BrowserChrome && u.Browser.Version.FindVersionNumber(ua, "version/") {
 		return
@@ -86,7 +85,7 @@ func EvalVersion(u *useragent.UserAgent, ua string) {
 }
 
 // EvalName retrieves the browser name from the given UA string
-func EvalName(u *useragent.UserAgent, ua string) {
+func EvalName(u *vars.UserAgent, ua string) {
 
 	if strings.Contains(ua, "applewebkit") {
 		evalWebkitBrowserName(u, ua)
@@ -96,7 +95,7 @@ func EvalName(u *useragent.UserAgent, ua string) {
 }
 
 // Retrieve browser name from UA strings containing 'applewebkit'
-func evalWebkitBrowserName(u *useragent.UserAgent, ua string) {
+func evalWebkitBrowserName(u *vars.UserAgent, ua string) {
 
 	switch {
 	case strings.Contains(ua, "googlebot"):
@@ -169,7 +168,7 @@ func evalWebkitBrowserName(u *useragent.UserAgent, ua string) {
 }
 
 // Retrieve browser name from UA strings not containing 'applewebkit'
-func evalNonWebkitBrowserName(u *useragent.UserAgent, ua string) {
+func evalNonWebkitBrowserName(u *vars.UserAgent, ua string) {
 
 	switch {
 	case strings.Contains(ua, "qq/") || strings.Contains(ua, "qqbrowser/"):

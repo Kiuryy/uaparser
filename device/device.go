@@ -1,13 +1,12 @@
 package device
 
 import (
-	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"strings"
 )
 
 // Eval parses the user agent and sets the device type
-func Eval(u *useragent.UserAgent, ua string) {
+func Eval(u *vars.UserAgent, ua string) {
 	switch {
 
 	case u.OS.Platform == vars.PlatformWindows || u.OS.Platform == vars.PlatformMac || u.OS.Name == vars.OSChromeOS:

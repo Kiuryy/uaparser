@@ -1,27 +1,31 @@
 package test_datasets
 
 import (
-	"github.com/Kiuryy/uaparser/useragent"
+	"github.com/Kiuryy/uaparser/vars"
 )
 
 var Datasets_Malformed = []TestDataset{
 	// Empty
 	{"",
-		useragent.UserAgent{},
+		vars.UserAgent{},
+		"",
 	},
 
 	// Single char
 	{"a",
-		useragent.UserAgent{},
+		vars.UserAgent{},
+		"",
 	},
 
 	// Some random string
 	{"some random string",
-		useragent.UserAgent{},
+		vars.UserAgent{},
+		"",
 	},
 
 	// Potentially malformed ua
 	{")(",
-		useragent.UserAgent{},
+		vars.UserAgent{},
+		"",
 	},
 }

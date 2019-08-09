@@ -9,14 +9,13 @@ import (
 	"github.com/Kiuryy/uaparser/browser"
 	"github.com/Kiuryy/uaparser/device"
 	"github.com/Kiuryy/uaparser/system"
-	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"strings"
 )
 
 // Parse accepts a raw user agent (string) and returns the UserAgent.
-func Parse(ua string) *useragent.UserAgent {
-	dest := useragent.UserAgent{}
+func Parse(ua string) *vars.UserAgent {
+	dest := vars.UserAgent{}
 	ua = normalise(ua)
 
 	if len(ua) == 0 {
@@ -33,6 +32,7 @@ func Parse(ua string) *useragent.UserAgent {
 		if dest.IsBot() {
 			dest.OS.Platform = vars.PlatformBot
 			dest.OS.Name = vars.OSBot
+			dest.OS.VersionAlias = ""
 		}
 	}
 

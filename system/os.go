@@ -1,14 +1,13 @@
 package system
 
 import (
-	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"github.com/Kiuryy/uaparser/version"
 	"strings"
 )
 
 // Eval parses the user agent and sets the system information (OS, Platform)
-func Eval(u *useragent.UserAgent, ua string) {
+func Eval(u *vars.UserAgent, ua string) {
 	s := strings.IndexRune(ua, '(')
 	e := strings.IndexRune(ua, ')')
 	if s > e {
@@ -66,7 +65,7 @@ func Eval(u *useragent.UserAgent, ua string) {
 
 // evalLinux returns the `Platform`, `OSName` and Version of UAs with
 // 'linux' listed as their platform.
-func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
+func evalLinux(u *vars.UserAgent, ua string, agentPlatform string) {
 
 	switch {
 
@@ -100,7 +99,7 @@ func evalLinux(u *useragent.UserAgent, ua string, agentPlatform string) {
 
 // evaliOS returns the `Platform`, `OSName` and Version of UAs with
 // 'ipad' or 'iphone' listed as their platform.
-func evaliOS(u *useragent.UserAgent, uaPlatform string, agentPlatform string) {
+func evaliOS(u *vars.UserAgent, uaPlatform string, agentPlatform string) {
 
 	switch uaPlatform {
 	// iPhone
@@ -128,7 +127,7 @@ func evaliOS(u *useragent.UserAgent, uaPlatform string, agentPlatform string) {
 }
 
 // getiOSVersion accepts the platform portion of a UA string and returns a Version.
-func evaliOSVersion(u *useragent.UserAgent, uaPlatformGroup string) {
+func evaliOSVersion(u *vars.UserAgent, uaPlatformGroup string) {
 	if i := strings.Index(uaPlatformGroup, "cpu iphone os "); i != -1 {
 		u.OS.Version.Parse(uaPlatformGroup[i+14:])
 		return
@@ -142,7 +141,7 @@ func evaliOSVersion(u *useragent.UserAgent, uaPlatformGroup string) {
 	u.OS.Version.Parse(uaPlatformGroup)
 }
 
-func evalWindows(u *useragent.UserAgent, ua string) {
+func evalWindows(u *vars.UserAgent, ua string) {
 
 	switch {
 
@@ -173,7 +172,7 @@ func evalWindows(u *useragent.UserAgent, ua string) {
 	}
 }
 
-func evalMac(u *useragent.UserAgent, uaPlatformGroup string) {
+func evalMac(u *vars.UserAgent, uaPlatformGroup string) {
 	u.OS.Platform = vars.PlatformMac
 	u.OS.Name = vars.OSUnknown
 

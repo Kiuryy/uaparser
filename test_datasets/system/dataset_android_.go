@@ -2,241 +2,273 @@ package test_datasets_system
 
 import (
 	"github.com/Kiuryy/uaparser/test_datasets"
-	"github.com/Kiuryy/uaparser/useragent"
 	"github.com/Kiuryy/uaparser/vars"
 	"github.com/Kiuryy/uaparser/version"
 )
 
 var Datasets_Android = []test_datasets.TestDataset{
 	{"Mozilla/5.0 (Linux; U; Android 1.0; en-us; dream) AppleWebKit/525.10+ (KHTML,like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 0}, ""},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 0}, ""},
 			vars.DevicePhone,
 		},
+		"Android 1",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.0; en-us; generic) AppleWebKit/525.10 (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 0}, ""},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 0}, ""},
 			vars.DevicePhone,
 		},
+		"Android 1",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.0.3; de-de; A80KSC Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 3}, ""},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 0, 3}, ""},
 			vars.DevicePhone,
 		},
+		"Android 1",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.5; en-gb; T-Mobile G1 Build/CRC1) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 1, 2}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 1, 2}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
 			vars.DevicePhone,
 		},
+		"Android 1.5 Cupcake",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.5; es-; FBW1_4 Build/MASTER) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
 			vars.DevicePhone,
 		},
+		"Android 1.5 Cupcake",
 	},
 	{"Mozilla/5.0 (Linux U; Android 1.5 en-us hero) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
 			vars.DevicePhone,
 		},
+		"Android 1.5 Cupcake",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.5; en-us; Opus One Build/RBE.00.00) AppleWebKit/528.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile Safari/525.20.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 1, 1}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 1, 1}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 5, 0}, "Cupcake"},
 			vars.DevicePhone,
 		},
+		"Android 1.5 Cupcake",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.6; ar-us; SonyEricssonX10i Build/R2BA026) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 1, 2}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 1, 2}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
 			vars.DevicePhone,
 		},
+		"Android 1.6 Donut",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.6; en-gb; HTC Tattoo Build/DRC79) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
 			vars.DevicePhone,
 		},
+		"Android 1.6 Donut",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 1.6; ja-jp; Docomo HT-03A Build/DRD08) AppleWebKit/525.10 (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{1, 6, 0}, "Donut"},
 			vars.DevicePhone,
 		},
+		"Android 1.6 Donut",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
 			vars.DevicePhone,
 		},
+		"Android 2.1 Éclair",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.1-update1; en-au; HTC_Desire_A8183 V1.16.841.1 Build/ERE27) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
 			vars.DevicePhone,
 		},
+		"Android 2.1 Éclair",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.1; en-us; generic) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{3, 0, 4}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 1, 0}, "Éclair"},
 			vars.DevicePhone,
 		},
+		"Android 2.1 Éclair",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.2; en-sa; HTC_DesireHD_A9191 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 2, 0}, "Froyo"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 2, 0}, "Froyo"},
 			vars.DevicePhone,
 		},
+		"Android 2.2 Froyo",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.2.1; en-gb; HTC_DesireZ_A7272 Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 2, 1}, "Froyo"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 2, 1}, "Froyo"},
 			vars.DevicePhone,
 		},
+		"Android 2.2 Froyo",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; Sensation_4G Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/5.0 Safari/533.16",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{5, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 3}, "Gingerbread"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{5, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 3}, "Gingerbread"},
 			vars.DevicePhone,
 		},
+		"Android 2.3 Gingerbread",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.3.5; ko-kr; SHW-M250S Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 5}, "Gingerbread"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 5}, "Gingerbread"},
 			vars.DevicePhone,
 		},
+		"Android 2.3 Gingerbread",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 2.3.7; ja-jp; L-02D Build/GWK74) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 7}, "Gingerbread"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{2, 3, 7}, "Gingerbread"},
 			vars.DevicePhone,
 		},
+		"Android 2.3 Gingerbread",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 3.0; en-us; Xoom Build/HRI39) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{3, 0, 0}, "Honeycomb"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{3, 0, 0}, "Honeycomb"},
 			vars.DeviceTablet,
 		},
+		"Android 3 Honeycomb",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.0.1; en-us; sdk Build/ICS_MR0) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 0, 1}, "Ice Cream Sandwich"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 0, 1}, "Ice Cream Sandwich"},
 			vars.DevicePhone,
 		},
+		"Android 4 Ice Cream Sandwich",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.1.1; en-us; Nexus S Build/JRO03E) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
 			vars.DevicePhone,
 		},
+		"Android 4.1 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.1; en-gb; Build/JRN84D) AppleWebKit/534.30 (KHTML like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 0}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 0}, "Jelly Bean"},
 			vars.DevicePhone,
 		},
+		"Android 4.1 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.1.1; el-gr; MB525 Build/JRO03H; CyanogenMod-10) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
 			vars.DevicePhone,
 		},
+		"Android 4.1 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.1.1; fr-fr; MB525 Build/JRO03H; CyanogenMod-10) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 1, 1}, "Jelly Bean"},
 			vars.DevicePhone,
 		},
+		"Android 4.1 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.2; en-us; Nexus 10 Build/JVP15I) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 2, 0}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 2, 0}, "Jelly Bean"},
 			vars.DeviceTablet,
 		},
+		"Android 4.2 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; U; Android 4.2; ro-ro; LT18i Build/4.1.B.0.431) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 2, 0}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 2, 0}, "Jelly Bean"},
 			vars.DevicePhone,
 		},
+		"Android 4.2 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JWR66D) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.111 Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{27, 0, 1453}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 3, 0}, "Jelly Bean"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{27, 0, 1453}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 3, 0}, "Jelly Bean"},
 			vars.DeviceTablet,
 		},
+		"Android 4.3 Jelly Bean",
 	},
 	{"Mozilla/5.0 (Linux; Android 4.4; Nexus 7 Build/KOT24) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.105 Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{30, 0, 1599}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 0}, "KitKat"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{30, 0, 1599}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 0}, "KitKat"},
 			vars.DeviceTablet,
 		},
+		"Android 4.4 KitKat",
 	},
 	{"Mozilla/5.0 (Linux; Android 4.4; Nexus 4 Build/KRT16E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.105 Mobile Safari",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{30, 0, 1599}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 0}, "KitKat"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{30, 0, 1599}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 0}, "KitKat"},
 			vars.DevicePhone,
 		},
+		"Android 4.4 KitKat",
 	},
 	{"Mozilla/5.0 (Linux; Android 6.0.1; SM-G930V Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{6, 0, 1}, "Marshmallow"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{6, 0, 1}, "Marshmallow"},
 			vars.DevicePhone,
 		},
+		"Android 6 Marshmallow",
 	},
 	{"Mozilla/5.0 (Linux; Android 7.0; Nexus 5X Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{7, 0, 0}, "Nougat"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{7, 0, 0}, "Nougat"},
 			vars.DevicePhone,
 		},
+		"Android 7 Nougat",
 	},
 	{"Mozilla/5.0 (Linux; Android 7.0; Nexus 6P Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.98 Mobile Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{7, 0, 0}, "Nougat"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{52, 0, 2743}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{7, 0, 0}, "Nougat"},
 			vars.DevicePhone,
 		},
+		"Android 7 Nougat",
 	},
 	{"Mozilla/5.0 (Linux; Android 8.0.0; SM-G930F Build/R16NW; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36",
-		useragent.UserAgent{
-			useragent.Browser{vars.BrowserChrome, version.Version{74, 0, 3729}},
-			useragent.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{8, 0, 0}, "Oreo"},
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{74, 0, 3729}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{8, 0, 0}, "Oreo"},
 			vars.DevicePhone,
 		},
+		"Android 8 Oreo",
 	},
 }
