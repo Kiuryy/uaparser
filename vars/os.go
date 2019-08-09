@@ -49,5 +49,5 @@ func (o *OS) String() string {
 	}
 
 	ret := fmt.Sprintf("%s %s", name, _version)
-	return strings.Trim(ret," ")
+	return strings.Trim(ret, " ")
 }
