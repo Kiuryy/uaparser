@@ -271,4 +271,28 @@ var Datasets_Android = []test_datasets.TestDataset{
 		},
 		"Android 8 Oreo",
 	},
+	{"Mozilla/5.0 (Linux; Android 4.4.4; SM-T560 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Safari/537.36",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{63, 0, 3239}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 4}, "KitKat"},
+			vars.DeviceTablet,
+		},
+		"Android 4.4 KitKat",
+	},
+	{"Mozilla/5.0 (Linux; Android 4.4.2; T1-701u Build/HuaweiMediaPad) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.123 Safari/537.36",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{64, 0, 3282}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 2}, "KitKat"},
+			vars.DeviceTablet,
+		},
+		"Android 4.4 KitKat",
+	},
+	{"Mozilla/5.0 (Linux; Android 4.4.2; Lenovo TAB 2 A7-30F Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Safari/537.36",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserChrome, version.Version{45, 0, 2454}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{4, 4, 2}, "KitKat"},
+			vars.DeviceTablet,
+		},
+		"Android 4.4 KitKat",
+	},
 }
