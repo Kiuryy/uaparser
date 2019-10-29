@@ -63,4 +63,12 @@ var Datasets_iPhone = []test_datasets.TestDataset{
 		},
 		"iOS 8",
 	},
+	{"Mozilla/5.0 (iPhone10,1; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserSafari, version.Version{0, 0, 0}},
+			vars.OS{vars.PlatformiPhone, vars.OSiOS, version.Version{12, 2, 0}, ""},
+			vars.DevicePhone,
+		},
+		"iOS 12.2",
+	},
 }

@@ -28,17 +28,17 @@ func Eval(u *vars.UserAgent, ua string) {
 	}
 
 	//strict OS & version identification
-	switch specs {
-	case "android":
+	switch {
+	case specs == "android":
 		evalLinux(u, ua, agentPlatform)
 
-	case "x11", "linux":
+	case specs == "x11" || specs == "linux":
 		evalLinux(u, ua, agentPlatform)
 
-	case "ipad", "iphone", "ipod touch", "ipod":
+	case strings.HasPrefix(specs, "ipad") || strings.HasPrefix(specs, "iphone") || strings.HasPrefix(specs, "ipod touch") || strings.HasPrefix(specs, "ipod"):
 		evaliOS(u, specs, agentPlatform)
 
-	case "macintosh":
+	case specs == "macintosh":
 		evalMac(u, ua)
 
 	default:
@@ -101,21 +101,21 @@ func evalLinux(u *vars.UserAgent, ua string, agentPlatform string) {
 // 'ipad' or 'iphone' listed as their platform.
 func evaliOS(u *vars.UserAgent, uaPlatform string, agentPlatform string) {
 
-	switch uaPlatform {
+	switch {
 	// iPhone
-	case "iphone":
+	case strings.HasPrefix(uaPlatform, "iphone"):
 		u.OS.Platform = vars.PlatformiPhone
 		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
 
 		// iPad
-	case "ipad":
+	case strings.HasPrefix(uaPlatform, "ipad"):
 		u.OS.Platform = vars.PlatformiPad
 		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
 
 		// iPod
-	case "ipod touch", "ipod":
+	case strings.HasPrefix(uaPlatform, "ipod touch") || strings.HasPrefix(uaPlatform, "ipod"):
 		u.OS.Platform = vars.PlatformiPod
 		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
