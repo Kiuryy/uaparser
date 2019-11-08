@@ -31,4 +31,12 @@ var Datasets_UCBrowser = []test_datasets.TestDataset{
 		},
 		"",
 	},
+	{"Mozilla/5.0 (Linux; U; Android 5.1.1; en-US; LG-D722 Build/LMY48Y) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/12.13.0.718 U3/0.8.0 Mobile Safari/534.30",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserUCBrowser, version.Version{12, 13, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSAndroid, version.Version{5, 1, 1}, "Lollipop"},
+			vars.DevicePhone,
+		},
+		"Android 5.1 Lollipop",
+	},
 }

@@ -21,38 +21,47 @@ import (
 
 // EvalVersion retrieves the browser version from the given UA string
 // Methods used in order:
-// 1st: look for generic version/#
-// 2nd: look for browser-specific instructions (e.g. chrome/34)
-// 3rd: infer from OS (iOS only)
+// 1st: look for browser-specific instructions (e.g. chrome/34)
+// 2nd: look for generic version/#
 func EvalVersion(u *vars.UserAgent, ua string) {
-	// if there is a 'version/#' attribute with numeric version, use it -- except for Chrome since Android vendors sometimes hijack version/#
-	if u.Browser.Name != vars.BrowserChrome && u.Browser.Version.FindVersionNumber(ua, "version/") {
-		return
-	}
 
 	switch u.Browser.Name {
 
 	case vars.BrowserChrome:
 		// match both chrome and crios
-		_ = u.Browser.Version.FindVersionNumber(ua, "chrome/") || u.Browser.Version.FindVersionNumber(ua, "crios/") || u.Browser.Version.FindVersionNumber(ua, "crmo/")
+		if u.Browser.Version.FindVersionNumber(ua, "chrome/") || u.Browser.Version.FindVersionNumber(ua, "crios/") || u.Browser.Version.FindVersionNumber(ua, "crmo/") {
+			return
+		}
 
 	case vars.BrowserChromium:
-		_ = u.Browser.Version.FindVersionNumber(ua, "chromium/") || u.Browser.Version.FindVersionNumber(ua, "chrome/")
+		if u.Browser.Version.FindVersionNumber(ua, "chromium/") || u.Browser.Version.FindVersionNumber(ua, "chrome/") {
+			return
+		}
 
 	case vars.BrowserYandex:
-		_ = u.Browser.Version.FindVersionNumber(ua, "yabrowser/")
+		if u.Browser.Version.FindVersionNumber(ua, "yabrowser/") {
+			return
+		}
 
 	case vars.BrowserVivaldi:
-		_ = u.Browser.Version.FindVersionNumber(ua, "vivaldi/")
+		if u.Browser.Version.FindVersionNumber(ua, "vivaldi/") {
+			return
+		}
 
 	case vars.BrowserSamsung:
-		_ = u.Browser.Version.FindVersionNumber(ua, "samsungbrowser/")
+		if u.Browser.Version.FindVersionNumber(ua, "samsungbrowser/") {
+			return
+		}
 
 	case vars.BrowserQQ:
-		_ = u.Browser.Version.FindVersionNumber(ua, "qq/") || u.Browser.Version.FindVersionNumber(ua, "qqbrowser/")
+		if u.Browser.Version.FindVersionNumber(ua, "qq/") || u.Browser.Version.FindVersionNumber(ua, "qqbrowser/") {
+			return
+		}
 
 	case vars.BrowserEdge:
-		_ = u.Browser.Version.FindVersionNumber(ua, "edge/") || u.Browser.Version.FindVersionNumber(ua, "edgios/") || u.Browser.Version.FindVersionNumber(ua, "edga/") || u.Browser.Version.FindVersionNumber(ua, "edg/")
+		if u.Browser.Version.FindVersionNumber(ua, "edge/") || u.Browser.Version.FindVersionNumber(ua, "edga/") || u.Browser.Version.FindVersionNumber(ua, "edg/") {
+			return
+		}
 
 	case vars.BrowserIE:
 		if u.Browser.Version.FindVersionNumber(ua, "msie ") {
@@ -65,23 +74,38 @@ func EvalVersion(u *vars.UserAgent, ua string) {
 			if (u.Browser.Version.Major >= 3) && (u.Browser.Version.Major <= 7) {
 				u.Browser.Version.Major += 4
 			}
+
+			return
 		}
 
 	case vars.BrowserFirefox:
-		_ = u.Browser.Version.FindVersionNumber(ua, "firefox/") || u.Browser.Version.FindVersionNumber(ua, "fxios/")
+		if u.Browser.Version.FindVersionNumber(ua, "firefox/") || u.Browser.Version.FindVersionNumber(ua, "fxios/") {
+			return
+		}
 
 	case vars.BrowserUCBrowser:
-		_ = u.Browser.Version.FindVersionNumber(ua, "ucbrowser/")
+		if u.Browser.Version.FindVersionNumber(ua, "ucbrowser/") {
+			return
+		}
 
 	case vars.BrowserOpera:
-		_ = u.Browser.Version.FindVersionNumber(ua, "opr/") || u.Browser.Version.FindVersionNumber(ua, "opios/") || u.Browser.Version.FindVersionNumber(ua, "opera/")
+		if u.Browser.Version.FindVersionNumber(ua, "opr/") || u.Browser.Version.FindVersionNumber(ua, "opios/") || u.Browser.Version.FindVersionNumber(ua, "opera mini/") {
+			return
+		}
 
 	case vars.BrowserBrave:
-		_ = u.Browser.Version.FindVersionNumber(ua, "brave/") || u.Browser.Version.FindVersionNumber(ua, "brave chrome/")
+		if u.Browser.Version.FindVersionNumber(ua, "brave/") || u.Browser.Version.FindVersionNumber(ua, "brave chrome/") {
+			return
+		}
 
 	case vars.BrowserCocCoc:
-		_ = u.Browser.Version.FindVersionNumber(ua, "coc_coc_browser/")
+		if u.Browser.Version.FindVersionNumber(ua, "coc_coc_browser/") {
+			return
+		}
 	}
+
+	// use the 'version/#' attribute with numeric version as fallback, if none of the above rules led to a valid version
+	u.Browser.Version.FindVersionNumber(ua, "version/")
 }
 
 // EvalName retrieves the browser name from the given UA string
