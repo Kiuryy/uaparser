@@ -77,7 +77,6 @@ func getCompleteDataset() []test_datasets.TestDataset {
 		testDatasetsBot.Datasets_Bot,
 		//
 		testDatasetsBrowser.Datasets_AndroidWebview,
-		testDatasetsBrowser.Datasets_Brave,
 		testDatasetsBrowser.Datasets_Chrome,
 		testDatasetsBrowser.Datasets_Chromium,
 		testDatasetsBrowser.Datasets_CocCoc,
@@ -89,7 +88,6 @@ func getCompleteDataset() []test_datasets.TestDataset {
 		testDatasetsBrowser.Datasets_Safari,
 		testDatasetsBrowser.Datasets_Samsung,
 		testDatasetsBrowser.Datasets_UCBrowser,
-		testDatasetsBrowser.Datasets_Vivaldi,
 		testDatasetsBrowser.Datasets_Yandex,
 		//
 		testDatasetsSystem.Datasets_Android,
