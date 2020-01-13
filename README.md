@@ -61,8 +61,6 @@ where example UserAgent is:
 * `BrowserAndroid` - Android [WebView](https://developer.chrome.com/multidevice/webview/overview) (Android OS <4.4 only)
 * `BrowserOpera` - [Opera](https://en.wikipedia.org/wiki/Opera_(web_browser))
 * `BrowserChromium` - Google [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))
-* `BrowserVivaldi` - [Vivaldi](https://en.wikipedia.org/wiki/Vivaldi_(web_browser))
-* `BrowserBrave` - [Brave](https://en.wikipedia.org/wiki/Brave_(web_browser))
 * `BrowserUCBrowser` - [UC Browser](https://en.wikipedia.org/wiki/UC_Browser)
 * `BrowserQQ` - Tencent [QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
 * `BrowserYandex` - [Yandex](https://en.wikipedia.org/wiki/Yandex_Browser)

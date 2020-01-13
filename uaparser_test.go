@@ -156,20 +156,12 @@ func TestBrowserAndroidWebview(t *testing.T) {
 	validateParserResult(t, testDatasetsBrowser.Datasets_AndroidWebview)
 }
 
-func TestBrowserVivaldi(t *testing.T) {
-	validateParserResult(t, testDatasetsBrowser.Datasets_Vivaldi)
-}
-
 func TestBrowserOpera(t *testing.T) {
 	validateParserResult(t, testDatasetsBrowser.Datasets_Opera)
 }
 
 func TestBrowserUCBrowser(t *testing.T) {
 	validateParserResult(t, testDatasetsBrowser.Datasets_UCBrowser)
-}
-
-func TestBrowserBrave(t *testing.T) {
-	validateParserResult(t, testDatasetsBrowser.Datasets_Brave)
 }
 
 func TestBrowserYandex(t *testing.T) {

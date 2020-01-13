@@ -40,32 +40,30 @@ func _() {
 	_ = x[BrowserFirefox-6]
 	_ = x[BrowserAndroid-7]
 	_ = x[BrowserOpera-8]
-	_ = x[BrowserBrave-9]
-	_ = x[BrowserVivaldi-10]
-	_ = x[BrowserUCBrowser-11]
-	_ = x[BrowserQQ-12]
-	_ = x[BrowserSamsung-13]
-	_ = x[BrowserYandex-14]
-	_ = x[BrowserCocCoc-15]
-	_ = x[BrowserBot-16]
-	_ = x[BrowserAppleBot-17]
-	_ = x[BrowserBaiduBot-18]
-	_ = x[BrowserBingBot-19]
-	_ = x[BrowserDuckDuckGoBot-20]
-	_ = x[BrowserFacebookBot-21]
-	_ = x[BrowserGoogleBot-22]
-	_ = x[BrowserLinkedInBot-23]
-	_ = x[BrowserMsnBot-24]
-	_ = x[BrowserPingdomBot-25]
-	_ = x[BrowserTwitterBot-26]
-	_ = x[BrowserYandexBot-27]
-	_ = x[BrowserCocCocBot-28]
-	_ = x[BrowserYahooBot-29]
+	_ = x[BrowserUCBrowser-9]
+	_ = x[BrowserQQ-10]
+	_ = x[BrowserSamsung-11]
+	_ = x[BrowserYandex-12]
+	_ = x[BrowserCocCoc-13]
+	_ = x[BrowserBot-14]
+	_ = x[BrowserAppleBot-15]
+	_ = x[BrowserBaiduBot-16]
+	_ = x[BrowserBingBot-17]
+	_ = x[BrowserDuckDuckGoBot-18]
+	_ = x[BrowserFacebookBot-19]
+	_ = x[BrowserGoogleBot-20]
+	_ = x[BrowserLinkedInBot-21]
+	_ = x[BrowserMsnBot-22]
+	_ = x[BrowserPingdomBot-23]
+	_ = x[BrowserTwitterBot-24]
+	_ = x[BrowserYandexBot-25]
+	_ = x[BrowserCocCocBot-26]
+	_ = x[BrowserYahooBot-27]
 }
 
-const _BrowserName_name = "BrowserUnknownBrowserChromeBrowserChromiumBrowserIEBrowserEdgeBrowserSafariBrowserFirefoxBrowserAndroidBrowserOperaBrowserBraveBrowserVivaldiBrowserUCBrowserBrowserQQBrowserSamsungBrowserYandexBrowserCocCocBrowserBotBrowserAppleBotBrowserBaiduBotBrowserBingBotBrowserDuckDuckGoBotBrowserFacebookBotBrowserGoogleBotBrowserLinkedInBotBrowserMsnBotBrowserPingdomBotBrowserTwitterBotBrowserYandexBotBrowserCocCocBotBrowserYahooBot"
+const _BrowserName_name = "BrowserUnknownBrowserChromeBrowserChromiumBrowserIEBrowserEdgeBrowserSafariBrowserFirefoxBrowserAndroidBrowserOperaBrowserUCBrowserBrowserQQBrowserSamsungBrowserYandexBrowserCocCocBrowserBotBrowserAppleBotBrowserBaiduBotBrowserBingBotBrowserDuckDuckGoBotBrowserFacebookBotBrowserGoogleBotBrowserLinkedInBotBrowserMsnBotBrowserPingdomBotBrowserTwitterBotBrowserYandexBotBrowserCocCocBotBrowserYahooBot"
 
-var _BrowserName_index = [...]uint16{0, 14, 27, 42, 51, 62, 75, 89, 103, 115, 127, 141, 157, 166, 180, 193, 206, 216, 231, 246, 260, 280, 298, 314, 332, 345, 362, 379, 395, 411, 426}
+var _BrowserName_index = [...]uint16{0, 14, 27, 42, 51, 62, 75, 89, 103, 115, 131, 140, 154, 167, 180, 190, 205, 220, 234, 254, 272, 288, 306, 319, 336, 353, 369, 385, 400}
 
 func (i BrowserName) String() string {
 	if i < 0 || i >= BrowserName(len(_BrowserName_index)-1) {

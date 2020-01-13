@@ -43,11 +43,6 @@ func EvalVersion(u *vars.UserAgent, ua string) {
 			return
 		}
 
-	case vars.BrowserVivaldi:
-		if u.Browser.Version.FindVersionNumber(ua, "vivaldi/") {
-			return
-		}
-
 	case vars.BrowserSamsung:
 		if u.Browser.Version.FindVersionNumber(ua, "samsungbrowser/") {
 			return
@@ -93,11 +88,6 @@ func EvalVersion(u *vars.UserAgent, ua string) {
 			return
 		}
 
-	case vars.BrowserBrave:
-		if u.Browser.Version.FindVersionNumber(ua, "brave/") || u.Browser.Version.FindVersionNumber(ua, "brave chrome/") {
-			return
-		}
-
 	case vars.BrowserCocCoc:
 		if u.Browser.Version.FindVersionNumber(ua, "coc_coc_browser/") {
 			return
@@ -130,12 +120,6 @@ func evalWebkitBrowserName(u *vars.UserAgent, ua string) {
 
 	case strings.Contains(ua, "opr/") || strings.Contains(ua, "opios/"):
 		u.Browser.Name = vars.BrowserOpera
-
-	case strings.Contains(ua, "brave/") || strings.Contains(ua, "brave chrome/"):
-		u.Browser.Name = vars.BrowserBrave
-
-	case strings.Contains(ua, "vivaldi/"):
-		u.Browser.Name = vars.BrowserVivaldi
 
 	case strings.Contains(ua, "edge/") || strings.Contains(ua, "edg/") || strings.Contains(ua, "edgios/") || strings.Contains(ua, "edga/"):
 		u.Browser.Name = vars.BrowserEdge

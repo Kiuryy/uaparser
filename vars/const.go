@@ -46,8 +46,6 @@ const (
 	BrowserFirefox
 	BrowserAndroid
 	BrowserOpera
-	BrowserBrave
-	BrowserVivaldi
 	BrowserUCBrowser
 	BrowserQQ
 	BrowserSamsung
