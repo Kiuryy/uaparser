@@ -43,9 +43,6 @@ func Eval(u *vars.UserAgent, ua string) {
 	case strings.Contains(ua, "nintendo") || strings.Contains(ua, "xbox") || strings.Contains(ua, "playstation"):
 		u.DeviceType = vars.DeviceConsole
 
-	case strings.Contains(ua, "glass") || strings.Contains(ua, "watch") || strings.Contains(ua, "sm-v"):
-		u.DeviceType = vars.DeviceWearable
-
 		// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
 	case strings.Contains(ua, "kindle/") || strings.Contains(ua, "silk/") && !strings.Contains(ua, "sd4930ur"):
 		u.DeviceType = vars.DeviceTablet
@@ -53,7 +50,7 @@ func Eval(u *vars.UserAgent, ua string) {
 	case strings.Contains(ua, "mobile") || strings.Contains(ua, "touch") || strings.Contains(ua, " mobi") || strings.Contains(ua, "webos"): //anything "mobile"/"touch" that didn't get captured as tablet, console or wearable is presumed a phone
 		u.DeviceType = vars.DevicePhone
 
-	case u.OS.Name == vars.OSLinux: // linux goes last since it's in so many other device types (tvs, wearables, android-based stuff)
+	case u.OS.Name == vars.OSLinux: // linux goes last since it's in so many other device types (tvs, android-based stuff)
 		u.DeviceType = vars.DeviceComputer
 
 	default:

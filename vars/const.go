@@ -11,7 +11,6 @@ const (
 	DeviceTablet
 	DevicePhone
 	DeviceConsole
-	DeviceWearable
 	DeviceTV
 )
 

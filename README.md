@@ -148,5 +148,4 @@ DeviceType is typically quite accurate, though determining between phones and ta
 * `DeviceTablet`
 * `DeviceTV`
 * `DeviceConsole`
-* `DeviceWearable`
 * `DeviceUnknown`
