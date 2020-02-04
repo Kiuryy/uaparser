@@ -55,10 +55,6 @@ func Eval(u *vars.UserAgent, ua string) {
 			// Apple CFNetwork
 		case strings.Contains(ua, "cfnetwork") && strings.Contains(ua, "darwin"):
 			evalMac(u, ua)
-
-		default:
-			u.OS.Platform = vars.PlatformUnknown
-			u.OS.Name = vars.OSUnknown
 		}
 	}
 }
@@ -91,6 +87,7 @@ func evalLinux(u *vars.UserAgent, ua string, agentPlatform string) {
 		u.OS.Platform = vars.PlatformLinux
 		u.OS.Name = vars.OSLinux
 
+		// default to linux anyway, since we don't evaluate which exact distribution is being used
 	default:
 		u.OS.Platform = vars.PlatformLinux
 		u.OS.Name = vars.OSLinux
@@ -119,10 +116,6 @@ func evaliOS(u *vars.UserAgent, uaPlatform string, agentPlatform string) {
 		u.OS.Platform = vars.PlatformiPod
 		u.OS.Name = vars.OSiOS
 		evaliOSVersion(u, agentPlatform)
-
-	default:
-		u.OS.Platform = vars.PlatformiPad
-		u.OS.Name = vars.OSUnknown
 	}
 }
 
@@ -142,13 +135,10 @@ func evaliOSVersion(u *vars.UserAgent, uaPlatformGroup string) {
 }
 
 func evalWindows(u *vars.UserAgent, ua string) {
+	u.OS.Platform = vars.PlatformWindows
+	u.OS.Name = vars.OSUnknown
 
 	switch {
-
-	// No windows version
-	case !strings.Contains(ua, "windows "):
-		u.OS.Platform = vars.PlatformWindows
-		u.OS.Name = vars.OSUnknown
 
 	case strings.Contains(ua, "windows nt ") && u.OS.Version.FindVersionNumber(ua, "windows nt "):
 		u.OS.Platform = vars.PlatformWindows
@@ -160,11 +150,6 @@ func evalWindows(u *vars.UserAgent, ua string) {
 		u.OS.Version.Major = 5
 		u.OS.Version.Minor = 1
 		u.OS.Version.Patch = 0
-
-	default:
-		u.OS.Platform = vars.PlatformWindows
-		u.OS.Name = vars.OSUnknown
-
 	}
 
 	if versionAlias, ok := windowsVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {

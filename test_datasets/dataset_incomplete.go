@@ -84,6 +84,15 @@ var Datasets_Incomplete = []TestParserDataset{
 
 	// Incomplete user agents
 
+	{"Mozilla/5.0 (iPhone10,1) AppleWebKit/605.1.15 (KHTML, like Gecko)",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserSafari, version.Version{0, 0, 0}},
+			vars.OS{vars.PlatformiPhone, vars.OSiOS, version.Version{0, 0, 0}, ""},
+			vars.DevicePhone,
+		},
+		"iOS",
+	},
+
 	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserChrome, version.Version{0, 0, 0}},
