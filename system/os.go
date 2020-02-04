@@ -138,18 +138,8 @@ func evalWindows(u *vars.UserAgent, ua string) {
 	u.OS.Platform = vars.PlatformWindows
 	u.OS.Name = vars.OSUnknown
 
-	switch {
-
-	case strings.Contains(ua, "windows nt ") && u.OS.Version.FindVersionNumber(ua, "windows nt "):
-		u.OS.Platform = vars.PlatformWindows
+	if strings.Contains(ua, "windows nt ") && u.OS.Version.FindVersionNumber(ua, "windows nt ") {
 		u.OS.Name = vars.OSWindows
-
-	case strings.Contains(ua, "windows xp"):
-		u.OS.Platform = vars.PlatformWindows
-		u.OS.Name = vars.OSWindows
-		u.OS.Version.Major = 5
-		u.OS.Version.Minor = 1
-		u.OS.Version.Patch = 0
 	}
 
 	if versionAlias, ok := windowsVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
