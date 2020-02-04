@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_AndroidWebview = []test_datasets.TestDataset{
+var Datasets_AndroidWebview = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Linux; U; Android 2.2; en-us; DROID2 GLOBAL Build/S273) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserAndroid, version.Version{4, 0, 0}},

@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_iPhone = []test_datasets.TestDataset{
+var Datasets_iPhone = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/546.10 (KHTML, like Gecko) Version/6.0 Mobile/7E18WD Safari/8536.25",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserSafari, version.Version{6, 0, 0}},

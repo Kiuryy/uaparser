@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Edge = []test_datasets.TestDataset{
+var Datasets_Edge = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.123",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserEdge, version.Version{12, 123, 0}},

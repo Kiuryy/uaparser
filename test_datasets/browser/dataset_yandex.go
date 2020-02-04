@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Yandex = []test_datasets.TestDataset{
+var Datasets_Yandex = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 YaBrowser/18.4.1.871 Yowser/2.5 Safari/537.36",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserYandex, version.Version{18, 4, 1}},

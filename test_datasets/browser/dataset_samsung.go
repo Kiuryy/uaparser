@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Samsung = []test_datasets.TestDataset{
+var Datasets_Samsung = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Linux; Android 7.0; SAMSUNG SM-G570M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/7.4 Chrome/59.0.3071.125 Mobile Safari/537.36",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserSamsung, version.Version{7, 4, 0}},

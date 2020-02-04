@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_QQ = []test_datasets.TestDataset{
+var Datasets_QQ = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; Touch; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; Tablet PC 2.0; QQBrowser/7.6.21433.400; rv:11.0) like Gecko",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserQQ, version.Version{7, 6, 21433}},

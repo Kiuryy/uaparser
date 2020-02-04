@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_ChromeOS = []test_datasets.TestDataset{
+var Datasets_ChromeOS = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (X11; CrOS x86_64 11151.113.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.127 Safari/537.36",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserChrome, version.Version{71, 0, 3578}},

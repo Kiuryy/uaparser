@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_iPod = []test_datasets.TestDataset{
+var Datasets_iPod = []test_datasets.TestParserDataset{
 	{"mozilla/5.0 (ipod touch; cpu iphone os 9_3_3 like mac os x) applewebkit/601.1.46 (khtml, like gecko) version/9.0 mobile/13g34 safari/601.1",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserSafari, version.Version{9, 0, 0}},

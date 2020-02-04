@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Mac = []test_datasets.TestDataset{
+var Datasets_Mac = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; en-us) AppleWebKit/525.26.2 (KHTML, like Gecko) Version/3.2 Safari/525.26.12",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserSafari, version.Version{3, 2, 0}},

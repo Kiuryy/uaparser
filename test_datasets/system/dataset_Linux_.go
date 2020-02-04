@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Linux = []test_datasets.TestDataset{
+var Datasets_Linux = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (X11; U; Linux x86_64; zh-TW; rv:1.9.0.8) Gecko/2009032712 Ubuntu/8.04 (hardy) Firefox/3.0.8 GTB5",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserFirefox, version.Version{3, 0, 8}},

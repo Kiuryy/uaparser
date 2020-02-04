@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Opera = []test_datasets.TestDataset{
+var Datasets_Opera = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 OPR/18.0.1284.68",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserOpera, version.Version{18, 0, 1284}},

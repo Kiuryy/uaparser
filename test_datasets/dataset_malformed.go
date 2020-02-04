@@ -4,7 +4,7 @@ import (
 	"github.com/Kiuryy/uaparser/vars"
 )
 
-var Datasets_Malformed = []TestDataset{
+var Datasets_Malformed = []TestParserDataset{
 	// Empty
 	{"",
 		vars.UserAgent{},

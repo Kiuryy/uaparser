@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Firefox = []test_datasets.TestDataset{
+var Datasets_Firefox = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserFirefox, version.Version{1, 0, 0}},

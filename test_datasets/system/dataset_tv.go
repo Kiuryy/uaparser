@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_TV = []test_datasets.TestDataset{
+var Datasets_TV = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (CrKey armv7l 1.4.15250) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.0 Safari/537.36", // Chromecast
 		vars.UserAgent{
 			vars.Browser{vars.BrowserChrome, version.Version{31, 0, 1650}},

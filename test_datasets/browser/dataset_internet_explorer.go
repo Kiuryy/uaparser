@@ -6,7 +6,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_IE = []test_datasets.TestDataset{
+var Datasets_IE = []test_datasets.TestParserDataset{
 	{"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)",
 		vars.UserAgent{
 			vars.Browser{vars.BrowserIE, version.Version{10, 0, 0}},

@@ -5,7 +5,7 @@ import (
 	"github.com/Kiuryy/uaparser/version"
 )
 
-var Datasets_Incomplete = []TestDataset{
+var Datasets_Incomplete = []TestParserDataset{
 	{"Mozilla/5.0 (iPad; CPU OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) GSA/6.0.51363 Mobile/12F69 Safari/600.1.4", // Google search app (GSA) for iOS -- it's Safari in disguise as of v6
 		vars.UserAgent{
 			vars.Browser{vars.BrowserSafari, version.Version{0, 0, 0}},
