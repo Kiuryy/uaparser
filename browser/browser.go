@@ -165,10 +165,6 @@ func evalWebkitBrowserName(u *vars.UserAgent, ua string) {
 	case strings.Contains(ua, "iphone") || strings.Contains(ua, "ipad"):
 		u.Browser.Name = vars.BrowserSafari
 
-		// Google's search app on iPhone, leverages native Safari rather than Chrome
-	case strings.Contains(ua, " gsa/"):
-		u.Browser.Name = vars.BrowserSafari
-
 	default:
 		evalNonWebkitBrowserName(u, ua)
 
