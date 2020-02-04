@@ -124,9 +124,6 @@ func evalWebkitBrowserName(u *vars.UserAgent, ua string) {
 	case strings.Contains(ua, "edge/") || strings.Contains(ua, "edg/") || strings.Contains(ua, "edgios/") || strings.Contains(ua, "edga/"):
 		u.Browser.Name = vars.BrowserEdge
 
-	case strings.Contains(ua, "iemobile/") || strings.Contains(ua, "msie "):
-		u.Browser.Name = vars.BrowserIE
-
 	case strings.Contains(ua, "ucbrowser/") || strings.Contains(ua, "ucweb/"):
 		u.Browser.Name = vars.BrowserUCBrowser
 
