@@ -43,10 +43,6 @@ func Eval(u *vars.UserAgent, ua string) {
 
 		u.DeviceType = vars.DevicePhone // default to phone
 
-		// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
-	case strings.Contains(ua, "kindle/") || strings.Contains(ua, "silk/") && !strings.Contains(ua, "sd4930ur"):
-		u.DeviceType = vars.DeviceTablet
-
 	case strings.Contains(ua, "mobile") || strings.Contains(ua, "touch") || strings.Contains(ua, " mobi") || strings.Contains(ua, "webos"): //anything "mobile"/"touch" that didn't get captured as tablet, console or wearable is presumed a phone
 		u.DeviceType = vars.DevicePhone
 
