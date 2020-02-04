@@ -187,9 +187,6 @@ func evalNonWebkitBrowserName(u *vars.UserAgent, ua string) {
 	case strings.Contains(ua, "ucbrowser"):
 		u.Browser.Name = vars.BrowserUCBrowser
 
-	case strings.Contains(ua, "applebot"):
-		u.Browser.Name = vars.BrowserAppleBot
-
 	case strings.Contains(ua, "baiduspider"):
 		u.Browser.Name = vars.BrowserBaiduBot
 
