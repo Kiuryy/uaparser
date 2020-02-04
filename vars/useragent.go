@@ -7,15 +7,11 @@ type UserAgent struct {
 	DeviceType DeviceType
 }
 
-// IsBot returns true if the UserAgent represent a bot
+// IsBot returns true if the Browser, OS or Platform is reported as "Bot"
 func (ua *UserAgent) IsBot() bool {
-	if ua.Browser.Name >= BrowserBot && ua.Browser.Name <= BrowserYahooBot {
-		return true
-	}
-	if ua.OS.Name == OSBot {
-		return true
-	}
-	if ua.OS.Platform == PlatformBot {
+	if (ua.Browser.Name >= BrowserBot && ua.Browser.Name <= BrowserYahooBot) ||
+		ua.OS.Name == OSBot ||
+		ua.OS.Platform == PlatformBot {
 		return true
 	}
 	return false
