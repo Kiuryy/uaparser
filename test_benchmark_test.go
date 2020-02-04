@@ -45,6 +45,7 @@ func getCompleteDataset() []test_datasets.TestParserDataset {
 		testDatasetsSystem.Datasets_Windows,
 		testDatasetsSystem.Datasets_Mac,
 		testDatasetsSystem.Datasets_TV,
+		testDatasetsSystem.Datasets_Console,
 	} {
 		all = append(all, dataset...)
 	}

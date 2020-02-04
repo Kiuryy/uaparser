@@ -14,5 +14,5 @@ type TestParserDataset struct {
 type TestVersionDataset struct {
 	Version1 version.Version
 	Version2 version.Version
-	Less bool
+	Less     bool
 }

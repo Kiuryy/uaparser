@@ -9,6 +9,9 @@ import (
 func Eval(u *vars.UserAgent, ua string) {
 	switch {
 
+	case strings.Contains(ua, "nintendo") || strings.Contains(ua, "xbox") || strings.Contains(ua, "playstation"):
+		u.DeviceType = vars.DeviceConsole
+
 	case u.OS.Platform == vars.PlatformWindows || u.OS.Platform == vars.PlatformMac || u.OS.Name == vars.OSChromeOS:
 		if strings.Contains(ua, "mobile") || strings.Contains(ua, "touch") {
 			u.DeviceType = vars.DeviceTablet // windows rt, linux haxor tablets
@@ -39,9 +42,6 @@ func Eval(u *vars.UserAgent, ua string) {
 		}
 
 		u.DeviceType = vars.DevicePhone // default to phone
-
-	case strings.Contains(ua, "nintendo") || strings.Contains(ua, "xbox") || strings.Contains(ua, "playstation"):
-		u.DeviceType = vars.DeviceConsole
 
 		// specifically above "mobile" string check as Kindle Fire tablets report as "mobile"
 	case strings.Contains(ua, "kindle/") || strings.Contains(ua, "silk/") && !strings.Contains(ua, "sd4930ur"):

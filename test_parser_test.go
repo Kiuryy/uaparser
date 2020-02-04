@@ -169,3 +169,7 @@ func TestSystemMac(t *testing.T) {
 func TestSystemTV(t *testing.T) {
 	validateParserResult(t, testDatasetsSystem.Datasets_TV)
 }
+
+func TestSystemOther(t *testing.T) {
+	validateParserResult(t, testDatasetsSystem.Datasets_Console)
+}

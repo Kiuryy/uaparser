@@ -39,4 +39,12 @@ var Datasets_Linux = []test_datasets.TestParserDataset{
 		},
 		"Linux",
 	},
+	{"Mozilla/5.0 (Linux; U; it-IT) AppleWebKit/528.5+ (KHTML, like Gecko, Safari/528.5+) Version/4.0 Kindle/3.0 (screen 600x800; rotate)",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserUnknown, version.Version{4, 0, 0}},
+			vars.OS{vars.PlatformLinux, vars.OSLinux, version.Version{0, 0, 0}, ""},
+			vars.DeviceTablet,
+		},
+		"Linux",
+	},
 }
