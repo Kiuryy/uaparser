@@ -5,12 +5,15 @@ language: go
 go:
   - 1.13.x
   - 1.12.x
-  - 1.11.x
 
 env:
   - GO111MODULE=on
 
-install: true
+install:
+  - go get golang.org/x/tools/cmd/cover
 
 script:
-  - go test -v
+  - go test -v -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
