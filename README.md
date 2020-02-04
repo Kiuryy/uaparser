@@ -1,6 +1,7 @@
 # <img src="https://raw.githubusercontent.com/Kiuryy/uaparser/master/__asset/logo-small.png" height="88" align="left" /> UAParser
 
 [![Build Status](https://travis-ci.org/Kiuryy/uaparser.svg?branch=master)](https://travis-ci.org/Kiuryy/uaparser)
+[![Code Coverage](https://img.shields.io/codecov/c/github/Kiuryy/uaparser)](https://codecov.io/gh/Kiuryy/uaparser)
 [![GoDoc](https://godoc.org/github.com/Kiuryy/uaparser?status.svg)](https://godoc.org/github.com/Kiuryy/uaparser)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Kiuryy/uaparser)](https://goreportcard.com/report/github.com/Kiuryy/uaparser)
 [![License: Apache v2](https://img.shields.io/badge/License-Apache%20v2-lightgray.svg)](https://www.apache.org/licenses/LICENSE-2.0)
