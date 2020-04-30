@@ -99,10 +99,10 @@ Versions can be compared using `Less` function: `if ver1.Less(ver2) {}`
 
 Here are some examples across the platform, os.name, and os.version:
 
-* For Windows XP (Windows NT 5.1), "`PlatformWindows`" is the platform, "`OSWindows`" is the name, and `{5, 1, 0}` the version.
-* For OS X 10.5.1, "`PlatformMac`" is the platform, "`OSMacOS`" the name, and `{10, 5, 1}` the version.
-* For Android 5.1, "`PlatformLinux`" is the platform, "`OSAndroid`" is the name, and `{5, 1, 0}` the version.
-* For iOS 5.1, "`PlatformiPhone`" or "`PlatformiPad`" is the platform, "`OSiOS`" is the name, and `{5, 1, 0}` the version.
+* For Windows XP (Windows NT 5.1), `PlatformWindows` is the platform, `OSWindows` is the name, and `{5, 1, 0}` the version.
+* For OS X 10.5.1, `PlatformMac` is the platform, `OSMacOS` the name, and `{10, 5, 1}` the version.
+* For Android 5.1, `PlatformLinux` is the platform, `OSAndroid` is the name, and `{5, 1, 0}` the version.
+* For iOS 5.1, `PlatformiPhone` or `PlatformiPad` is the platform, `OSiOS` is the name, and `{5, 1, 0}` the version.
 
 #### OS Version Alias
 
