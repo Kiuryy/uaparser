@@ -55,4 +55,12 @@ var Datasets_Edge = []test_datasets.TestParserDataset{
 		},
 		"macOS Mojave 10.14",
 	},
+	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36 Edg/88.0.705.56",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserEdge, version.Version{88, 0, 705}},
+			vars.OS{vars.PlatformMac, vars.OSMacOS, version.Version{11, 1, 0}, "Big Sur"},
+			vars.DeviceComputer,
+		},
+		"macOS 11 Big Sur",
+	},
 }

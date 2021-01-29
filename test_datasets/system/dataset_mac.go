@@ -103,4 +103,12 @@ var Datasets_Mac = []test_datasets.TestParserDataset{
 		},
 		"macOS 11 Big Sur",
 	},
+	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:85.0) Gecko/20100101 Firefox/85.0",
+		vars.UserAgent{
+			vars.Browser{vars.BrowserFirefox, version.Version{85, 0, 0}},
+			vars.OS{vars.PlatformMac, vars.OSMacOS, version.Version{11, 1, 0}, "Big Sur"},
+			vars.DeviceComputer,
+		},
+		"macOS 11 Big Sur",
+	},
 }

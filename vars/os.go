@@ -24,7 +24,7 @@ func (o *OS) String() string {
 		return ""
 	}
 
-	if o.Version.Minor > 0 {
+	if o.Version.Minor > 0 && (o.Platform != PlatformMac || o.Version.Major < 11) { // add minor version, except for macOS 11+
 		_version = fmt.Sprintf("%s.%d", _version, o.Version.Minor)
 	}
 

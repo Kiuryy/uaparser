@@ -155,8 +155,14 @@ func evalMac(u *vars.UserAgent, uaPlatformGroup string) {
 		u.OS.Name = vars.OSMacOS
 		u.OS.Version.Parse(uaPlatformGroup[i+9:])
 
-		if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
-			u.OS.VersionAlias = versionAlias
+		if u.OS.Version.Major >= 11 { // minor version has the same alias since macOS 11
+			if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, 0, 0}]; ok {
+				u.OS.VersionAlias = versionAlias
+			}
+		} else { // previous versions of macOS had a different alias based on their minor version (e.g. 10.14 Mojave, 10.15 Catalina, ...)
+			if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
+				u.OS.VersionAlias = versionAlias
+			}
 		}
 	}
 }
