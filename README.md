@@ -94,7 +94,7 @@ Unknown version is returned as `0`.
 
 #### OS Version
 
-MacOS major version is always 10 with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
+macOS major version is always 10 for releases prior to Big Sur with consecutive minor versions indicating release releases (10 - Yosemite, 11 - El Capitain, 12 Sierra, etc). Windows version is NT version. `Version{0, 0, 0}` indicated version is unknown or not evaluated.
 Versions can be compared using `Less` function: `if ver1.Less(ver2) {}`
 
 Here are some examples across the platform, os.name, and os.version:
@@ -128,6 +128,8 @@ Some OS use version aliases, which are commonly used to identify specific versio
 * Android 5 - `Lollipop` - `{5, 0, 0}`
 * Android 4.4 - `KitKat` - `{4, 4, 0}`
 * ...
+
+Android releases prior to version 10 were named. The latest releases won't have a version alias anymore.
 
 ###### Windows Version Aliases
 
