@@ -110,7 +110,7 @@ Some OS use version aliases, which are commonly used to identify specific versio
 
 ###### macOS Version Aliases
 
-* macOS 10.16 - `Big Sur` - `{10, 16, 0}`
+* macOS 11 - `Big Sur` - `{11, 0, 0}`
 * macOS 10.15 - `Catalina` - `{10, 15, 0}`
 * macOS 10.14 - `Mojave` - `{10, 14, 0}`
 * macOS 10.13 - `High Sierra` - `{10, 13, 0}`

@@ -95,12 +95,12 @@ var Datasets_Mac = []test_datasets.TestParserDataset{
 		},
 		"macOS High Sierra 10.13",
 	},
-	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_16) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15",
+	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 11.0) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/11.0 Safari/602.1.50",
 		vars.UserAgent{
-			vars.Browser{vars.BrowserSafari, version.Version{13, 0, 5}},
-			vars.OS{vars.PlatformMac, vars.OSMacOS, version.Version{10, 16, 0}, "Big Sur"},
+			vars.Browser{vars.BrowserSafari, version.Version{11, 0, 0}},
+			vars.OS{vars.PlatformMac, vars.OSMacOS, version.Version{11, 0, 0}, "Big Sur"},
 			vars.DeviceComputer,
 		},
-		"macOS Big Sur 10.16",
+		"macOS 11 Big Sur",
 	},
 }

@@ -28,10 +28,10 @@ func (o *OS) String() string {
 		_version = fmt.Sprintf("%s.%d", _version, o.Version.Minor)
 	}
 
-	if o.Platform == PlatformMac && o.Version.Major == 10 { // handle different macOS names, 'OS X' for _version <= 10.11, 'macOS' for _version >= 10.12
-		if o.Version.Minor >= 12 {
-			name = "macOS"
-		} else {
+	if o.Platform == PlatformMac {
+		name = "macOS"
+
+		if o.Version.Major == 10 && o.Version.Minor < 12 { // handle different macOS names, 'OS X' for _version <= 10.11, 'macOS' for _version >= 10.12
 			name = "OS X"
 		}
 	}
@@ -39,7 +39,7 @@ func (o *OS) String() string {
 	if len(o.VersionAlias) > 0 { // alias for this version of the OS exists
 		if o.Platform == PlatformWindows { // Replace internal Windows version with alias
 			_version = o.VersionAlias
-		} else if o.Platform == PlatformMac { // prepend alias string to the version for macOS
+		} else if o.Platform == PlatformMac && o.Version.Major < 11 { // prepend alias string to the version for macOS < 11
 			_version = fmt.Sprintf("%s %s", o.VersionAlias, _version)
 		} else { // append alias string to the version for all other platforms
 			_version = fmt.Sprintf("%s %s", _version, o.VersionAlias)

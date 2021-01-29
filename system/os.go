@@ -151,9 +151,9 @@ func evalMac(u *vars.UserAgent, uaPlatformGroup string) {
 	u.OS.Platform = vars.PlatformMac
 	u.OS.Name = vars.OSUnknown
 
-	if i := strings.Index(uaPlatformGroup, "os x 10"); i != -1 {
+	if i := strings.Index(uaPlatformGroup, "mac os x"); i != -1 {
 		u.OS.Name = vars.OSMacOS
-		u.OS.Version.Parse(uaPlatformGroup[i+5:])
+		u.OS.Version.Parse(uaPlatformGroup[i+9:])
 
 		if versionAlias, ok := macVersionAlias[version.Version{u.OS.Version.Major, u.OS.Version.Minor, 0}]; ok {
 			u.OS.VersionAlias = versionAlias

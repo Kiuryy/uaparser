@@ -1,6 +1,6 @@
 module github.com/Kiuryy/uaparser
 
-go 1.14
+go 1.15
 
 require (
 	golang.org/x/mod v0.3.0 // indirect
