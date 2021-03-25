@@ -5,6 +5,7 @@
   "homepage": "https://redeviation.com/",
   "scripts": {
     "init": "go get -u golang.org/x/tools/cmd/stringer",
-    "update": "stringer -type=DeviceType,BrowserName,OSName,Platform -output=vars/const_string.go vars/const.go && gofmt -s -w ."
+    "update": "stringer -type=DeviceType,BrowserName,OSName,Platform -output=vars/const_string.go vars/const.go && gofmt -s -w .",
+    "test": "go test -v ./... -bench=. -coverpkg=./... -coverprofile=coverage.txt -covermode=atomic"
   }
 }
