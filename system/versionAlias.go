@@ -19,6 +19,7 @@ var macVersionAlias = map[version.Version]string{
 	{10, 14, 0}: "Mojave",
 	{10, 15, 0}: "Catalina",
 	{11, 0, 0}:  "Big Sur",
+	{12, 0, 0}:  "Monterey",
 }
 
 var windowsVersionAlias = map[version.Version]string{
